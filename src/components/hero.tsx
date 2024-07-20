@@ -50,7 +50,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1500px] mx-auto place-items-center px-2 lg:px-0 my-14">
+      <div className="grid grid-cols-1 -mt-8 sm:mt-4 md:mt-4 md:grid-cols-2 gap-4 max-w-[1500px] mx-auto place-items-center px-2 lg:px-0 my-14">
         <div className="mt-28">
           <CPU />
         </div>
@@ -58,7 +58,7 @@ function Hero() {
           <div className="w-full p-8">
             <div className="text-white">
               <div className="mb-8 mt-[100px]">
-                <h2 className="text-4xl md:text-6xl font-extrabold text-balance">
+                <h2 className="text-4xl -mt-32 sm:mt-4 md:mt-4 md:text-6xl font-extrabold text-balance">
                   # The blockchain revolution ! <br />
                 </h2>
                 <p className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed">

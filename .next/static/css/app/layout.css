@@ -664,11 +664,11 @@ video {
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
 }
-.-mb-12 {
-  margin-bottom: -3rem;
-}
 .-mb-6 {
   margin-bottom: -1.5rem;
+}
+.-mt-12 {
+  margin-top: -3rem;
 }
 .-mt-3 {
   margin-top: -0.75rem;
@@ -727,8 +727,53 @@ video {
 .mt-\[100px\] {
   margin-top: 100px;
 }
-.-mt-12 {
-  margin-top: -3rem;
+.-mt-6 {
+  margin-top: -1.5rem;
+}
+.-mt-16 {
+  margin-top: -4rem;
+}
+.-mt-32 {
+  margin-top: -8rem;
+}
+.-mt-8 {
+  margin-top: -2rem;
+}
+.mt-20 {
+  margin-top: 5rem;
+}
+.-mb-4 {
+  margin-bottom: -1rem;
+}
+.-mb-16 {
+  margin-bottom: -4rem;
+}
+.mb-\[-400px\] {
+  margin-bottom: -400px;
+}
+.mb-\[-550px\] {
+  margin-bottom: -550px;
+}
+.mb-\[-50px\] {
+  margin-bottom: -50px;
+}
+.mb-\[-450px\] {
+  margin-bottom: -450px;
+}
+.mb-\[-430px\] {
+  margin-bottom: -430px;
+}
+.mt-\[-30px\] {
+  margin-top: -30px;
+}
+.mt-\[-130px\] {
+  margin-top: -130px;
+}
+.-mt-20 {
+  margin-top: -5rem;
+}
+.-mt-10 {
+  margin-top: -2.5rem;
 }
 .block {
   display: block;
@@ -805,6 +850,9 @@ video {
 }
 .h-min {
   height: min-content;
+}
+.h-\[300px\] {
+  height: 300px;
 }
 .max-h-0 {
   max-height: 0px;
@@ -883,6 +931,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-\[300px\] {
+  width: 300px;
 }
 .min-w-24 {
   min-width: 6rem;
@@ -1773,8 +1824,28 @@ html {
     margin-top: 1.25rem;
   }
 
+  .sm\:mt-4 {
+    margin-top: 1rem;
+  }
+
+  .sm\:mb-\[-3px\] {
+    margin-bottom: -3px;
+  }
+
+  .sm\:mt-\[-3px\] {
+    margin-top: -3px;
+  }
+
   .sm\:block {
     display: block;
+  }
+
+  .sm\:h-\[400px\] {
+    height: 400px;
+  }
+
+  .sm\:w-\[400px\] {
+    width: 400px;
   }
 }
 
@@ -1786,6 +1857,10 @@ html {
 
   .md\:mb-12 {
     margin-bottom: 3rem;
+  }
+
+  .md\:mt-4 {
+    margin-top: 1rem;
   }
 
   .md\:block {
@@ -1808,6 +1883,10 @@ html {
     height: 600px;
   }
 
+  .md\:h-\[500px\] {
+    height: 500px;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -1818,6 +1897,10 @@ html {
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:w-\[500px\] {
+    width: 500px;
   }
 
   .md\:max-w-\[1200px\] {

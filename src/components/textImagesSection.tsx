@@ -38,7 +38,7 @@ function TextImagesSection() {
           </h2>
           <p
             className={cn(
-              "text-base md:text-lg leading-7 text-balance",
+              "text-base md:text-lg leading-7 text-balance -mb-16",
               inter.className
             )}
           >
@@ -60,9 +60,9 @@ function TextImagesSection() {
 
 
       <TextImageSection
-      className="mb-[-500px] sm:mb-[-300px]"
+      className="mb-[-400px] sm:mb-[-300px]"
         override={() => (
-          <div className="relative flex h-[500px] w-[500px] items-center justify-center overflow-hidden sm:-mt-24 -mt-40">
+          <div className="relative flex h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] md:h-[500px] md:w-[500px] items-center justify-center  sm:-mt-24 -mt-40">
             <div className="absolute flex items-center justify-center w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <img
                 src="/images/shiba.png"
