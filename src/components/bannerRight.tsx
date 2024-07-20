@@ -34,16 +34,16 @@ const DogeVisionBanner: React.FC = () => {
       //<h2 className="text-5xl md:text-7xl font-bold mb-8 text-white-400">
        // DOGE VISION
       //</h2>
-   <div className="w-full p-8 text-white">
+   <div className="w-full p-8 text-white hidden sm:block ">
       <div className="text-2xl md:text-6xl font-bold text-white mb-4 "style={{ lineHeight: '1.3' }}>
         The world's first Layer 3 blockchain, Integrating 
         </div>
 
-      <div className="h-32 mb-12"> 
+      <div className="h-24 md:h-32 lg:h-48 mb-6 md:mb-12"> 
         <AnimatePresence mode="wait">
           <motion.h3
             key={currentTextIndex}
-            className="text-2xl md:text-6xl font-bold text-purple-600 "style={{ lineHeight: '1.3' }}
+            className="text-2xl md:text-6xl font-bold text-purple-600 mb-12 "style={{ lineHeight: '1.3' }}
             initial="hidden"
             animate="visible"
             exit="exit"

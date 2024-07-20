@@ -1,4 +1,4 @@
-// File: C:\Users\kossa\Downloads\crypto-client Last\crypto-client\src\app\[locale]\page.tsx
+// File: C:\Users\kossa\Downloads\crypto-client Last\crypto-client\crypto-web3\src\app\[locale]\page.tsx
 import * as entry from '../../../../src/app/[locale]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

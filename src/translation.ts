@@ -26,7 +26,7 @@ export const translation = {
         title: "Games, NFTs, and Streaming Platform",
 
         description: [
-          "Layer 3's first-ever blockchain integrating Web3 games, NFTs, and the world's first decentralized streaming platform.Immersive Games and Metaverse Dive into a world of innovative Web3 games and metaverse experiences. DogeVision integrates fully with NFTs and blockchain technology, offering users an immersive and interactive entertainment environment.",
+          "Layer 3's first-ever blockchain integrating Web3 games, NFTs, and the world's first decentralized streaming platform. Immersive Games and Metaverse Dive into a world of innovative Web3 games and metaverse experiences. DogeVision integrates fully with NFTs and blockchain technology, offering users an immersive and interactive entertainment environment.",
           "The World's First Streaming Platform ! Access the world's first decentralized streaming platform, providing an exceptional rewarding system for streamers and a user-friendly experience. DogeVision combines the best of digital entertainment with blockchain benefits.",
         ],
         action: "Learn More",
@@ -87,7 +87,7 @@ export const translation = {
       ],
       tokenomicsSubtitle: "Empowering the $DOGE VISION Revolution",
       tokenomicsReadMore: "Total Token Amount: 200,000,000,000",
-      tokenomicsFooter: "Total Token Amount: 200,000,000,000",
+      tokenomicsFooter: "Join the Revolution ! ",
     },
   },
   fr: {

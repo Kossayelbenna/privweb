@@ -41,9 +41,9 @@ function Hero() {
         </div>
         <div className="flex flex-col w-full scale-70">
           <iframe
-            className="w-full h-[700px] -mb-12"
+            className="w-full h-[700px] -mt-12"
             
-            style={{ outline: 0, border: 0, transform: 'scale(0.95)' }}
+            style={{ outline: 0, border: 0, transform: 'scale(1)' }}
             allow="clipboard-write"
             src="https://pay.radom.com/presale/806ea959-b589-4964-aa76-b5549a53ebcb"
           ></iframe>
