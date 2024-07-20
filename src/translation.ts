@@ -86,8 +86,9 @@ export const translation = {
         },
       ],
       tokenomicsSubtitle: "Empowering the $DOGE VISION Revolution",
+      tokenomicsFooter: "Building the first gaming ecosystem in the blockchain IN the world's first LAYER 3 BLOCKCHAIN !",
       tokenomicsReadMore: "Total Token Amount: 200,000,000,000",
-      tokenomicsFooter: "Join the Revolution ! ",
+      
     },
   },
   fr: {

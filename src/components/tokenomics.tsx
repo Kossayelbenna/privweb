@@ -33,13 +33,13 @@ function Tokenomics() {
           </div>
         ))}
         <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-end">
-          <h3 className="text-3xl lg:text-4xl font-bold text-white text-right">
-            {tr("tokenomicsFooter")}
-          </h3>
-        </div>
-        <h3 className="text-xl lg:text-2xl font-bold text-white text-left col-span-1 md:col-span-2 lg:col-span-3">
+          <h3 className="text-xl lg:text-2xl font-bold text-white text-right col-span-1 md:col-span-2 lg:col-span-3">
           {tr("tokenomicsReadMore")}
         </h3>
+        </div>
+        <h5 className="text-xl lg:text-2xl font-bold text-white text-left">
+            {tr("tokenomicsFooter")}
+          </h5>
       </div>
     </div>
   );
