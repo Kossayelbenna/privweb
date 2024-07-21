@@ -60,35 +60,35 @@ function TextImagesSection() {
 
 
       <TextImageSection
-  className="mb-[-500px] sm:mb-[-300px] "
-  override={() => (
-    <div className="relative flex h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] md:h-[500px] md:w-[500px] items-center justify-center  sm:-mt-24 -mt-40">
-      <div className="absolute flex items-center justify-center w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <img
-          src="/images/shiba.png"
-          alt=""
-          className="absolute w-[100px] h-[100px]"
-        />
-      </div>
-      <OrbitingCircles
-        className="h-[30px] w-[30px] border-none bg-transparent"
-        duration={20}
-        delay={20}
-        radius={80}
-      >
-        <img src="/images/coin_1.png" alt="" className="w-10 h-10" />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="h-[30px] w-[30px] border-none bg-transparent"
-        duration={20}
-        delay={10}
-        radius={80}
-      >
-        <img src="/images/coin_5.png" alt="" className="w-10 h-10" />
-      </OrbitingCircles>
+      className="mb-[-500px] sm:mb-[-300px]"
+        override={() => (
+          <div className="relative flex h-[500px] w-[500px] items-center justify-center overflow-hidden sm:-mt-24 -mt-40">
+            <div className="absolute flex items-center justify-center w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <img
+                src="/images/shiba.png"
+                alt=""
+                className="absolute w-[100px] h-[100px]"
+              />
+            </div>
+            <OrbitingCircles
+              className="h-[30px] w-[30px] border-none bg-transparent"
+              duration={20}
+              delay={20}
+              radius={80}
+            >
+              <img src="/images/coin_1.png" alt="" className="w-10 h-10" />
+            </OrbitingCircles>
+            <OrbitingCircles
+              className="h-[30px] w-[30px] border-none bg-transparent"
+              duration={20}
+              delay={10}
+              radius={80}
+            >
+              <img src="/images/coin_5.png" alt="" className="w-10 h-10" />
+            </OrbitingCircles>
 
-      {/* Outer Circles (reverse) */}
-      <OrbitingCircles
+            {/* Outer Circles (reverse) */}
+            <OrbitingCircles
         className="h-[50px] w-[50px] border-none bg-transparent"
         radius={140}
         duration={25}
@@ -107,25 +107,23 @@ function TextImagesSection() {
         <img src="/images/coin_4.png" alt="" className="w-16 h-16" />
       </OrbitingCircles>
 
-      {/* Troisième cercle - modifié pour être caché sur mobile */}
-      <div className="hidden sm:block">
-        <OrbitingCircles
-          className="h-[50px] w-[50px] border-none bg-transparent"
-          radius={200}
-          duration={30}
-          delay={0}
-        >
-          <img src="/images/coin_2.png" alt="" className="w-16 h-16" />
-        </OrbitingCircles>
-        <OrbitingCircles
-          className="h-[50px] w-[50px] border-none bg-transparent"
-          radius={200}
-          duration={30}
-          delay={15}
-        >
-          <img src="/images/coin_4.png" alt="" className="w-16 h-16" />
-        </OrbitingCircles>
-      </div>
+      {/* Troisième cercle */}
+      <OrbitingCircles
+        className="h-[50px] w-[50px] border-none bg-transparent"
+        radius={200}
+        duration={30}
+        delay={0}
+      >
+        <img src="/images/coin_2.png" alt="" className="w-16 h-16" />
+      </OrbitingCircles>
+      <OrbitingCircles
+        className="h-[50px] w-[50px] border-none bg-transparent"
+        radius={200}
+        duration={30}
+        delay={15}
+      >
+        <img src="/images/coin_4.png" alt="" className="w-16 h-16" />
+      </OrbitingCircles>
     </div>
   )}
   invert={true}

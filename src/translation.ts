@@ -32,6 +32,10 @@ export const translation = {
         action: "Learn More",
       },
 
+      Description_seo_name:["DOGE VISION",
+      ],
+
+
       section2: {
         head: "DOGE VISION",
         description: [

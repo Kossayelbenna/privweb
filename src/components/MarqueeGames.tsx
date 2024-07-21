@@ -3,6 +3,7 @@ import React from "react";
 import Marquee from "./magicui/marquee";
 import { useLocale, useTranslator } from "@/lib/use-translator";
 
+
 const images = [
   {
     src: "/images/carosel/P (1).png",

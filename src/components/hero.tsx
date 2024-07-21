@@ -9,6 +9,8 @@ import './magicui/marquee';
 import { ConnectWallet } from "@thirdweb-dev/react";
 import BlurIn from "./magicui/animation-blurr"; // Assurez-vous que le chemin est correct
 
+
+
 function Hero() {
   const tr = useTranslator();
   return (

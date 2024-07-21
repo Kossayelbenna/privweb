@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@thirdweb-dev/react": "^3.10.3",
+    "@types/react-window": "^1.8.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.14",
@@ -20,6 +21,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
+    "react-window": "^1.8.10",
     "styled-components": "^6.1.12",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
