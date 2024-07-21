@@ -6,138 +6,83 @@ import { useLocale, useTranslator } from "@/lib/use-translator";
 
 const images = [
   {
-    src: "/images/carosel/P (1).png",
+    src: "/images/carosel/P (1).JPEG",
     description: {
-      fr: "Description en français",
-      en: "Description in English",
+      fr: "Univers Multijoueur : Une aventure sans limites",
+      en: "Multiplayer Universe: Limitless Adventure"
     },
   },
   {
     src: "/images/carosel/P (2).png",
     description: {
-      fr: "Deuxième description en français",
-      en: "Second description in English",
+      fr: "Lobby Légendaire : Préparez-vous au combat",
+      en: "Legendary Lobby: Gear Up for Battle"
     },
   },
   {
     src: "/images/carosel/P (3).png",
     description: {
-      fr: "Troisième description en français",
-      en: "Third description in English",
+      fr: "Folie Cartoon : La bataille commence !",
+      en: "Cartoon Mayhem: Let the Battle Begin!"
     },
   },
   {
     src: "/images/carosel/P (4).png",
     description: {
-      fr: "Quatrième description en français",
-      en: "Fourth description in English",
+      fr: "Duel des Héros : Choisissez votre champion",
+      en: "Hero Showdown: Choose Your Champion"
     },
   },
   {
     src: "/images/carosel/P (5).png",
     description: {
-      fr: "Cinquième description en français",
-      en: "Fifth description in English",
+      fr: "Sports Extrêmes : Défiez les limites",
+      en: "Extreme Sports: Push Your Limits"
     },
   },
   {
     src: "/images/carosel/P (6).png",
     description: {
-      fr: "Sixième description en français",
-      en: "Sixth description in English",
+      fr: "Équipe de Choc : La victoire en vue",
+      en: "Dream Team: Victory in Sight"
     },
   },
   {
     src: "/images/carosel/P (7).png",
     description: {
-      fr: "Septième description en français",
-      en: "Seventh description in English",
+      fr: "Danse Royale : Bougez au rythme",
+      en: "Royal Dance-Off: Move to the Beat"
     },
   },
   {
     src: "/images/carosel/P (8).png",
     description: {
-      fr: "Huitième description en français",
-      en: "Eighth description in English",
+      fr: "Anime Arena : L'ultime confrontation",
+      en: "Anime Arena: The Ultimate Showdown"
     },
   },
   {
     src: "/images/carosel/P (9).png",
     description: {
-      fr: "Neuvième description en français",
-      en: "Ninth description in English",
+      fr: "Soccer Suprême : Marquez l'histoire",
+      en: "Supreme Soccer: Make Your Mark"
     },
   },
   {
     src: "/images/carosel/P (10).png",
     description: {
-      fr: "Dixième description en français",
-      en: "Tenth description in English",
+      fr: "Ninja Nocturne : Dans l'ombre du dragon",
+      en: "Night Ninja: In the Dragon's Shadow"
     },
   },
   {
     src: "/images/carosel/P (11).png",
     description: {
-      fr: "Onzième description en français",
-      en: "Eleventh description in English",
+      fr: "Baseball Pro : Frappez un coup de circuit",
+      en: "Pro Baseball: Hit It Out of the Park"
     },
   },
-  {
-    src: "/images/carosel/P (12).png",
-    description: {
-      fr: "Douzième description en français",
-      en: "Twelfth description in English",
-    },
-  },
-  {
-    src: "/images/carosel/P (13).png",
-    description: {
-      fr: "Treizième description en français",
-      en: "Thirteenth description in English",
-    },
-  },
-  {
-    src: "/images/carosel/P (14).png",
-    description: {
-      fr: "Quatorzième description en français",
-      en: "Fourteenth description in English",
-    },
-  },
-  {
-    src: "/images/carosel/P (15).png",
-    description: {
-      fr: "Quinzième description en français",
-      en: "Fifteenth description in English",
-    },
-  },
-  {
-    src: "/images/carosel/P (16).png",
-    description: {
-      fr: "Seizième description en français",
-      en: "Sixteenth description in English",
-    },
-  },
-  {
-    src: "/images/carosel/P (17).png",
-    description: {
-      fr: "Dix-septième description en français",
-      en: "Seventeenth description in English",
-    },
-  },
-  {
-    src: "/images/carosel/P (18).png",
-    description: {
-      fr: "Dix-huitième description en français",
-      en: "Eighteenth description in English",
-    },
-  },
-  {
-    src: "/images/carosel/P (19).png",
-    description: {
-      fr: "Dix-neuvième description en français",
-      en: "Nineteenth description in English",
-    },
-  },
+  
 ];
 
 function MarqueeGames() {

@@ -58,6 +58,24 @@ const Hero = () => {
                 loading="lazy"
                 className="absolute bottom-16 right-10 w-40 h-40 rounded-xl  object-cover"
               />
+              <img
+                src="/images/dfr.png"
+                alt="Floating Image 2"
+                loading="lazy"
+                className="absolute bottom-2 left-2/4 w-30 h-60 rounded-xl  object-cover"
+              />
+              <img
+                src="/images/drs.png"
+                alt="Floating Image 3"
+                loading="lazy"
+                className="absolute top-22 right-0 w-40 h-40 rounded-xl  object-cover"
+              />
+              <img
+                src="/images/des.png"
+                alt="Floating Image 3"
+                loading="lazy"
+                className="absolute top-22 left-0 w-40 h-40 rounded-xl  object-cover"
+              />
             </div>
           </div>
         )}

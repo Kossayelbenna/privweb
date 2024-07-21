@@ -12,7 +12,7 @@ interface MarqueeProps {
 
 export default function Marquee({
   className,
-  reverse = false,
+  reverse ,
   pauseOnHover = false,
   children,
   vertical = false,
@@ -32,7 +32,7 @@ export default function Marquee({
       )}
       style={
         {
-          "--duration": "60s",
+          "--duration": "40s",
           "--gap": "1rem",
         } as React.CSSProperties
       }

@@ -1,22 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
+import { BorderBeam } from "@/components/magicui/border-beam";
 import { BsTelegram, BsInstagram, BsFacebook, BsTwitter, BsDiscord } from "react-icons/bs";
 
 const FooterContainer = styled.footer`
-  background-color: rgba(0, 0, 0, 0.4); /* Arrière-plan semi-transparent gris */
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
   color: #ffffff;
   padding: 40px 20px;
-  margin-bottom:-50px;
+  margin-bottom: -50px;
   font-family: Arial, sans-serif;
 `;
 
 const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Align items vertically */
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px; /* Ajout de padding pour espacer les éléments */
+  padding: 20px;
   
   @media (max-width: 768px) {
     flex-direction: column;
@@ -25,14 +28,14 @@ const FooterContent = styled.div`
 
 const FooterNav = styled.nav`
   ul {
-    display: flex; /* Affichage horizontal des éléments de navigation */
+    display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
 
   li {
-    margin-right: 20px; /* Espacement entre les éléments de navigation */
+    margin-right: 20px;
   }
 
   a {
@@ -40,7 +43,7 @@ const FooterNav = styled.nav`
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    padding: 5px; /* Ajout de padding pour les liens */
+    padding: 5px;
   }
 `;
 
@@ -68,10 +71,10 @@ const FooterBottom = styled.div`
   margin: 40px auto 0;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center; /* Alignement central pour la réactivité mobile */
+  text-align: center;
 
   @media (max-width: 768px) {
-    text-align: center; /* Alignement central pour la réactivité mobile */
+    text-align: center;
   }
 `;
 
@@ -88,7 +91,7 @@ const Logo = styled.div`
   }
 
   @media (max-width: 768px) {
-    justify-content: center; /* Centre le logo pour la réactivité mobile */
+    justify-content: center;
     img {
       margin-right: 0;
     }
@@ -109,6 +112,12 @@ const Copyright = styled.p`
 const Footer: React.FC = () => {
   return (
     <FooterContainer>
+      <BorderBeam 
+        duration={15}
+        size={400}
+        colorFrom="rgb(255, 130, 0)"
+        colorTo="rgb(255, 200, 0)"
+      />
       <FooterContent>
         <FooterNav>
           <ul>
@@ -135,8 +144,8 @@ const Footer: React.FC = () => {
       </FooterContent>
       <FooterBottom>
         <Logo>
-          <img src="/images/logo.png" alt="DOGE LOGO" />
-          DOGE VISION
+          <img src="/images/logo.png" alt="DOGE LOGO" 
+           style={{ width: '200px', height: 'auto' }} />
         </Logo>
         <Disclaimer>
           Cryptocurrency investments carry a high risk of volatility. Be aware of the tax implications, as profits may be subject to capital gains or other taxes in your jurisdiction. Cryptocurrency regulations can vary, so ensure you understand the rules in your area. Conduct thorough research and invest only what you can afford to lose.
