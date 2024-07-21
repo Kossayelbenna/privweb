@@ -109,12 +109,11 @@ const Hero = () => {
                   # The blockchain revolution ! <br />
                 </h2>
                 <p className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed">
-                  The world's first layer 3 blockchain built for Dogecoin and the first ecosystem that integrates GAMES, NFT, STREAMING PLATFORM, taking the industry to the next level.
-                </p>
+                DOGE VISION is pioneering the first gaming ecosystem on a layer 3 blockchain. Our platform boasts lower transaction fees and operates within a multichain ecosystem, integrating games, NFTs, and a streaming platform. Dive into an immersive world of Web3 games and metaverse experiences, fully leveraging NFTs and blockchain technology.                </p>
               </div>
               <div className="mt-12">
                 <h5 className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed font-bold">
-                  Building the first gaming ecosystem in the blockchain in the world's first LAYER 3 BLOCKCHAIN!
+                  Building The First Gaming & streaming Ecosystem In The World's First LAYER 3 BLOCKCHAIN!
                 </h5>
                 <div className="flex items-center space-x-4">
                   <ul className="flex space-x-4">
