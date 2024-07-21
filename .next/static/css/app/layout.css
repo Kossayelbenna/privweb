@@ -739,6 +739,12 @@ video {
 .mt-\[100px\] {
   margin-top: 100px;
 }
+.mb-64 {
+  margin-bottom: 16rem;
+}
+.mb-32 {
+  margin-bottom: 8rem;
+}
 .block {
   display: block;
 }
@@ -1108,6 +1114,9 @@ video {
 }
 .gap-5 {
   gap: 1.25rem;
+}
+.gap-\[var\(--gap\)\] {
+  gap: var(--gap);
 }
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1610,6 +1619,9 @@ video {
 .\[background\:radial-gradient\(125\%_125\%_at_50\%_10\%\2c \#000_40\%\2c \#63e_100\%\)\] {
   background: radial-gradient(125% 125% at 50% 10%,#000 40%,#63e 100%);
 }
+.\[border\:calc\(var\(--border-width\)\)_solid_transparent\] {
+  border: calc(var(--border-width)) solid transparent;
+}
 .\[border\:calc\(var\(--border-width\)\*1px\)_solid_transparent\] {
   border: calc(var(--border-width) * 1px) solid transparent;
 }
@@ -1721,6 +1733,11 @@ html {
 .after\:\[background\:linear-gradient\(to_left\2c var\(--color-from\)\2c var\(--color-to\)\2c transparent\)\]::after {
   content: var(--tw-content);
   background: linear-gradient(to left,var(--color-from),var(--color-to),transparent);
+}
+
+.after\:\[offset-anchor\:calc\(var\(--anchor\)\)_50\%\]::after {
+  content: var(--tw-content);
+  offset-anchor: calc(var(--anchor)) 50%;
 }
 
 .after\:\[offset-anchor\:calc\(var\(--anchor\)\*1\%\)_50\%\]::after {

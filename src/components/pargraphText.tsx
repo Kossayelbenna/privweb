@@ -4,19 +4,13 @@ import React, { useMemo } from "react";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "usehooks-ts";
 
-function TextImageSection({
-  images,
+const TextImageSection = React.memo(({
+  images = [],
   children,
   invert = false,
   override,
   className,
-}: {
-  images?: string[];
-  children: React.ReactNode;
-  invert?: boolean;
-  override?: () => React.ReactNode;
-  className?: string;
-}) {
+}) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const content = useMemo(() => {
@@ -35,7 +29,7 @@ function TextImageSection({
     >
       {content.map((child, index) => {
         if (child === true) {
-          if (override)
+          if (override) {
             return (
               <div
                 className="h-[700px] flex items-center justify-center"
@@ -44,7 +38,10 @@ function TextImageSection({
                 {override()}
               </div>
             );
-          if (!images) return;
+          }
+
+          if (images.length === 0) return null;
+
           return (
             <div
               className="h-[700px] flex items-center justify-center"
@@ -55,6 +52,7 @@ function TextImageSection({
                   <img
                     src={images[3]}
                     alt=""
+                    loading="lazy"
                     className="absolute organic-float-4 rounded-xl top-10 shadow-xl transform -right-24 w-40 h-40 object-cover"
                   />
                 )}
@@ -62,6 +60,7 @@ function TextImageSection({
                   <img
                     src={images[0]}
                     alt=""
+                    loading="lazy"
                     className="organic-float-1 absolute inset-0 shadow-xl rounded-xl w-full h-full object-cover"
                   />
                 )}
@@ -69,6 +68,7 @@ function TextImageSection({
                   <img
                     src={images[1]}
                     alt=""
+                    loading="lazy"
                     className="absolute organic-float-2 rounded-xl -top-20 shadow-xl -left-20 transform w-40 h-40 object-cover"
                   />
                 )}
@@ -76,6 +76,7 @@ function TextImageSection({
                   <img
                     src={images[2]}
                     alt=""
+                    loading="lazy"
                     className="absolute organic-float-3 rounded-xl -bottom-20 shadow-xl -left-20 transform w-52 h-60 object-cover"
                   />
                 )}
@@ -83,10 +84,11 @@ function TextImageSection({
             </div>
           );
         }
+
         return <div key={index}>{child}</div>;
       })}
     </div>
   );
-}
+});
 
 export default TextImageSection;

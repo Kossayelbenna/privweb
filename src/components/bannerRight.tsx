@@ -15,11 +15,11 @@ const DogeVisionBanner: React.FC = () => {
     }, 4000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [animatedTexts.length]);
 
   const letterAnimation = {
     hidden: { opacity: 0, y: 130 },
-    visible: (i: 1) => ({
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
@@ -30,20 +30,16 @@ const DogeVisionBanner: React.FC = () => {
   };
 
   return (
-    
-      //<h2 className="text-5xl md:text-7xl font-bold mb-8 text-white-400">
-       // DOGE VISION
-      //</h2>
-   <div className="w-full p-8 text-white hidden sm:block mb-0">
-      <div className="text-2xl md:text-6xl font-bold text-white mb-4 "style={{ lineHeight: '1.3' }}>
+    <div className="w-full p-8 text-white hidden sm:block mb-0">
+      <div className="text-2xl md:text-6xl font-bold text-white mb-4" style={{ lineHeight: '1.3' }}>
         The world's first Layer 3 blockchain, Integrating 
-        </div>
+      </div>
 
       <div className="h-24 md:h-32 lg:h-48 mb-6 md:mb-12"> 
         <AnimatePresence mode="wait">
           <motion.h3
             key={currentTextIndex}
-            className="text-2xl md:text-6xl font-bold text-purple-600 mb-12 "style={{ lineHeight: '1.3' }}
+            className="text-2xl md:text-6xl font-bold text-purple-600 mb-12" style={{ lineHeight: '1.3' }}
             initial="hidden"
             animate="visible"
             exit="exit"
@@ -57,13 +53,13 @@ const DogeVisionBanner: React.FC = () => {
         </AnimatePresence>
       </div>
       <div className="text-2xl md:text-xl font-bold text-white mt-2">
-      We're not just going to the moon – we're building a new universe with DOGE comunity! 
+        We're not just going to the moon – we're building a new universe with DOGE community! 
       </div>
 
       <a href="#" className="mt-6 bg-white text-black font-bold text-xl md:text-2xl py-4 px-10 rounded-full inline-block hover:bg-purple-700 transition duration-300">
         Join the Doge Revolution!
       </a>
-   </div>
+    </div>
   );
 };
 
