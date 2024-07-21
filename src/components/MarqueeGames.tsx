@@ -143,7 +143,7 @@ function MarqueeGames() {
   const locale = useLocale();
   const tr = useTranslator();
   return (
-    <div className="py-10 pt-40">
+    <div className="py-10 pt-40 ">
       <div className="flex flex-col items-center justify-center gap-4 p-5">
         <h1
           className="text-5xl font-bold text-white text-center "
@@ -154,8 +154,10 @@ function MarqueeGames() {
         </h1>
       </div>
       <div className="flex flex-col items-center justify-center max-w-3xl mx-auto px-4 mt-4 mb-8">
-  <h5 className="text-center text-lg md:text-xl font-bold leading-relaxed">{tr("description1")}</h5>
-</div>
+          <h5 className="text-center text-lg md:text-xl font-bold leading-relaxed"> 
+            {tr("description1")} 
+          </h5>
+      </div>
       <Marquee
         pauseOnHover
         className="[--duration:50s] bg-primary backdrop-blur-xl border border-gray-100/20 p-2 gap-20 transform "
@@ -163,7 +165,12 @@ function MarqueeGames() {
         {images.map(({ src, description }) => (
           <div
             key={src}
-            className="relative flex items-center justify-center w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-[2rem] border border-gray-100/20 overflow-clip"
+
+
+            //image taille !!!!!!!!!!!!!!!!!!!!
+
+            
+            className="relative flex items-center justify-center w-[400px] h-[400px] md:w-[600px] md:h-[500px] rounded-[2rem] border border-gray-100/20 overflow-clip"
           >
             <img
               src={src}

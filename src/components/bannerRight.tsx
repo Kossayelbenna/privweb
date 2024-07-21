@@ -34,7 +34,7 @@ const DogeVisionBanner: React.FC = () => {
       //<h2 className="text-5xl md:text-7xl font-bold mb-8 text-white-400">
        // DOGE VISION
       //</h2>
-   <div className="w-full p-8 text-white hidden sm:block ">
+   <div className="w-full p-8 text-white hidden sm:block mb-0">
       <div className="text-2xl md:text-6xl font-bold text-white mb-4 "style={{ lineHeight: '1.3' }}>
         The world's first Layer 3 blockchain, Integrating 
         </div>

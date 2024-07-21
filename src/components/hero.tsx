@@ -39,6 +39,9 @@ function Hero() {
         <div className="sticky h-fit ml-28 ">
           <BannerLeft />
         </div>
+
+
+
         <div className="flex flex-col w-full scale-70">
           <iframe
             className="w-full h-[700px] -mt-12"
@@ -49,6 +52,9 @@ function Hero() {
           ></iframe>
         </div>
       </div>
+
+
+
 
       <div className="grid grid-cols-1 -mt-8 sm:mt-4 md:mt-4 md:grid-cols-2 gap-4 max-w-[1500px] mx-auto place-items-center px-2 lg:px-0 my-14">
         <div className="mt-28">
@@ -66,8 +72,8 @@ function Hero() {
                 </p>
               </div>
               <div className="mt-12">
-                <h5 className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed">
-                  We are the first gaming ecosystem in the blockchain. and building the worlds first LAYER 3 BLOCKCHAIN !
+                <h5 className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed font-bold" >
+                  Building the first gaming ecosystem in the blockchain IN the world's first LAYER 3 BLOCKCHAIN !
                 </h5>
                 <div className="flex items-center space-x-4">
                   <ul className="flex space-x-4">

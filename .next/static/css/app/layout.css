@@ -784,6 +784,18 @@ video {
 .-mt-64 {
   margin-top: -16rem;
 }
+.-mb-12 {
+  margin-bottom: -3rem;
+}
+.mb-0 {
+  margin-bottom: 0px;
+}
+.mb-\[-200px\] {
+  margin-bottom: -200px;
+}
+.mb-\[-530px\] {
+  margin-bottom: -530px;
+}
 .block {
   display: block;
 }
@@ -862,6 +874,30 @@ video {
 }
 .h-\[300px\] {
   height: 300px;
+}
+.h-32 {
+  height: 8rem;
+}
+.h-8 {
+  height: 2rem;
+}
+.h-\[20px\] {
+  height: 20px;
+}
+.h-\[250px\] {
+  height: 250px;
+}
+.h-\[40px\] {
+  height: 40px;
+}
+.h-\[80px\] {
+  height: 80px;
+}
+.h-\[25px\] {
+  height: 25px;
+}
+.h-\[600px\] {
+  height: 600px;
 }
 .max-h-0 {
   max-height: 0px;
@@ -943,6 +979,24 @@ video {
 }
 .w-\[300px\] {
   width: 300px;
+}
+.w-8 {
+  width: 2rem;
+}
+.w-\[20px\] {
+  width: 20px;
+}
+.w-\[250px\] {
+  width: 250px;
+}
+.w-\[40px\] {
+  width: 40px;
+}
+.w-\[80px\] {
+  width: 80px;
+}
+.w-\[25px\] {
+  width: 25px;
 }
 .min-w-24 {
   min-width: 6rem;
@@ -1861,6 +1915,18 @@ html {
     margin-bottom: -100px;
   }
 
+  .sm\:mb-\[-400px\] {
+    margin-bottom: -400px;
+  }
+
+  .sm\:mb-\[-320px\] {
+    margin-bottom: -320px;
+  }
+
+  .sm\:mb-\[-310px\] {
+    margin-bottom: -310px;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -1869,8 +1935,56 @@ html {
     height: 400px;
   }
 
+  .sm\:h-10 {
+    height: 2.5rem;
+  }
+
+  .sm\:h-16 {
+    height: 4rem;
+  }
+
+  .sm\:h-\[100px\] {
+    height: 100px;
+  }
+
+  .sm\:h-\[300px\] {
+    height: 300px;
+  }
+
+  .sm\:h-\[30px\] {
+    height: 30px;
+  }
+
+  .sm\:h-\[50px\] {
+    height: 50px;
+  }
+
   .sm\:w-\[400px\] {
     width: 400px;
+  }
+
+  .sm\:w-10 {
+    width: 2.5rem;
+  }
+
+  .sm\:w-16 {
+    width: 4rem;
+  }
+
+  .sm\:w-\[100px\] {
+    width: 100px;
+  }
+
+  .sm\:w-\[300px\] {
+    width: 300px;
+  }
+
+  .sm\:w-\[30px\] {
+    width: 30px;
+  }
+
+  .sm\:w-\[50px\] {
+    width: 50px;
   }
 }
 
@@ -1914,6 +2028,14 @@ html {
 
   .md\:h-\[500px\] {
     height: 500px;
+  }
+
+  .md\:h-\[900px\] {
+    height: 900px;
+  }
+
+  .md\:h-\[400px\] {
+    height: 400px;
   }
 
   .md\:w-1\/2 {
