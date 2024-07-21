@@ -98,7 +98,7 @@ function RoadMap() {
         </h3>
       </div>
       <div
-        className="w-full grid relative scale-75 md:scale-100"
+        className="w-full grid relative scale-100 md:scale-100"
         style={{ gridTemplateColumns: "1fr 8px 1fr" }}
       >
         <div>

@@ -115,8 +115,8 @@ const Footer: React.FC = () => {
       <BorderBeam 
         duration={15}
         size={400}
-        colorFrom="rgb(255, 130, 0)"
-        colorTo="rgb(255, 200, 0)"
+        color-from="#ffaa40"
+        colorTo = "#9c40ff"
       />
       <FooterContent>
         <FooterNav>

@@ -87,7 +87,7 @@ const Hero = () => {
           </div>
           <div className="flex flex-col w-full scale-70 z-0">
             <iframe
-              className="w-full h-[700px] -mt-12"
+              className="w-full h-[700px] mt-0"
               style={{ outline: 0, border: 0, transform: 'scale(1)' }}
               allow="clipboard-write"
               src="https://pay.radom.com/presale/806ea959-b589-4964-aa76-b5549a53ebcb"
