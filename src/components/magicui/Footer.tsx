@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { BsTelegram, BsInstagram, BsFacebook, BsTwitter, BsDiscord } from "react-icons/bs";
 
 const FooterContainer = styled.footer`
-  background-color: rgba(0, 0, 0, 0.5); /* Arrière-plan semi-transparent gris */
+  background-color: rgba(0, 0, 0, 0.4); /* Arrière-plan semi-transparent gris */
   color: #ffffff;
   padding: 40px 20px;
+  margin-bottom:-50px;
   font-family: Arial, sans-serif;
 `;
 

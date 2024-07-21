@@ -6,7 +6,7 @@ function LogoMarquee() {
     <div className="max-w-screen overflow-x-clip ">
       <Marquee
         // pauseOnHover
-        className="[--duration:20s] bg-white p-0 gap-10 transform rotate-3 scale-105"
+        className="[--duration:10s] bg-white p-0 gap-10 transform rotate-3 scale-105"
       >
         <img
           src="/images/liste_logo/img1.png"
