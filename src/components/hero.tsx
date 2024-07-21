@@ -9,40 +9,73 @@ import BannerLeft from "@/components/bannerRight";
 import './magicui/marquee';
 import { ConnectWallet } from "@thirdweb-dev/react";
 import BlurIn from "@/components/magicui/animation-blurr"; // Assurez-vous que le chemin est correct
+import { useMediaQuery } from 'usehooks-ts';
 
 const Hero = () => {
   const tr = useTranslator();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const featuresTop = useMemo(() => tr("features").slice(0, 3), [tr]);
   const featuresBottom = useMemo(() => tr("features").slice(3), [tr]);
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen pt-40">
-      <div className={cn("flex flex-col gap-4 items-center justify-center")}>
+      <div className="flex flex-col gap-4 items-center justify-center">
         <BlurIn
           className={cn(
-            "text-3xl md:text-6xl font-extrabold -mt-[25px]", // Ajustez la classe ici
+            "text-3xl md:text-6xl font-extrabold -mt-[25px]",
             "bg-clip-text text-transparent bg-gradient-to-br from-[#9b5de5] via-[#f15bb5] to-[#fee440]",
             "drop-shadow-md"
           )}
-          word={tr("title")[1]} // Utiliser 'word' ici pour correspondre à l'interface BlurIntProps
+          word={tr("title")[1]}
         />
         <h1 className="text-2xl md:text-4xl font-extrabold text-center max-w-2xl font-display mb-16">
           <span>{tr("title")[0]}</span>
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1500px] mx-auto place-items-center px-2 lg:px-0">
-        <div className="sticky h-fit ml-28 ">
-          <BannerLeft />
-        </div>
-        <div className="flex flex-col w-full scale-70">
-          <iframe
-            className="w-full h-[700px] -mt-12"
-            style={{ outline: 0, border: 0, transform: 'scale(1)' }}
-            allow="clipboard-write"
-            src="https://pay.radom.com/presale/806ea959-b589-4964-aa76-b5549a53ebcb"
-          ></iframe>
+      <div className="relative w-full max-w-[1500px] mx-auto px-2 lg:px-0">
+        {/* Section d'Images Flottantes */}
+        {!isMobile && (
+          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
+            <div className="relative w-full h-[700px]">
+              {/* Images flottantes */}
+              <img
+               // src=
+                //alt=
+                //loading="lazy"
+                //className="absolute top-16 left-10 w-40 h-40 rounded-xl shadow-xl object-cover"
+              />
+              <img
+                src="/images/avt-01.png"
+                alt="Floating Image 2"
+                loading="lazy"
+                className="absolute top-2/2 left-2/4 w-30 h-60 rounded-xl  object-cover"
+              />
+              <img
+                src="/images/de.png"
+                alt="Floating Image 3"
+                loading="lazy"
+                className="absolute bottom-16 right-10 w-40 h-40 rounded-xl  object-cover"
+              />
+            </div>
+          </div>
+        )}
+        
+        {/* Contenu Principal */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
+          <div className="sticky top-0 h-fit ml-28 z-10">
+            <BannerLeft />
+          </div>
+          <div className="flex flex-col w-full scale-70 z-0">
+            <iframe
+              className="w-full h-[700px] -mt-12"
+              style={{ outline: 0, border: 0, transform: 'scale(1)' }}
+              allow="clipboard-write"
+              src="https://pay.radom.com/presale/806ea959-b589-4964-aa76-b5549a53ebcb"
+              title="Presale iframe"
+            ></iframe>
+          </div>
         </div>
       </div>
 
@@ -90,7 +123,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className={cn("relative flex flex-col pt-5 pb-20 max-w-[1200px] mx-auto")}>
+      <div className="relative flex flex-col pt-5 pb-20 max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 px-3 lg:px-0 mt-5 sm:my-5 gap-3">
           {featuresTop.map((feature, idx) => (
             <div
