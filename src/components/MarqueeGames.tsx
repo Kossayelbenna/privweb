@@ -1,8 +1,13 @@
 "use client";
+
 import React from "react";
-import Marquee from "./magicui/marquee";
+import dynamic from 'next/dynamic';
 import { useLocale, useTranslator } from "@/lib/use-translator";
 
+// Lazy load the Marquee component
+const Marquee = dynamic(() => import('./magicui/marquee'), {
+  ssr: false,
+});
 
 const images = [
   {
@@ -85,7 +90,7 @@ const images = [
   
 ];
 
-function MarqueeGames() {
+const MarqueeGames: React.FC = () => {
   const locale = useLocale();
   const tr = useTranslator();
   return (
@@ -111,11 +116,6 @@ function MarqueeGames() {
         {images.map(({ src, description }) => (
           <div
             key={src}
-
-
-            //image taille !!!!!!!!!!!!!!!!!!!!
-
-            
             className="relative flex items-center justify-center w-[400px] h-[400px] md:w-[600px] md:h-[500px] rounded-[2rem] border border-gray-100/20 overflow-clip"
           >
             <img

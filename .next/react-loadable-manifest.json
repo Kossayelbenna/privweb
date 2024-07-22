@@ -383,8 +383,8 @@
       "static/chunks/vendor.js"
     ]
   },
-  "components\\QnaSection.tsx -> ./QnaSection": {
-    "id": "components\\QnaSection.tsx -> ./QnaSection",
+  "components\\MarqueeGames.tsx -> ./magicui/marquee": {
+    "id": "components\\MarqueeGames.tsx -> ./magicui/marquee",
     "files": []
   },
   "components\\magicui\\Footer.tsx -> ./Footer": {
