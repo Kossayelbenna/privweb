@@ -2,6 +2,8 @@ import React from "react";
 import Qna from "./Qna";
 import { useTranslator } from "@/lib/use-translator";
 import Footer from "./magicui/Footer";
+import dynamic from 'next/dynamic';
+
 
 const qna = [
   {
@@ -52,10 +54,14 @@ const qna = [
     q: "How can I stay updated with DOGE VISION’s progress?",
     a: "You can stay updated by following DOGE VISION’s official website and social media channels. Join our community to receive the latest news, updates, and participate in discussions and events.",
   },
+  
 ];
 
 
 function QnaSection() {
+  const QnaSection = dynamic(() => import('./QnaSection'), {
+    ssr: false,
+  });
   const tr = useTranslator();
   return (
     <div>

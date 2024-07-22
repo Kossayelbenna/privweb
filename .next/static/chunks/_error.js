@@ -21,7 +21,7 @@ eval(__webpack_require__.ts("\n    (window.__NEXT_P = window.__NEXT_P || []).pus
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ __webpack_require__.O(0, ["main"], function() { return __webpack_exec__("./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=C%3A%5CUsers%5Ckossa%5CDownloads%5Ccrypto-client%20Last%5Ccrypto-client%5Ccrypto-web3%5Cnode_modules%5Cnext%5Cdist%5Cpages%5C_error.js&page=%2F_error!"); });
+/******/ __webpack_require__.O(0, ["vendor","main"], function() { return __webpack_exec__("./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=C%3A%5CUsers%5Ckossa%5CDownloads%5Ccrypto-client%20Last%5Ccrypto-client%5Ccrypto-web3%5Cnode_modules%5Cnext%5Cdist%5Cpages%5C_error.js&page=%2F_error!"); });
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ _N_E = __webpack_exports__;
 /******/ }

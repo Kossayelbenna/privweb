@@ -1,4 +1,6 @@
 import { cn } from "@/lib/utils";
+import dynamic from 'next/dynamic';
+
 
 interface MarqueeProps {
   className?: string;
@@ -11,6 +13,7 @@ interface MarqueeProps {
 }
 
 export default function Marquee({
+  
   className,
   reverse ,
   pauseOnHover = false,

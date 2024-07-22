@@ -1,6 +1,8 @@
 import React from "react";
 import { BorderBeam } from "./magicui/border-beam";
 import { useLocale, useTranslator } from "@/lib/use-translator";
+import dynamic from 'next/dynamic';
+
 
 const steps = [
   {
@@ -82,6 +84,10 @@ const steps = [
 ];
 
 function RoadMap() {
+  const RoadMap = dynamic(() => import('./roadMap'), {
+    ssr: false,
+  });
+  
   const locale = useLocale();
   const tr = useTranslator();
   return (

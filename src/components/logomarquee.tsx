@@ -1,6 +1,10 @@
 import React from "react";
 import Marquee from "./magicui/marquee";
+import dynamic from 'next/dynamic';
 
+const logomarquee = dynamic(() => import('../components/logomarquee.tsx'), {
+  ssr: false,
+});
 function LogoMarquee() {
   return (
     <div className="relative max-w-screen overflow-x-clip py-1">

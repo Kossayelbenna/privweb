@@ -1,8 +1,13 @@
 import { useTranslator } from "@/lib/use-translator";
 import React from "react";
 import { BorderBeam } from "./magicui/border-beam";
+import dynamic from 'next/dynamic';
+
 
 function Tokenomics() {
+  const Tokenomics = dynamic(() => import('./tokenomics'), {
+    ssr: false,
+  });
   const tr = useTranslator();
   return (
     <div

@@ -4,8 +4,15 @@ import { cn } from "@/lib/utils";
 import { BiMoney } from "react-icons/bi";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { inter } from "@/fonts";
+import dynamic from 'next/dynamic';
+
+
 
 const HowToBuy = () => {
+  const HowToBuy = dynamic(() => import('../components/HowToBuy.tsx'), {
+    ssr: false,
+  });
+  
   const locale = useLocale();
   const tr = useTranslator();
 

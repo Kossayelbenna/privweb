@@ -7,6 +7,7 @@
   ],
   "ampDevFiles": [
     "static/chunks/fallback/webpack.js",
+    "static/chunks/fallback/vendor.js",
     "static/chunks/fallback/amp.js"
   ],
   "lowPriorityFiles": [],
@@ -14,11 +15,13 @@
   "pages": {
     "/_app": [
       "static/chunks/fallback/webpack.js",
+      "static/chunks/fallback/vendor.js",
       "static/chunks/fallback/main.js",
       "static/chunks/fallback/pages/_app.js"
     ],
     "/_error": [
       "static/chunks/fallback/webpack.js",
+      "static/chunks/fallback/vendor.js",
       "static/chunks/fallback/main.js",
       "static/chunks/fallback/pages/_error.js"
     ]

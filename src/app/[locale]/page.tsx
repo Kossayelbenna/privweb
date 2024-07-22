@@ -36,7 +36,7 @@ function page() {
       <RoadMap />
       <HowToBuy />
       <QnaSection />
-      <div className="h-[50px]"></div>
+      
     </>
   );
 }

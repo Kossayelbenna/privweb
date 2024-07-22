@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { BsTelegram, BsInstagram, BsFacebook, BsTwitter, BsDiscord } from "react-icons/bs";
+import dynamic from 'next/dynamic';
+
 
 const FooterContainer = styled.footer`
   position: relative;
@@ -110,6 +112,9 @@ const Copyright = styled.p`
 `;
 
 const Footer: React.FC = () => {
+  const Footer = dynamic(() => import('./Footer'), {
+    ssr: false,
+  });
   return (
     <FooterContainer>
       <BorderBeam 

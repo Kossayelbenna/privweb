@@ -2,8 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { BorderBeam } from "./magicui/border-beam";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import dynamic from 'next/dynamic';
+
 
 function Qna({
+ 
   q,
   a,
   className,
@@ -76,7 +79,9 @@ function Qna({
         </p>
       </div>
     </div>
+    
   );
+
 }
 
 export default Qna;
