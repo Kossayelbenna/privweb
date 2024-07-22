@@ -383,19 +383,9 @@
       "static/chunks/vendor.js"
     ]
   },
-  "components\\HowToBuy.tsx -> ../components/HowToBuy.tsx": {
-    "id": "components\\HowToBuy.tsx -> ../components/HowToBuy.tsx",
-    "files": []
-  },
   "components\\QnaSection.tsx -> ./QnaSection": {
     "id": "components\\QnaSection.tsx -> ./QnaSection",
     "files": []
-  },
-  "components\\howToBuy.tsx -> ../components/HowToBuy.tsx": {
-    "id": "components\\howToBuy.tsx -> ../components/HowToBuy.tsx",
-    "files": [
-      "static/chunks/_app-pages-browser_src_components_HowToBuy_tsx.js"
-    ]
   },
   "components\\logomarquee.tsx -> ../components/logomarquee.tsx": {
     "id": "components\\logomarquee.tsx -> ../components/logomarquee.tsx",
