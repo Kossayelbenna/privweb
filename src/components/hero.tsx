@@ -10,6 +10,7 @@ import './magicui/marquee';
 import { ConnectWallet } from "@thirdweb-dev/react";
 import BlurIn from "@/components/magicui/animation-blurr"; // Assurez-vous que le chemin est correct
 import { useMediaQuery } from 'usehooks-ts';
+import Image from 'next/image';
 
 const Hero = () => {
   const tr = useTranslator();
@@ -87,7 +88,7 @@ const Hero = () => {
           </div>
           <div className="flex flex-col w-full scale-70 z-0">
           <div className=" flex justify-center items-center ">
-            <div className="text-white text-3xl mb-4">Presale will start soon !</div>
+            <div className="text-white text-3xl mb-4">Presale will start soon</div>
           </div>
             <iframe
               className="w-full h-[700px] mt-0"
