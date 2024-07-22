@@ -4,38 +4,32 @@ import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-
 interface BlurInProps {
   word: string;
   className?: string;
-  variant?: {
-    hidden: { filter: string; opacity: number };
-    visible: { filter: string; opacity: number };
-  };
   duration?: number;
 }
-
-const defaultVariants = {
-  hidden: { filter: "blur(10px)", opacity: 0 },
-  visible: { filter: "blur(0px)", opacity: 1 },
-};
 
 const BlurIn: React.FC<BlurInProps> = React.memo(({ 
   word, 
   className, 
-  variant = defaultVariants, 
-  duration = 0.5
+  duration = 0.5  // Légèrement réduit, mais pas trop pour préserver l'effet
 }) => {
+  const variants = {
+    hidden: { filter: "blur(10px)", opacity: 0 },
+    visible: { filter: "blur(0px)", opacity: 1 },
+  };
+
   return (
     <motion.h1
       initial="hidden"
-      animate="visible"
-      transition={{ duration }}
-      variants={variant}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.6 }}
+      variants={variants}
+      transition={{ duration, ease: "easeOut" }}
       className={cn(
         className,
-        "font-display text-center text-4xl font-extrabold tracking-[-0.02em] drop-shadow-sm md:text-6xl md:leading-[5rem]",
-        "will-change-auto"
+        "font-display text-center text-4xl font-extrabold tracking-[-0.02em] drop-shadow-sm md:text-6xl md:leading-[5rem]"
       )}
     >
       {word}
@@ -46,4 +40,3 @@ const BlurIn: React.FC<BlurInProps> = React.memo(({
 BlurIn.displayName = 'BlurIn';
 
 export default BlurIn;
-
