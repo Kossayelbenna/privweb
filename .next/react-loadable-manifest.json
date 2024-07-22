@@ -383,6 +383,63 @@
       "static/chunks/vendor.js"
     ]
   },
+  "app\\[locale]\\page.tsx -> @/components/MarqueeGames": {
+    "id": "app\\[locale]\\page.tsx -> @/components/MarqueeGames",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_MarqueeGames_tsx.js"
+    ]
+  },
+  "app\\[locale]\\page.tsx -> @/components/Qna": {
+    "id": "app\\[locale]\\page.tsx -> @/components/Qna",
+    "files": [
+      "static/chunks/vendor.js",
+      "static/chunks/common.js"
+    ]
+  },
+  "app\\[locale]\\page.tsx -> @/components/QnaSection": {
+    "id": "app\\[locale]\\page.tsx -> @/components/QnaSection",
+    "files": [
+      "static/chunks/vendor.js",
+      "static/chunks/common.js",
+      "static/chunks/_app-pages-browser_src_components_QnaSection_tsx.js"
+    ]
+  },
+  "app\\[locale]\\page.tsx -> @/components/howToBuy": {
+    "id": "app\\[locale]\\page.tsx -> @/components/howToBuy",
+    "files": [
+      "static/chunks/vendor.js",
+      "static/chunks/common.js",
+      "static/css/node_modules_next_font_google_target_css-node_modules_next_font_google_target_css-_app-pages--9e2d88.css",
+      "static/chunks/node_modules_next_font_google_target_css-node_modules_next_font_google_target_css-_app-pages--9e2d88.js"
+    ]
+  },
+  "app\\[locale]\\page.tsx -> @/components/logomarquee": {
+    "id": "app\\[locale]\\page.tsx -> @/components/logomarquee",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_logomarquee_tsx.js"
+    ]
+  },
+  "app\\[locale]\\page.tsx -> @/components/roadMap": {
+    "id": "app\\[locale]\\page.tsx -> @/components/roadMap",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_roadMap_tsx.js"
+    ]
+  },
+  "app\\[locale]\\page.tsx -> @/components/textImagesSection": {
+    "id": "app\\[locale]\\page.tsx -> @/components/textImagesSection",
+    "files": [
+      "static/chunks/vendor.js",
+      "static/chunks/common.js",
+      "static/css/node_modules_next_font_google_target_css-node_modules_next_font_google_target_css-_app-pages--afc15a.css",
+      "static/chunks/node_modules_next_font_google_target_css-node_modules_next_font_google_target_css-_app-pages--afc15a.js"
+    ]
+  },
+  "app\\[locale]\\page.tsx -> @/components/tokenomics": {
+    "id": "app\\[locale]\\page.tsx -> @/components/tokenomics",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_tokenomics_tsx.js"
+    ]
+  },
   "components\\MarqueeGames.tsx -> ./magicui/marquee": {
     "id": "components\\MarqueeGames.tsx -> ./magicui/marquee",
     "files": []
