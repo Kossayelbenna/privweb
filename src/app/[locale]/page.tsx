@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 import Navbar from '@/components/navbar';
 import Hero from '@/components/hero';
 import BgSVG from '@/components/bg-svg';
+import BlurIn from '@magicui/aniation-blurr';
 
 // Lazy load other components
 const HowToBuy = dynamic(() => import('@/components/howToBuy'), { ssr: false });
