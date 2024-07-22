@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { inter, readexPro } from "@/fonts";
 import { cn } from "@/lib/utils";
-
+import { Analytics } from "@vercel/analytics/react"
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",

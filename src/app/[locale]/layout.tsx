@@ -1,7 +1,7 @@
 import { LocaleProvider } from "@/lib/use-translator";
 import { Locale } from "locale";
 import React from "react";
-
+import { Analytics } from "@vercel/analytics/react"
 function layout({
   params: { locale },
   children,
