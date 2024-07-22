@@ -7,11 +7,11 @@ function LogoMarquee() {
   return (
     <div className="relative max-w-screen overflow-x-clip py-1">
       <div
-        className="absolute inset-0"
-        style={{
-        background: "linear-gradient(0deg, rgba(228,228,228,0) 15%, rgba(255,255,255,0.9016398795846463) 25%, rgba(255,255,255,0.856821952413778) 50%, rgba(255,255,255,0.9968779748227415) 75%, rgba(203,200,200,0) 85%, rgba(255,255,255,0) 100%);"
-        }}
-      ></div>
+  className="absolute inset-0"
+  style={{
+    background: "linear-gradient(0deg, rgba(228,228,228,0) 15%, rgba(255,255,255,0.9016398795846463) 25%, rgba(255,255,255,0.856821952413778) 50%, rgba(255,255,255,0.9968779748227415) 75%, rgba(203,200,200,0) 85%, rgba(255,255,255,0) 100%)"
+  }}
+></div>
       <Marquee
         className="flex items-center relative"
         style={{ "--duration": "15s", "--pauseOnHover": "true" }}
