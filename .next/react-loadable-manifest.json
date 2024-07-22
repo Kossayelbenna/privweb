@@ -387,10 +387,6 @@
     "id": "components\\QnaSection.tsx -> ./QnaSection",
     "files": []
   },
-  "components\\logomarquee.tsx -> ../components/logomarquee.tsx": {
-    "id": "components\\logomarquee.tsx -> ../components/logomarquee.tsx",
-    "files": []
-  },
   "components\\magicui\\Footer.tsx -> ./Footer": {
     "id": "components\\magicui\\Footer.tsx -> ./Footer",
     "files": []
