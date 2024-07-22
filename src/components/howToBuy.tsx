@@ -6,9 +6,7 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import { inter } from "@/fonts";
 
 
-
 const HowToBuy = () => {
-  
   
   const locale = useLocale();
   const tr = useTranslator();
@@ -112,7 +110,6 @@ const HowToBuy = () => {
         </div>
       </div>
     </div>
-    
   );
 }
 
