@@ -3,40 +3,66 @@ import Marquee from "./magicui/marquee";
 
 function LogoMarquee() {
   return (
-    <div className="max-w-screen overflow-x-clip ">
+    <div className="relative max-w-screen overflow-x-clip py-1">
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(0deg, rgba(228,228,228,0) 15%, rgba(255,255,255,0.9016398795846463) 25%, rgba(255,255,255,0.856821952413778) 50%, rgba(255,255,255,0.9968779748227415) 75%, rgba(203,200,200,0) 85%, rgba(255,255,255,0) 100%);"
+        }}
+      ></div>
       <Marquee
-        // pauseOnHover
-        className="[--duration:10s] bg-white p-0 gap-10 transform rotate-3 scale-105"
+        className="flex items-center relative"
+        style={{ "--duration": "15s", "--pauseOnHover": "true" }}
       >
         <img
-          src="/images/liste_logo/img1.png"
-          alt=""
-          className="w-24 h-24 object-contain"
+          src="/images/liste_logo/1.png"
+          alt="Logo 1"
+          className="w-40 h-40 object-contain mx-2.5"
         />
         <img
-          src="/images/liste_logo/img2.png"
-          alt=""
-          className="w-24 h-24 object-contain"
+          src="/images/liste_logo/2.png"
+          alt="Logo 2"
+          className="w-40 h-40 object-contain mx-2.5"
         />
         <img
-          src="/images/liste_logo/img3.png"
-          alt=""
-          className="w-24 h-24 object-contain"
+          src="/images/liste_logo/3.png"
+          alt="Logo 3"
+          className="w-40 h-40 object-contain mx-2.5"
         />
         <img
-          src="/images/liste_logo/img4.png"
-          alt=""
-          className="w-24 h-24 object-contain"
+          src="/images/liste_logo/4.png"
+          alt="Logo 4"
+          className="w-40 h-40 object-contain mx-2.5"
         />
         <img
-          src="/images/liste_logo/img5.png"
-          alt=""
-          className="w-24 h-24 object-contain"
+          src="/images/liste_logo/5.png"
+          alt="Logo 5"
+          className="w-40 h-40 object-contain mx-2.5"
         />
         <img
-          src="/images/liste_logo/img6.png"
-          alt=""
-          className="w-24 h-24 object-contain"
+          src="/images/liste_logo/6.png"
+          alt="Logo 6"
+          className="w-40 h-40 object-contain mx-2.5"
+        />
+        <img
+          src="/images/liste_logo/7.png"
+          alt="Logo 7"
+          className="w-40 h-40 object-contain mx-2.5"
+        />
+        <img
+          src="/images/liste_logo/8.png"
+          alt="Logo 8"
+          className="w-40 h-40 object-contain mx-2.5"
+        />
+        <img
+          src="/images/liste_logo/9.png"
+          alt="Logo 9"
+          className="w-40 h-40 object-contain mx-2.5"
+        />
+        <img
+          src="/images/liste_logo/10.png"
+          alt="Logo 10"
+          className="w-40 h-40 object-contain mx-2.5"
         />
       </Marquee>
     </div>
