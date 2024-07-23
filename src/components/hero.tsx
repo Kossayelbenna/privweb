@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useMemo } from "react";
 import { useTranslator } from "@/lib/use-translator";
 import { cn } from "@/lib/utils";
@@ -22,18 +21,21 @@ const Hero: React.FC = () => {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen pt-40">
       <div className="flex flex-col gap-4 items-center justify-center">
-        <BlurIn
+        
+        <span
           className={cn(
             "text-3xl md:text-6xl font-extrabold -mt-[25px]",
             "bg-clip-text text-transparent bg-gradient-to-br from-[#9b5de5] via-[#f15bb5] to-[#fee440]",
             "drop-shadow-md"
           )}
-          word={tr("title")[1]}
-        />
-        <h1 className="text-2xl md:text-4xl font-extrabold text-center max-w-2xl font-display mb-16">
-          <span>{tr("title")[0]}</span>
-        </h1>
+        >
+          {tr("title")[1]}
+        </span>
+        <span className="text-2xl md:text-4xl font-extrabold text-center max-w-2xl font-display mb-16 ">
+          {tr("title")[0]}
+        </span>
       </div>
+
 
   <div className=" relative w-full max-w-[1500px] mx-auto px-2 lg:px-0">
     {/* Section d'Images Flottantes */}

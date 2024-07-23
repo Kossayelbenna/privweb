@@ -13,7 +13,7 @@ interface BlurInProps {
 const BlurIn: React.FC<BlurInProps> = React.memo(({ 
   word, 
   className, 
-  duration = 0.5  // Légèrement réduit, mais pas trop pour préserver l'effet
+  duration = 0.4  // Réduit pour améliorer la performance
 }) => {
   const variants = {
     hidden: { filter: "blur(10px)", opacity: 0 },
