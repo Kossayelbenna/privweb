@@ -21,19 +21,20 @@ const Hero: React.FC = () => {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen pt-40">
       <div className="flex flex-col gap-4 items-center justify-center">
-        
-        <span
+        <BlurIn
           className={cn(
             "text-3xl md:text-6xl font-extrabold -mt-[25px]",
             "bg-clip-text text-transparent bg-gradient-to-br from-[#9b5de5] via-[#f15bb5] to-[#fee440]",
             "drop-shadow-md"
           )}
-        >
-          {tr("title")[1]}
-        </span>
-        <span className="text-2xl md:text-4xl font-extrabold text-center max-w-2xl font-display mb-16 ">
-          {tr("title")[0]}
-        </span>
+          word={tr("title")[1]}
+        />
+        <h1 className="text-2xl md:text-4xl font-extrabold text-center max-w-2xl font-display mb-16">
+          <BlurIn
+            className=""
+            word={tr("title")[0]}
+          />
+        </h1>
       </div>
 
 
