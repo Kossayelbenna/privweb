@@ -19,6 +19,7 @@ const QnaSection = dynamic(() => import('@/components/QnaSection'), { ssr: false
 const RoadMap = dynamic(() => import('@/components/roadMap'), { ssr: false });
 const Tokenomics = dynamic(() => import('@/components/tokenomics'), { ssr: false });
 const BorderBeam = dynamic(() => import('@/components/magicui/border-beam'), { ssr: false });
+const AnimatedBeam = dynamic(() => import('@/components/magicui/animated-beam'), { ssr: false });
 
 import { inter } from "@/fonts";
 import { useTranslator } from "@/lib/use-translator";
