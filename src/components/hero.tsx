@@ -35,49 +35,57 @@ const Hero: React.FC = () => {
         </h1>
       </div>
 
-        <div className="hidden md:block relative w-full max-w-[1500px] mx-auto px-2 lg:px-0">
-         {/* Section d'Images Flottantes */}
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
-          <div className="relative w-full h-[700px]">
-              <img
-               // src=
-                //alt=
-                //loading="lazy"
-                //className="absolute top-16 left-10 w-40 h-40 rounded-xl shadow-xl object-cover"
-              />
-              <img
-                src="/images/avt-01.png"
-                alt="Floating Image 2"
-                loading="lazy"
-                className="absolute top-2/2 left-2/4 w-30 h-60 rounded-xl  object-cover"
-              />
-              <img
-                src="/images/de.png"
-                alt="Floating Image 3"
-                loading="lazy"
-                className="absolute bottom-16 right-10 w-40 h-40 rounded-xl  object-cover"
-              />
-              <img
-                src="/images/dfr.png"
-                alt="Floating Image 2"
-                loading="lazy"
-                className="absolute bottom-2 left-2/4 w-30 h-60 rounded-xl  object-cover"
-              />
-              <img
-                src="/images/drs.png"
-                alt="Floating Image 3"
-                loading="lazy"
-                className="absolute top-22 right-0 w-40 h-40 rounded-xl  object-cover"
-              />
-              <img
-                src="/images/des.png"
-                alt="Floating Image 3"
-                loading="lazy"
-                className="absolute top-22 left-0 w-40 h-40 rounded-xl  object-cover"
-              />
-            </div>
-          </div>
+  <div className=" relative w-full max-w-[1500px] mx-auto px-2 lg:px-0">
+    {/* Section d'Images Flottantes */}
+    <div className="hidden md:block absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
+      <div className="relative w-full h-[700px]">
+        {/* Image commentée */}
+        {/* <Image
+          src="/path/to/image"
+          alt="Description"
+          width={160}
+          height={160}
+          className="absolute top-16 left-10 w-40 h-40 rounded-xl shadow-xl object-cover"
+        /> */}
         
+        <Image
+          src="/images/avt-01.png"
+          alt="Floating Image 2"
+          width={220}
+          height={240}
+          className="absolute top-2/2 left-2/4 w-30 h-60 rounded-xl object-cover"
+        />
+        <Image
+          src="/images/de.png"
+          alt="Floating Image 3"
+          width={160}
+          height={160}
+          className="absolute bottom-16 right-10 w-40 h-40 rounded-xl object-cover"
+        />
+        <Image
+          src="/images/dfr.png"
+          alt="Floating Image 2"
+          width={220}
+          height={240}
+          className="absolute bottom-2 left-2/4 w-30 h-60 rounded-xl object-cover"
+        />
+        <Image
+          src="/images/drs.png"
+          alt="Floating Image 3"
+          width={160}
+          height={160}
+          className="absolute top-22 right-0 w-40 h-40 rounded-xl object-cover"
+        />
+        <Image
+          src="/images/des.png"
+          alt="Floating Image 3"
+          width={160}
+          height={160}
+          className="absolute top-22 left-0 w-40 h-40 rounded-xl object-cover"
+        />
+      </div>
+    </div>
+  
         
         {/* Contenu Principal */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
