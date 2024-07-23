@@ -53,7 +53,7 @@ const TextImageSection = React.memo(({
                     src={images[3]}
                     alt=""
                     loading="lazy"
-                    className="absolute organic-float-4 rounded-xl top-10 shadow-xl transform -right-24 w-40 h-40 object-cover"
+                    className="absolute organic-float-4 rounded-xl -top-5 shadow-xl transform -right-36 w-40 h-40 object-cover"
                   />
                 )}
                 {images[0] && (

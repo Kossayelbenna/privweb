@@ -11,10 +11,10 @@ function TextImagesSection() {
     <>
       <TextImageSection
         images={[
-          "/images/carosel/P (5).png",
-          "/images/carosel/P (8).png",
-          "/images/carosel/P (6).png",
-          "/images/carosel/P (11).png",
+          "/images/carosel/P-_3_.webp",
+          "/images/carosel/p-_8_.webp",
+          "/images/carosel/P (2) (1).webp",
+          "/images/carosel/P (6).webp",
         ]}
         invert={false}
       >

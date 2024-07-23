@@ -11,77 +11,71 @@ const Marquee = dynamic(() => import('./magicui/marquee'), {
 
 const images = [
   {
-    src: "/images/carosel/P (1).JPEG",
+    src: "/images/carosel/P-_1_.webp",
     description: {
       fr: "Univers Multijoueur : Une aventure sans limites",
       en: "Multiplayer Universe: Limitless Adventure"
     },
   },
   {
-    src: "/images/carosel/P (2).png",
+    src: "/images/carosel/P (2) (1).webp",
     description: {
       fr: "Lobby Légendaire : Préparez-vous au combat",
       en: "Legendary Lobby: Gear Up for Battle"
     },
   },
   {
-    src: "/images/carosel/P (3).png",
+    src: "/images/carosel/P-_3_.webp",
     description: {
       fr: "Folie Cartoon : La bataille commence !",
       en: "Cartoon Mayhem: Let the Battle Begin!"
     },
   },
   {
-    src: "/images/carosel/P (4).png",
+    src: "/images/carosel/p 4.webp",
     description: {
       fr: "Duel des Héros : Choisissez votre champion",
-      en: "Hero Showdown: Choose Your Champion"
+      en: "Fights of the galaxy"
     },
   },
   {
-    src: "/images/carosel/P (5).png",
+    src: "/images/carosel/P (5).webp",
     description: {
       fr: "Sports Extrêmes : Défiez les limites",
-      en: "Extreme Sports: Push Your Limits"
+      en: "Full min Basketball , More than just a game"
     },
   },
   {
-    src: "/images/carosel/P (6).png",
+    src: "/images/carosel/P (6).webp",
     description: {
       fr: "Équipe de Choc : La victoire en vue",
       en: "Dream Team: Victory in Sight"
     },
   },
+ 
   {
-    src: "/images/carosel/P (7).png",
-    description: {
-      fr: "Danse Royale : Bougez au rythme",
-      en: "Royal Dance-Off: Move to the Beat"
-    },
-  },
-  {
-    src: "/images/carosel/P (8).png",
+    src: "/images/carosel/p-_8_.webp",
     description: {
       fr: "Anime Arena : L'ultime confrontation",
       en: "Anime Arena: The Ultimate Showdown"
     },
   },
   {
-    src: "/images/carosel/P (9).png",
+    src: "/images/carosel/P-_9_.webp",
     description: {
       fr: "Soccer Suprême : Marquez l'histoire",
-      en: "Supreme Soccer: Make Your Mark"
+      en: "Gear up for the BATTLE"
     },
   },
   {
-    src: "/images/carosel/P (10).png",
+    src: "/images/carosel/P-_11_.webp",
     description: {
       fr: "Ninja Nocturne : Dans l'ombre du dragon",
       en: "Night Ninja: In the Dragon's Shadow"
     },
   },
   {
-    src: "/images/carosel/P (11).png",
+    src: "/images/carosel/pp-_2_.webp",
     description: {
       fr: "Baseball Pro : Frappez un coup de circuit",
       en: "Pro Baseball: Hit It Out of the Park"
