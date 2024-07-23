@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useMemo } from "react";
 import { useTranslator } from "@/lib/use-translator";
 import { cn } from "@/lib/utils";
@@ -30,13 +31,9 @@ const Hero: React.FC = () => {
           word={tr("title")[1]}
         />
         <h1 className="text-2xl md:text-4xl font-extrabold text-center max-w-2xl font-display mb-16">
-          <BlurIn
-            className=""
-            word={tr("title")[0]}
-          />
+          <span>{tr("title")[0]}</span>
         </h1>
       </div>
-
 
   <div className=" relative w-full max-w-[1500px] mx-auto px-2 lg:px-0">
     {/* Section d'Images Flottantes */}
