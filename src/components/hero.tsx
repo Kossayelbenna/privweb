@@ -12,7 +12,7 @@ import BlurIn from "@/components/magicui/animation-blurr"; // Assurez-vous que l
 import { useMediaQuery } from 'usehooks-ts';
 import Image from 'next/image';
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const tr = useTranslator();
   const isMobile = useMediaQuery("(max-width: 768px)");
 
@@ -35,12 +35,10 @@ const Hero = () => {
         </h1>
       </div>
 
-      <div className="relative w-full max-w-[1500px] mx-auto px-2 lg:px-0">
-        {/* Section d'Images Flottantes */}
-        {!isMobile && (
-          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
-            <div className="relative w-full h-[700px]">
-              {/* Images flottantes */}
+        <div className="hidden md:block relative w-full max-w-[1500px] mx-auto px-2 lg:px-0">
+         {/* Section d'Images Flottantes */}
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
+          <div className="relative w-full h-[700px]">
               <img
                // src=
                 //alt=
@@ -79,7 +77,7 @@ const Hero = () => {
               />
             </div>
           </div>
-        )}
+        
         
         {/* Contenu Principal */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">

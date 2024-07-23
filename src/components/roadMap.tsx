@@ -97,7 +97,7 @@ function RoadMap() {
     >
       <div className="flex flex-col items-center justify-center gap-4 p-5">
         <h3
-          className="text-4xl font-bold text-white text-center"
+          className="text-5xl font-bold text-white text-center"
           style={{ textShadow: "0 0 10px rgba(0,0,0,0.5)" }}
         >
           {tr("roadmapTitle")}

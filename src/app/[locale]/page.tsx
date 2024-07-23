@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 // Directly import Navbar, Hero, and BgSVG for immediate loading
 import Navbar from '@/components/navbar';
 import Hero from '@/components/hero';
+
 import BgSVG from '@/components/bg-svg';
 import BlurIn from "@/components/magicui/animation-blurr";
 
@@ -18,8 +19,6 @@ const Qna = dynamic(() => import('@/components/Qna'), { ssr: false });
 const QnaSection = dynamic(() => import('@/components/QnaSection'), { ssr: false });
 const RoadMap = dynamic(() => import('@/components/roadMap'), { ssr: false });
 const Tokenomics = dynamic(() => import('@/components/tokenomics'), { ssr: false });
-const BorderBeam = dynamic(() => import('@/components/border-beam'), { ssr: false });
-const AnimatedBeam = dynamic(() => import('@/components/magicui/animated-beam'), { ssr: false });
 
 import { inter } from "@/fonts";
 import { useTranslator } from "@/lib/use-translator";

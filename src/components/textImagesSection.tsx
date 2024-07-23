@@ -76,7 +76,7 @@ function TextImagesSection() {
               delay={20}
               radius={80}
             >
-              <img src="/images/coin_1.png" alt="" className="w-10 h-10" />
+              <img src="/images/de.png" alt="" className="w-12 h-12" />
             </OrbitingCircles>
             <OrbitingCircles
               className="h-[30px] w-[30px] border-none bg-transparent"
@@ -84,7 +84,7 @@ function TextImagesSection() {
               delay={10}
               radius={80}
             >
-              <img src="/images/coin_5.png" alt="" className="w-10 h-10" />
+              <img src="/images/dfr.png" alt="" className="w-12 h-12" />
             </OrbitingCircles>
 
             {/* Outer Circles (reverse) */}
@@ -95,7 +95,7 @@ function TextImagesSection() {
         delay={0}
         reverse
       >
-        <img src="/images/coin_3.png" alt="" className="w-16 h-16" />
+        <img src="/images/1 (5).png" alt="" className="w-13 h-13" />
       </OrbitingCircles>
       <OrbitingCircles
         className="h-[50px] w-[50px] border-none bg-transparent"
@@ -104,7 +104,7 @@ function TextImagesSection() {
         delay={12.5}
         reverse
       >
-        <img src="/images/coin_4.png" alt="" className="w-16 h-16" />
+        <img src="/images/1 (6).png" alt="" className="w-13 h-13" />
       </OrbitingCircles>
 
       {/* Troisième cercle */}
@@ -114,7 +114,7 @@ function TextImagesSection() {
         duration={30}
         delay={0}
       >
-        <img src="/images/coin_2.png" alt="" className="w-16 h-16" />
+        <img src="/images/1 (3).png" alt="" className="w-16 h-16" />
       </OrbitingCircles>
       <OrbitingCircles
         className="h-[50px] w-[50px] border-none bg-transparent"
@@ -122,7 +122,7 @@ function TextImagesSection() {
         duration={30}
         delay={15}
       >
-        <img src="/images/coin_4.png" alt="" className="w-16 h-16" />
+        <img src="/images/1 (1).png" alt="" className="w-16 h-16" />
       </OrbitingCircles>
     </div>
   )}
