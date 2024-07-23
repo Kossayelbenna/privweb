@@ -643,6 +643,21 @@ video {
 .top-5 {
   top: 1.25rem;
 }
+.-right-32 {
+  right: -8rem;
+}
+.top-4 {
+  top: 1rem;
+}
+.-top-10 {
+  top: -2.5rem;
+}
+.-top-5 {
+  top: -1.25rem;
+}
+.-right-36 {
+  right: -9rem;
+}
 .-z-10 {
   z-index: -10;
 }
@@ -834,9 +849,6 @@ video {
 }
 .h-min {
   height: min-content;
-}
-.h-\[220px\] {
-  height: 220px;
 }
 .max-h-0 {
   max-height: 0px;
@@ -1569,9 +1581,6 @@ video {
 }
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.will-change-auto {
-  will-change: auto;
 }
 @keyframes enter {
 
