@@ -404,6 +404,13 @@
       "static/chunks/_app-pages-browser_src_components_QnaSection_tsx.js"
     ]
   },
+  "app\\[locale]\\page.tsx -> @/components/hero2": {
+    "id": "app\\[locale]\\page.tsx -> @/components/hero2",
+    "files": [
+      "static/chunks/common.js",
+      "static/chunks/_app-pages-browser_src_components_hero2_tsx.js"
+    ]
+  },
   "app\\[locale]\\page.tsx -> @/components/howToBuy": {
     "id": "app\\[locale]\\page.tsx -> @/components/howToBuy",
     "files": [
@@ -422,6 +429,7 @@
   "app\\[locale]\\page.tsx -> @/components/roadMap": {
     "id": "app\\[locale]\\page.tsx -> @/components/roadMap",
     "files": [
+      "static/chunks/common.js",
       "static/chunks/_app-pages-browser_src_components_roadMap_tsx.js"
     ]
   },
@@ -437,6 +445,7 @@
   "app\\[locale]\\page.tsx -> @/components/tokenomics": {
     "id": "app\\[locale]\\page.tsx -> @/components/tokenomics",
     "files": [
+      "static/chunks/common.js",
       "static/chunks/_app-pages-browser_src_components_tokenomics_tsx.js"
     ]
   },
