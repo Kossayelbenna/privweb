@@ -1,10 +1,10 @@
+
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import dynamic from 'next/dynamic';
 import { useLocale, useTranslator } from "@/lib/use-translator";
 
-// Lazy load the Marquee component
 const Marquee = dynamic(() => import('./magicui/marquee'), {
   ssr: false,
 });
@@ -87,39 +87,47 @@ const images = [
 const MarqueeGames: React.FC = () => {
   const locale = useLocale();
   const tr = useTranslator();
+
+  const memoizedImages = useMemo(() => images.map(({ src, description }) => ({
+    src,
+    description: description[locale as keyof typeof description]
+  })), [locale]);
+
+  const memoizedTitle = useMemo(() => tr("marqueeGamesTitle"), [tr]);
+  const memoizedDescription = useMemo(() => tr("description1"), [tr]);
+
   return (
-    <div className="py-10 pt-40 ">
+    <div className="py-10 pt-40">
       <div className="flex flex-col items-center justify-center gap-4 p-5">
         <h1
-          className="text-5xl font-bold text-white text-center "
+          className="text-5xl font-bold text-white text-center"
           style={{ textShadow: "0 0 10px rgba(0,0,0,0.5)" }}
         >
-          {tr("marqueeGamesTitle")}
-          
+          {memoizedTitle}
         </h1>
       </div>
       <div className="flex flex-col items-center justify-center max-w-3xl mx-auto px-4 mt-4 mb-8">
-          <h5 className="text-center text-lg md:text-xl font-bold leading-relaxed"> 
-            {tr("description1")} 
-          </h5>
+        <h5 className="text-center text-lg md:text-xl font-bold leading-relaxed"> 
+          {memoizedDescription} 
+        </h5>
       </div>
       <Marquee
         pauseOnHover
-        className="[--duration:50s] bg-primary backdrop-blur-xl border border-gray-100/20 p-2 gap-20 transform "
+        className="[--duration:50s] bg-primary backdrop-blur-xl border border-gray-100/20 p-2 gap-20 transform"
       >
-        {images.map(({ src, description }) => (
+        {memoizedImages.map(({ src, description }) => (
           <div
             key={src}
             className="relative flex items-center justify-center w-[400px] h-[400px] md:w-[600px] md:h-[500px] rounded-[2rem] border border-gray-100/20 overflow-clip"
           >
             <img
               src={src}
-              alt={(description as any)[locale as any]}
+              alt={description}
               className="w-full h-full absolute inset-0 object-cover hover:scale-110 transition-transform duration-300 ease-in-out rounded-md"
             />
             <div className="absolute bottom-2 left-2 right-2 rounded-xl flex justify-center items-center p-5 bg-white/10 backdrop-blur-lg">
               <p className="text-white text-md font-semibold">
-                {(description as any)[locale as any]}
+                {description}
               </p>
             </div>
           </div>
@@ -129,4 +137,4 @@ const MarqueeGames: React.FC = () => {
   );
 }
 
-export default MarqueeGames;
+export default React.memo(MarqueeGames);

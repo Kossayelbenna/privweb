@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { BiMoney } from "react-icons/bi";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { inter } from "@/fonts";
+import { Wallet, CreditCard, Coins, Banknote } from "lucide-react";  // Importez ces icônes de lucide-react
 
 
 const HowToBuy = () => {
@@ -21,7 +22,7 @@ const HowToBuy = () => {
         en: "Install a Defi wallet such as Best Wallet, MetaMask, or Trust Wallet to take advantage of the full DOGE VISION P2E experience. Connect it to our secure presale widget to buy $DOGEVISION tokens",
         fr: "Installez un portefeuille Defi tel que Best Wallet, MetaMask ou Trust Wallet pour profiter pleinement de l'expérience P2E DOGE VISION. Connectez-le à notre widget de prévente sécurisé pour acheter des jetons $DOGEVISION",
       },
-      image: <BiMoney />,
+      image: <Wallet size={24} />,
     },
     {
       title: {
@@ -32,7 +33,7 @@ const HowToBuy = () => {
         en: "To proceed, you'll require BNB, ETH, USDT or other cryptocurrency. Deposit funds or purchase crypto directly within Best Wallet to initiate your transaction. Ensure you retain sufficient BNB or ETH or other crypto to cover gas fees.",
         fr: "Pour continuer, vous aurez besoin de BNB, ETH, USDT ou d'autres cryptomonnaies. Déposez des fonds ou achetez directement des cryptos dans Best Wallet pour initier votre transaction. Assurez-vous de conserver suffisamment de BNB, ETH ou autres cryptos pour couvrir les frais de gaz.",
       },
-      image: <BiMoney />,
+      image: <CreditCard size={24} />,
     },
     {
       title: {
@@ -43,7 +44,7 @@ const HowToBuy = () => {
         en: "You have the option to stake your DOGE VISION tokens on either BNB Chain or Ethereum to grow your holdings. If you choose to stake, follow the prompts on the widget.",
         fr: "Vous avez la possibilité de staker vos jetons DOGE VISION sur BNB Chain ou Ethereum pour augmenter vos avoirs. Si vous choisissez de staker, suivez les instructions sur le widget.",
       },
-      image: <BiMoney />,
+      image: <Coins size={24} />,
     },
     {
       title: {
@@ -54,7 +55,7 @@ const HowToBuy = () => {
         en: "After completing your purchase, your $DOGEVISION token balance will be displayed on the buy widget. And you're one of the first holders.",
         fr: "Après avoir terminé votre achat, votre solde de jetons $DOGEVISION s'affichera sur le widget d'achat. Et vous êtes l'un des premiers détenteurs.",
       },
-      image: <BiMoney />,
+      image: <Banknote size={24}  />,
     },
   ], [locale]);
 

@@ -1,14 +1,20 @@
+import React, { useState, useMemo } from "react";
 import { useTranslator } from "@/lib/use-translator";
-import React from "react";
 import { BorderBeam } from "./magicui/border-beam";
-import dynamic from 'next/dynamic';
-
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Assurez-vous d'avoir installé lucide-react
 
 function Tokenomics() {
-  const Tokenomics = dynamic(() => import('./tokenomics'), {
-    ssr: false,
-  });
   const tr = useTranslator();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const memoizedTokenomicsTitles = useMemo(() => tr("tokenomicsTitles"), [tr]);
+  const memoizedTokenomicsSubtitle = useMemo(() => tr("tokenomicsSubtitle"), [tr]);
+  const memoizedTokenomicsReadMore = useMemo(() => tr("tokenomicsReadMore"), [tr]);
+  const memoizedTokenomicsFooter = useMemo(() => tr("tokenomicsFooter"), [tr]);
+
+  const handleNext = () => setCurrentIndex((prev) => (prev + 1) % memoizedTokenomicsTitles.length);
+  const handlePrev = () => setCurrentIndex((prev) => (prev - 1 + memoizedTokenomicsTitles.length) % memoizedTokenomicsTitles.length);
+
   return (
     <div
       id="tokenomics"
@@ -23,11 +29,35 @@ function Tokenomics() {
           Tokenomics
         </h3>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
-        <h3 className="text-4xl lg:text-4xl font-bold text-white text-left col-span-1 md:col-span-2 lg:col-span-3">
-          {tr("tokenomicsSubtitle")}
-        </h3>
-        {tr("tokenomicsTitles").map((e, index) => (
+
+      <h3 className="text-2xl md:text-4xl font-bold text-white text-center md:text-left p-5">
+        {memoizedTokenomicsSubtitle}
+      </h3>
+
+      {/* Mobile Carousel */}
+      <div className="md:hidden p-5">
+        <div className="relative bg-white/10 p-6 rounded-lg flex flex-col gap-2 shadow-md backdrop-blur-md ease-in-out">
+          <BorderBeam />
+          <h5 className="text-xl font-bold text-white">{memoizedTokenomicsTitles[currentIndex].title}</h5>
+          <p className="text-base text-white">{memoizedTokenomicsTitles[currentIndex].description}</p>
+          <div className="flex justify-between mt-4">
+            <button onClick={handlePrev} className="text-white"><ChevronLeft size={24} /></button>
+            <button onClick={handleNext} className="text-white"><ChevronRight size={24} /></button>
+          </div>
+        </div>
+        <div className="flex justify-center mt-4">
+          {memoizedTokenomicsTitles.map((_, index) => (
+            <div
+              key={index}
+              className={`w-2 h-2 rounded-full mx-1 ${index === currentIndex ? 'bg-white' : 'bg-gray-500'}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop Grid */}
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
+        {memoizedTokenomicsTitles.map((e, index) => (
           <div
             key={index}
             className="relative bg-white/10 p-6 md:p-8 rounded-lg flex gap-2 flex-col shadow-md backdrop-blur-md ease-in-out"
@@ -37,18 +67,18 @@ function Tokenomics() {
             <BorderBeam />
           </div>
         ))}
-        <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-end">
-          <h3 className="text-xl lg:text-2xl font-bold text-white text-right col-span-1 md:col-span-2 lg:col-span-3">
-          {tr("tokenomicsReadMore")}
+      </div>
+
+      <div className="p-5">
+        <h3 className="text-xl lg:text-2xl font-bold text-white text-right">
+          {memoizedTokenomicsReadMore}
         </h3>
-        </div>
-        <h5 className="text-xl lg:text-2xl font-bold text-white text-left">
-            {tr("tokenomicsFooter")}
-          </h5>
+        <h5 className="text-xl lg:text-2xl font-bold text-white text-left mt-4">
+          {memoizedTokenomicsFooter}
+        </h5>
       </div>
     </div>
   );
 }
 
-export default Tokenomics;
-
+export default React.memo(Tokenomics);

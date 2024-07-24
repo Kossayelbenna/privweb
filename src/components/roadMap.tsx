@@ -1,193 +1,212 @@
-import React from "react";
-import { BorderBeam } from "./magicui/border-beam";
-import { useLocale, useTranslator } from "@/lib/use-translator";
-import dynamic from 'next/dynamic';
 
 
-const steps = [
-  {
-    title: { en: "THE BIG BANG", fr: "LE BIG BANG" },
-    description: {
-      en: `- Website Goes Live
-- Social Channels Are Born
-- Start Game Development
-- Layer 3 blockchain development
-- Presale Begins`,
-      fr: `- Le site web est lancé
-- Naissance des canaux sociaux
-- Début du développement du jeu
-- Développement de la blockchain Layer 3
-- Début de la prévente`,
-    },
-  },
-  {
-    title: { en: "DEVELOPMENT", fr: "DÉVELOPPEMENT" },
-    description: {
-      en: `- Continue Game Development
-- Establish Strategic Partnerships
-- Initial Marketing Campaign
-- Continue DOGEVISION blockchain development`,
-      fr: `- Poursuite du développement du jeu
-- Établissement de partenariats stratégiques
-- Campagne marketing initiale
-- Poursuite du développement de la blockchain DOGEVISION`,
-    },
-  },
-  {
-    title: { en: "LAUNCHPAD", fr: "PLATEFORME DE LANCEMENT" },
-    description: {
-      en: `- Launch rare NFT Collection
-- Release First Web3 Game
-- Expand Community Outreach
-- Big giveaways for the community`,
-      fr: `- Lancement de la collection NFT rare
-- Sortie du premier jeu Web3
-- Expansion de la sensibilisation communautaire
-- Grands cadeaux pour la communauté`,
-    },
-  },
-  {
-    title: { en: "EXPANSION", fr: "EXPANSION" },
-    description: {
-      en: `- Develop Additional Games
-- Launch Decentralized Streaming Platform
-- Implement Multichain Token
-- 1Million$ Marketing Campaign`,
-      fr: `- Développement de jeux supplémentaires
-- Lancement de la plateforme de streaming décentralisée
-- Implémentation du token multichain
-- Campagne marketing d'1 million de dollars`,
-    },
-  },
-  {
-    title: { en: "REWARDS", fr: "RÉCOMPENSES" },
-    description: {
-      en: `- Big Giveaways and Contests
-- Give the presale people a rare NFT $$
-- Expand NFT Marketplace`,
-      fr: `- Grands cadeaux et concours
-- Offrir aux participants de la prévente un NFT rare $$
-- Expansion du marché NFT`,
-    },
-  },
-  {
-    title: { en: "GLOBAL IMPACT", fr: "IMPACT GLOBAL" },
-    description: {
-      en: `- Major Marketing Push
-- Strategic Global Partnerships
-- Continuous Ecosystem Development and Upgrades`,
-      fr: `- Importante campagne marketing
-- Partenariats stratégiques mondiaux
-- Développement et mises à niveau continus de l'écosystème`,
-    },
-  },
-];
-
-function RoadMap() {
-  const RoadMap = dynamic(() => import('./roadMap'), {
-    ssr: false,
-  });
+  import React, { useMemo } from "react";
+  import { BorderBeam } from "./magicui/border-beam";
+  import { useLocale, useTranslator } from "@/lib/use-translator";
   
-  const locale = useLocale();
-  const tr = useTranslator();
-  return (
-    <div
-      className="pt-10 md:pt-20 max-w-[1200px] mx-auto px-2 lg:px-0"
-      id="roadmap"
-    >
-      <div className="flex flex-col items-center justify-center gap-4 p-5">
-        <h3
-          className="text-5xl font-bold text-white text-center"
-          style={{ textShadow: "0 0 10px rgba(0,0,0,0.5)" }}
-        >
-          {tr("roadmapTitle")}
-        </h3>
-      </div>
+  const steps = [
+    {
+      title: { en: "THE BIG BANG", fr: "LE BIG BANG" },
+      description: {
+        en: `- Website Goes Live
+  - Social Channels Are Born
+  - Start Game Development
+  - Layer 3 blockchain development
+  - Presale Begins`,
+        fr: `- Le site web est lancé
+  - Naissance des canaux sociaux
+  - Début du développement du jeu
+  - Développement de la blockchain Layer 3
+  - Début de la prévente`,
+      },
+    },
+    {
+      title: { en: "DEVELOPMENT", fr: "DÉVELOPPEMENT" },
+      description: {
+        en: `- Continue Game Development
+  - Establish Strategic Partnerships
+  - Initial Marketing Campaign
+  - Continue DOGEVISION blockchain development`,
+        fr: `- Poursuite du développement du jeu
+  - Établissement de partenariats stratégiques
+  - Campagne marketing initiale
+  - Poursuite du développement de la blockchain DOGEVISION`,
+      },
+    },
+    {
+      title: { en: "LAUNCHPAD", fr: "PLATEFORME DE LANCEMENT" },
+      description: {
+        en: `- Launch rare NFT Collection
+  - Release First Web3 Game
+  - Expand Community Outreach
+  - Big giveaways for the community`,
+        fr: `- Lancement de la collection NFT rare
+  - Sortie du premier jeu Web3
+  - Expansion de la sensibilisation communautaire
+  - Grands cadeaux pour la communauté`,
+      },
+    },
+    {
+      title: { en: "EXPANSION", fr: "EXPANSION" },
+      description: {
+        en: `- Develop Additional Games
+  - Launch Decentralized Streaming Platform
+  - Implement Multichain Token
+  - 1Million$ Marketing Campaign`,
+        fr: `- Développement de jeux supplémentaires
+  - Lancement de la plateforme de streaming décentralisée
+  - Implémentation du token multichain
+  - Campagne marketing d'1 million de dollars`,
+      },
+    },
+    {
+      title: { en: "REWARDS", fr: "RÉCOMPENSES" },
+      description: {
+        en: `- Big Giveaways and Contests
+  - Give the presale people a rare NFT $$
+  - Expand NFT Marketplace`,
+        fr: `- Grands cadeaux et concours
+  - Offrir aux participants de la prévente un NFT rare $$
+  - Expansion du marché NFT`,
+      },
+    },
+    {
+      title: { en: "GLOBAL IMPACT", fr: "IMPACT GLOBAL" },
+      description: {
+        en: `- Major Marketing Push
+  - Strategic Global Partnerships
+  - Continuous Ecosystem Development and Upgrades`,
+        fr: `- Importante campagne marketing
+  - Partenariats stratégiques mondiaux
+  - Développement et mises à niveau continus de l'écosystème`,
+      },
+    },];
+  
+  function RoadMap() {
+    const locale = useLocale();
+    const tr = useTranslator();
+  
+    const memoizedSteps = useMemo(() => steps.map((step, index) => ({
+      ...step,
+      title: step.title[locale],
+      description: step.description[locale],
+      phase: index + 1,
+    })), [locale]);
+  
+    return (
       <div
-        className="w-full grid relative scale-100 md:scale-100"
-        style={{ gridTemplateColumns: "1fr 8px 1fr" }}
+        className="pt-10 md:pt-20 max-w-[1200px] mx-auto px-2 lg:px-0"
+        id="roadmap"
       >
-        <div>
-          {steps.map((step, index) => {
-            const even = index % 2 === 0;
-            return (
-              <div
-                key={index}
-                className="relative flex items-center justify-center min-h-[80px]"
-              >
-                {even && (
-                  <>
-                    <div className="absolute right-[-4px] top-1/2 w-1/2 h-[2px] bg-white/100 transform translate-y-[-50%]"></div>
-                    {/* circle  */}
-                    <div className="absolute right-[-12px] top-1/2 w-6 h-6 bg-white/100 rounded-full transform translate-y-[-50%]"></div>
-                    {/* line */}
-                    <div className="relative flex flex-col items-start p-5 min-h-[80px] max-w-[350px] bg-black   rounded-lg shadow-md backdrop-blur-md ease-in-out">
-                      <BorderBeam />
-                      <div className="absolute -top-3 action-btn w-fit py-1 px-4 border rounded-2xl backdrop-blur-md border-gray-100/20">
-                        Phase {index + 1}
-                      </div>
-
-                     
-                      <h4 className="text-white text-lg font-bold">
-                        {step.title[locale]}
-                      </h4>
-                      <pre className="text-white text-sm font-light whitespace-pre-line break-words">
-                        {step.description[locale]}
-                      </pre>
-
-
-                    </div>
-                  </>
-                )}
-              </div>
-            );
-          })}
+        <div className="flex flex-col items-center justify-center gap-4 p-5">
+          <h3
+            className="text-4xl font-bold text-white text-center"
+            style={{ textShadow: "0 0 10px rgba(0,0,0,0.5)" }}
+          >
+            {tr("roadmapTitle")}
+          </h3>
         </div>
-        <div
-          style={{
-            minHeight: steps.length * 100,
-          }}
-          className="w-2 bg-white/10 rounded-lg h-full"
-        ></div>
-        <div>
-          {steps.map((step, index) => {
-            const odd = index % 2 !== 0;
-            return (
-              <div
-                key={index}
-                className="relative flex items-center justify-center min-h-[80px]"
-              >
-                {odd && (
-                  <>
-                    <div className="absolute left-[-4px] top-1/2 w-1/2 h-[2px] bg-white/100 transform translate-y-[-50%]"></div>
-                    {/* circle  */}
-                    <div className="absolute left-[-12px] top-1/2 w-6 h-6 bg-white/100 rounded-full transform translate-y-[-50%]"></div>
-                    {/* line */}
-                    <div className="flex flex-col items-start p-5 min-h-[80px] max-w-[350px] bg-black  relative rounded-lg shadow-md backdrop-blur-md ease-in-out">
-                      <BorderBeam />
-                      <div className="absolute -top-3 action-btn w-fit py-1 px-4 border rounded-2xl backdrop-blur-md border-gray-100/20">
-                        Phase {index + 1}
-                        </div>
-
-                     
-                          <h4 className="text-white text-lg font-bold">
-                            {step.title[locale]}
-                          </h4>
-                          <pre className="text-white text-sm font-light whitespace-pre-line break-words">
-                            {step.description[locale]}
-                          </pre>
-
-
-                          </div>
-                  </>
-                )}
+        
+        {/* Mobile Version */}
+        <div className="md:hidden space-y-8">
+          {memoizedSteps.map((step) => (
+            <div key={step.phase} className="relative flex">
+              <div className="mr-4 flex flex-col items-center">
+                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mb-2">
+                  <span className="text-black font-bold">{step.phase}</span>
+                </div>
+                <div className="flex-grow w-0.5 bg-white/10"></div>
               </div>
-            );
-          })}
+              <div className="flex-grow">
+                <div className="bg-black p-5 rounded-lg shadow-md backdrop-blur-md relative w-full">
+                  <BorderBeam />
+                  <div className="action-btn w-fit py-1 px-4 border rounded-2xl backdrop-blur-md border-gray-100/20 mb-3">
+                    Phase {step.phase}
+                  </div>
+                  <h4 className="text-white text-lg font-bold mb-2">{step.title}</h4>
+                  <pre className="text-white text-sm font-light whitespace-pre-line break-words">
+                    {step.description}
+                  </pre>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+  
+        {/* Desktop Version */}
+        <div
+          className="hidden md:grid w-full relative scale-75 md:scale-100"
+          style={{ gridTemplateColumns: "1fr 8px 1fr" }}
+        >
+          <div>
+            {memoizedSteps.map((step, index) => {
+              const even = index % 2 === 0;
+              return (
+                <div
+                  key={index}
+                  className="relative flex items-center justify-center min-h-[80px]"
+                >
+                  {even && (
+                    <>
+                      <div className="absolute right-[-4px] top-1/2 w-1/2 h-[2px] bg-white/100 transform translate-y-[-50%]"></div>
+                      <div className="absolute right-[-12px] top-1/2 w-6 h-6 bg-white/100 rounded-full transform translate-y-[-50%]"></div>
+                      <div className="relative flex flex-col items-start p-5 min-h-[80px] max-w-[350px] bg-black rounded-lg shadow-md backdrop-blur-md ease-in-out">
+                        <BorderBeam />
+                        <div className="absolute -top-3 action-btn w-fit py-1 px-4 border rounded-2xl backdrop-blur-md border-gray-100/20">
+                          Phase {step.phase}
+                        </div>
+                        <h4 className="text-white text-lg font-bold">
+                          {step.title}
+                        </h4>
+                        <pre className="text-white text-sm font-light whitespace-pre-line break-words">
+                          {step.description}
+                        </pre>
+                      </div>
+                    </>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          <div
+            style={{
+              minHeight: steps.length * 100,
+            }}
+            className="w-2 bg-white/10 rounded-lg h-full"
+          ></div>
+          <div>
+            {memoizedSteps.map((step, index) => {
+              const odd = index % 2 !== 0;
+              return (
+                <div
+                  key={index}
+                  className="relative flex items-center justify-center min-h-[80px]"
+                >
+                  {odd && (
+                    <>
+                      <div className="absolute left-[-4px] top-1/2 w-1/2 h-[2px] bg-white/100 transform translate-y-[-50%]"></div>
+                      <div className="absolute left-[-12px] top-1/2 w-6 h-6 bg-white/100 rounded-full transform translate-y-[-50%]"></div>
+                      <div className="flex flex-col items-start p-5 min-h-[80px] max-w-[350px] bg-black relative rounded-lg shadow-md backdrop-blur-md ease-in-out">
+                        <BorderBeam />
+                        <div className="absolute -top-3 action-btn w-fit py-1 px-4 border rounded-2xl backdrop-blur-md border-gray-100/20">
+                          Phase {step.phase}
+                        </div>
+                        <h4 className="text-white text-lg font-bold">
+                          {step.title}
+                        </h4>
+                        <pre className="text-white text-sm font-light whitespace-pre-line break-words">
+                          {step.description}
+                        </pre>
+                      </div>
+                    </>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-export default RoadMap;
+    );
+  }
+  
+  export default React.memo(RoadMap);
