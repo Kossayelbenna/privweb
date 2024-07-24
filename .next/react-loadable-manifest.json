@@ -445,6 +445,7 @@
   "app\\[locale]\\page.tsx -> @/components/tokenomics": {
     "id": "app\\[locale]\\page.tsx -> @/components/tokenomics",
     "files": [
+      "static/chunks/vendor.js",
       "static/chunks/common.js",
       "static/chunks/_app-pages-browser_src_components_tokenomics_tsx.js"
     ]
@@ -457,12 +458,16 @@
     "id": "components\\magicui\\Footer.tsx -> ./Footer",
     "files": []
   },
-  "components\\roadMap.tsx -> ./roadMap": {
-    "id": "components\\roadMap.tsx -> ./roadMap",
-    "files": []
+  "components\\textImagesSection.tsx -> ./magicui/orbiting-circles": {
+    "id": "components\\textImagesSection.tsx -> ./magicui/orbiting-circles",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_magicui_orbiting-circles_tsx.js"
+    ]
   },
-  "components\\tokenomics.tsx -> ./tokenomics": {
-    "id": "components\\tokenomics.tsx -> ./tokenomics",
-    "files": []
+  "components\\textImagesSection.tsx -> ./pargraphText": {
+    "id": "components\\textImagesSection.tsx -> ./pargraphText",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_pargraphText_tsx.js"
+    ]
   }
 }
