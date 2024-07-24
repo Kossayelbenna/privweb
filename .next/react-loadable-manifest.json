@@ -454,6 +454,10 @@
     "id": "components\\MarqueeGames.tsx -> ./magicui/marquee",
     "files": []
   },
+  "components\\logomarquee.tsx -> ./magicui/marquee": {
+    "id": "components\\logomarquee.tsx -> ./magicui/marquee",
+    "files": []
+  },
   "components\\magicui\\Footer.tsx -> ./Footer": {
     "id": "components\\magicui\\Footer.tsx -> ./Footer",
     "files": []
