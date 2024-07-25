@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
           className={cn(
             "text-3xl md:text-6xl font-extrabold -mt-[25px]",
             "bg-clip-text text-transparent bg-gradient-to-br from-[#9b5de5] via-[#f15bb5] to-[#fee440]",
-            "drop-shadow-md"
+            "drop-shadow-md text-center"
           )}
           word={tr("title")[1]}
         />
