@@ -23,7 +23,7 @@ const DogeVisionBanner: React.FC = () => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.08,
+        delay: i * 0.1,
       },
     }),
     exit: { opacity: 1, y: -130 },
@@ -32,7 +32,7 @@ const DogeVisionBanner: React.FC = () => {
   return (
     <div className="w-full p-8 text-white hidden sm:block mb-0">
       <div className="text-2xl md:text-6xl font-bold text-white mb-4" style={{ lineHeight: '1.3' }}>
-        The world's first Layer 3 blockchain, Integrating 
+        The World's First Layer 3 Blockchain, Integrating 
       </div>
 
       <div className="h-24 md:h-32 lg:h-48 mb-6 md:mb-12"> 

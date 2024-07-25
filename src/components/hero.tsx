@@ -16,7 +16,7 @@ interface IframeWrapperProps {
 }
 
 const IframeWrapper: React.FC<IframeWrapperProps> = ({ children }) => (
-  <div className="relative overflow-hidden rounded-[25px] w-[455px] h-[670px]">
+  <div className="relative overflow-hidden rounded-[25px] w-[455px] h-[675px] mt-16">
     <BorderBeam />
     <div className="relative z-10 w-full h-full">
       {children}
@@ -42,21 +42,21 @@ const Hero: React.FC = () => {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen pt-40">
-      <div className="flex flex-col gap-4 items-center justify-center">
-        <BlurIn
+      <div className="flex flex-col gap-4 items-center justify-center -mt-0">
+        <div
           className={cn(
-            "text-3xl md:text-6xl font-extrabold -mt-[25px]",
+            "text-3xl md:text-6xl font-extrabold -mt-[10px]",
             "bg-clip-text text-transparent bg-gradient-to-br from-[#9b5de5] via-[#f15bb5] to-[#fee440]",
             "drop-shadow-md text-center"
-          )}
-          word={tr("title")[1]}
-        />
+          )}>
+          {tr("title")[1]}
+        </div>
         <h1 className="text-2xl md:text-4xl font-extrabold text-center max-w-2xl font-display mb-16">
           <span>{tr("title")[0]}</span>
         </h1>
       </div>
 
-      <div className="relative w-full max-w-[1500px] mx-auto px-2 lg:px-0">
+      <div className="relative w-full max-w-[1500px] mx-auto px-2 lg:px-0 ">
         <div className="hidden md:block absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
           <div className="relative w-full h-[700px]">
             {floatingImages.map((img, index) => (
@@ -64,14 +64,14 @@ const Hero: React.FC = () => {
             ))}
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
-          <div className="sticky top-0 h-fit ml-28 z-10">
+          <div className="sticky top-0 h-fit ml-28 z-10" style={{ transform: 'scale(0.9)' }}>
             <BannerLeft />
           </div>
           <div className="flex flex-col items-center w-full z-0">
-            <div className="flex justify-center items-center">
-              <div className="text-white text-3xl mb-4">Presale will start soon</div>
+            <div className="flex justify-center items-center">  
+              
             </div>
             <IframeWrapper>
               <iframe
@@ -82,10 +82,12 @@ const Hero: React.FC = () => {
                   overflow: 'hidden'
                 }}
                 allow="clipboard-write"
+                style={{ transform: 'scale(1)' }}
                 src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
                 title="Presale iframe"
+                scrolling="no"
               />
-            </IframeWrapper>
+              </IframeWrapper>
           </div>
         </div>
       </div>

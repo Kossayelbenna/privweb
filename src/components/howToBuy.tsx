@@ -103,11 +103,11 @@ const HowToBuy = () => {
         </div>
         <div className="flex flex-col items-center scale-70">
           <iframe
-            className="lg:w-[450px] w-full h-[700px]"
+            className="lg:w-[450px] w-full h-[750px] md:-mt-12"
             allow="clipboard-write"
-            style={{ transform: 'scale(0.9)' }}
-            src="https://pay.radom.com/presale/806ea959-b589-4964-aa76-b5549a53ebcb"
-          ></iframe>
+            style={{ transform: 'scale(0.85)' }}
+            src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
+            ></iframe>
         </div>
       </div>
     </div>

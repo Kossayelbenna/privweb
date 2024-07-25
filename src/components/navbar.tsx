@@ -17,7 +17,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 500) {
         setAtTop(false);
       } else {
         setAtTop(true);
@@ -38,7 +38,7 @@ function Navbar() {
         className={cn(
           "w-full fixed flex items-center justify-center z-50 max-w-[100vw] left-0 right-0 ",
 
-          atTop ? "top-0" : "top-5"
+          atTop ? "top-0" : "top-10"
         )}
       >
         <header
