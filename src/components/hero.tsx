@@ -1,16 +1,29 @@
 "use client";
 
 import React, { useMemo } from "react";
+import Image from 'next/image';
 import { useTranslator } from "@/lib/use-translator";
+import { useMediaQuery } from 'usehooks-ts';
 import { cn } from "@/lib/utils";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { CPU } from "@/components/cpu";
 import BannerLeft from "@/components/bannerRight";
-import './magicui/marquee';
-import { ConnectWallet } from "@thirdweb-dev/react";
 import BlurIn from "@/components/magicui/animation-blurr";
-import { useMediaQuery } from 'usehooks-ts';
-import Image from 'next/image';
+import './magicui/marquee';
+
+interface IframeWrapperProps {
+  children: React.ReactNode;
+}
+
+const IframeWrapper: React.FC<IframeWrapperProps> = ({ children }) => (
+  <div className="relative overflow-hidden rounded-[25px] w-[455px] h-[670px]">
+    <BorderBeam />
+    <div className="relative z-10 w-full h-full">
+      {children}
+    </div>
+  </div>
+);
+
 
 const Hero: React.FC = () => {
   const tr = useTranslator();
@@ -18,6 +31,14 @@ const Hero: React.FC = () => {
 
   const featuresTop = useMemo(() => tr("features").slice(0, 3), [tr]);
   const featuresBottom = useMemo(() => tr("features").slice(3), [tr]);
+
+  const floatingImages = [
+    { src: "/images/avt-01.png", alt: "Floating Image 2", width: 220, height: 240, className: "absolute top-2/2 left-2/4 w-30 h-60 rounded-xl object-cover" },
+    { src: "/images/de.png", alt: "Floating Image 3", width: 160, height: 160, className: "absolute bottom-16 right-10 w-40 h-40 rounded-xl object-cover" },
+    { src: "/images/dfr.png", alt: "Floating Image 2", width: 220, height: 240, className: "absolute bottom-2 left-2/4 w-30 h-60 rounded-xl object-cover" },
+    { src: "/images/drs.png", alt: "Floating Image 3", width: 160, height: 160, className: "absolute top-22 right-0 w-40 h-40 rounded-xl object-cover" },
+    { src: "/images/des.png", alt: "Floating Image 3", width: 160, height: 160, className: "absolute top-22 left-0 w-40 h-40 rounded-xl object-cover" },
+  ];
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen pt-40">
@@ -38,41 +59,9 @@ const Hero: React.FC = () => {
       <div className="relative w-full max-w-[1500px] mx-auto px-2 lg:px-0">
         <div className="hidden md:block absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
           <div className="relative w-full h-[700px]">
-            <Image
-              src="/images/avt-01.png"
-              alt="Floating Image 2"
-              width={220}
-              height={240}
-              className="absolute top-2/2 left-2/4 w-30 h-60 rounded-xl object-cover"
-            />
-            <Image
-              src="/images/de.png"
-              alt="Floating Image 3"
-              width={160}
-              height={160}
-              className="absolute bottom-16 right-10 w-40 h-40 rounded-xl object-cover"
-            />
-            <Image
-              src="/images/dfr.png"
-              alt="Floating Image 2"
-              width={220}
-              height={240}
-              className="absolute bottom-2 left-2/4 w-30 h-60 rounded-xl object-cover"
-            />
-            <Image
-              src="/images/drs.png"
-              alt="Floating Image 3"
-              width={160}
-              height={160}
-              className="absolute top-22 right-0 w-40 h-40 rounded-xl object-cover"
-            />
-            <Image
-              src="/images/des.png"
-              alt="Floating Image 3"
-              width={160}
-              height={160}
-              className="absolute top-22 left-0 w-40 h-40 rounded-xl object-cover"
-            />
+            {floatingImages.map((img, index) => (
+              <Image key={index} {...img} />
+            ))}
           </div>
         </div>
         
@@ -80,17 +69,23 @@ const Hero: React.FC = () => {
           <div className="sticky top-0 h-fit ml-28 z-10">
             <BannerLeft />
           </div>
-          <div className="flex flex-col w-full scale-70 z-0">
+          <div className="flex flex-col items-center w-full z-0">
             <div className="flex justify-center items-center">
               <div className="text-white text-3xl mb-4">Presale will start soon</div>
             </div>
-            <iframe
-              className="w-full h-[700px] mt-0"
-              style={{ outline: 0, border: 0, transform: 'scale(1)' }}
-              allow="clipboard-write"
-              src="https://pay.radom.com/presale/806ea959-b589-4964-aa76-b5549a53ebcb"
-              title="Presale iframe"
-            ></iframe>
+            <IframeWrapper>
+              <iframe
+                className="w-full h-full rounded-[20px]"
+                style={{ 
+                  outline: 0, 
+                  border: 0,
+                  overflow: 'hidden'
+                }}
+                allow="clipboard-write"
+                src="https://pay.radom.com/presale/806ea959-b589-4964-aa76-b5549a53ebcb"
+                title="Presale iframe"
+              />
+            </IframeWrapper>
           </div>
         </div>
       </div>
