@@ -82,7 +82,7 @@ const Hero: React.FC = () => {
                   overflow: 'hidden'
                 }}
                 allow="clipboard-write"
-                src="https://pay.radom.com/presale/806ea959-b589-4964-aa76-b5549a53ebcb"
+                src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
                 title="Presale iframe"
               />
             </IframeWrapper>
