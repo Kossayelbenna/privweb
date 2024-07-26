@@ -166,7 +166,7 @@ function Navbar() {
                 className="w-6 h-6"
               />
               <div className="flex gap-2">
-                <a href="https://t.me/yourchannel" target="_blank" rel="noopener noreferrer">
+                <a href="https://t.me/+4__dZjnbjKY0Nzlk" target="_blank" rel="noopener noreferrer">
                   <BsTelegram className="w-6 h-6 text-white" />
                 </a>
                 <a href="https://discord.com/invite/yourserver" target="_blank" rel="noopener noreferrer">
@@ -174,9 +174,6 @@ function Navbar() {
                 </a>
                 <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
                   <BsTwitter className="w-6 h-6 text-white" />
-                </a>
-                <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                  <BsInstagram className="w-6 h-6 text-white" />
                 </a>
               </div>
             </div>
