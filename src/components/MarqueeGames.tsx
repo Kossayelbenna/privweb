@@ -14,71 +14,71 @@ const images = [
     src: "/images/carosel/P-_1_.webp",
     description: {
       fr: "Univers Multijoueur : Une aventure sans limites",
-      en: "Multiplayer Universe: Limitless Adventure"
+      en: "Multiplayer Metaverse Map: Limitless Adventure"
     },
   },
   {
     src: "/images/carosel/P (2) (1).webp",
     description: {
-      fr: "Lobby Légendaire : Préparez-vous au combat",
-      en: "Legendary Lobby: Gear Up for Battle"
+      fr: "Formez votre équipe et dominez le champ de bataille",
+      en: "Squad up and dominate the battlefield"
     },
   },
   {
     src: "/images/carosel/P-_3_.webp",
     description: {
-      fr: "Folie Cartoon : La bataille commence !",
-      en: "Cartoon Mayhem: Let the Battle Begin!"
+      fr: "Rassemblez votre équipe ! Que la bataille commence !",
+      en: "Assemble your team! Let the Battle Begin!"
     },
   },
   {
     src: "/images/carosel/p 4.webp",
     description: {
-      fr: "Duel des Héros : Choisissez votre champion",
+      fr: "Combats de la galaxie               ",
       en: "Fights of the galaxy"
     },
   },
   {
     src: "/images/carosel/P (5).webp",
     description: {
-      fr: "Sports Extrêmes : Défiez les limites",
+      fr: " Basketball complet, Plus qu'un simple jeu",
       en: "Full min Basketball , More than just a game"
     },
   },
   {
     src: "/images/carosel/P (6).webp",
     description: {
-      fr: "Équipe de Choc : La victoire en vue",
-      en: "Dream Team: Victory in Sight"
+      fr: "Rejoignez votre équipe pour le basketball !",
+      en: "Join your squad for basketball!"
     },
   },
  
   {
     src: "/images/carosel/p-_8_.webp",
     description: {
-      fr: "Anime Arena : L'ultime confrontation",
+      fr: " Anime Arena : L'ultime confrontation",
       en: "Anime Arena: The Ultimate Showdown"
     },
   },
   {
     src: "/images/carosel/P-_9_.webp",
     description: {
-      fr: "Soccer Suprême : Marquez l'histoire",
+      fr: "Servez la victoire dans une action de tennis réaliste !      ",
       en: "Gear up for the BATTLE"
     },
   },
   {
     src: "/images/carosel/P-_11_.webp",
     description: {
-      fr: "Ninja Nocturne : Dans l'ombre du dragon",
-      en: "Night Ninja: In the Dragon's Shadow"
+      fr: "  Choisissez votre champion et battez-vous",
+      en: "Serve up victory in realistic tennis action!"
     },
   },
   {
     src: "/images/carosel/pp-_2_.webp",
     description: {
       fr: "Baseball Pro : Frappez un coup de circuit",
-      en: "Pro Baseball: Hit It Out of the Park"
+      en: "Choose your champion! and fight"
     },
   },
   
