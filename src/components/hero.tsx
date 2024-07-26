@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
               </IframeWrapper>
               <div className="text-center mt-4 mx-auto max-w-[90%] space-y-3">
   <div className="text-sm md:text-base font-medium text-white bg-purple-800/20 border border-purple-500/50 rounded-lg p-3">
-    <span className="text-purple-400 font-bold">Presale is live:</span> An opportunity for early investors before price skyrockets!
+    <span className="text-purple-400 font-bold"> Over $20,000 raised |</span> Presale just started today! Join early investors before price increases!
   </div>
   <div className="text-xs md:text-sm text-gray-300 bg-gray-800/30 border border-gray-700/50 rounded-lg p-3">
     $DOGE VISION is multichain: You can buy using Solana, Ethereum, Base, BNB, Polygon and other cryptocurrencies.
