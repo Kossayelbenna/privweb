@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
     <span className="text-purple-400 font-bold"> Over $20,000 raised |</span> Presale just started today! Join early investors before price increases!
   </div>
   <div className="text-xs md:text-sm text-gray-300 bg-gray-800/30 border border-gray-700/50 rounded-lg p-3">
-    $DOGE VISION is multichain: You can buy using Solana, Ethereum, Base, BNB, Polygon and other cryptocurrencies.
+    $DOGE VISION is multichain: You can buy using Solana, Ethereum, Base, BNB, Busd, Usdc, Usdt, Polygon, Tron, and Bitcoin in different chains.
   </div>
 </div>
           </div>
