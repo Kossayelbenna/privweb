@@ -766,6 +766,12 @@ video {
 .mt-\[100px\] {
   margin-top: 100px;
 }
+.-mb-8 {
+  margin-bottom: -2rem;
+}
+.-mb-12 {
+  margin-bottom: -3rem;
+}
 .block {
   display: block;
 }
@@ -857,6 +863,36 @@ video {
 .h-min {
   height: min-content;
 }
+.h-\[600px\] {
+  height: 600px;
+}
+.h-\[595px\] {
+  height: 595px;
+}
+.h-\[680px\] {
+  height: 680px;
+}
+.h-\[800\] {
+  height: 800;
+}
+.h-\[850px\] {
+  height: 850px;
+}
+.h-\[698px\] {
+  height: 698px;
+}
+.h-\[697px\] {
+  height: 697px;
+}
+.h-\[695px\] {
+  height: 695px;
+}
+.h-\[693px\] {
+  height: 693px;
+}
+.h-\[694px\] {
+  height: 694px;
+}
 .max-h-0 {
   max-height: 0px;
 }
@@ -941,6 +977,12 @@ video {
 .w-full {
   width: 100%;
 }
+.w-\[445px\] {
+  width: 445px;
+}
+.w-\[440px\] {
+  width: 440px;
+}
 .min-w-24 {
   min-width: 6rem;
 }
@@ -967,6 +1009,12 @@ video {
 }
 .max-w-lg {
   max-width: 32rem;
+}
+.max-w-\[80\%\] {
+  max-width: 80%;
+}
+.max-w-\[90\%\] {
+  max-width: 90%;
 }
 .flex-none {
   flex: none;
@@ -1163,6 +1211,11 @@ video {
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1247,6 +1300,12 @@ video {
 .border-gray-100\/30 {
   border-color: rgb(243 244 246 / 0.3);
 }
+.border-purple-500\/50 {
+  border-color: rgb(168 85 247 / 0.5);
+}
+.border-gray-700\/50 {
+  border-color: rgb(55 65 81 / 0.5);
+}
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1289,6 +1348,12 @@ video {
 }
 .bg-white\/30 {
   background-color: rgb(255 255 255 / 0.3);
+}
+.bg-purple-800\/20 {
+  background-color: rgb(107 33 168 / 0.2);
+}
+.bg-gray-800\/30 {
+  background-color: rgb(31 41 55 / 0.3);
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -1482,6 +1547,9 @@ video {
 .font-semibold {
   font-weight: 600;
 }
+.font-medium {
+  font-weight: 500;
+}
 .leading-7 {
   line-height: 1.75rem;
 }
@@ -1502,6 +1570,14 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-purple-400 {
+  --tw-text-opacity: 1;
+  color: rgb(192 132 252 / var(--tw-text-opacity));
+}
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 .opacity-0 {
   opacity: 0;
@@ -1977,6 +2053,11 @@ html {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 

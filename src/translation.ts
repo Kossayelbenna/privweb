@@ -33,8 +33,8 @@ export const translation = {
       section2: {
         head: "DOGE VISION",
         description: [
-          "Versatile Multichain Token The DOGE VISION Token is at the heart of our ecosystem, designed to be multichain and highly versatile. It facilitates instant bridging between Ethereum and DOGE VISION, offering unparalleled flexibility and usability.",
-          "Enjoy low transaction fees, high-speed transactions, and the security of the Ethereum blockchain, all powered by the DOGE VISION Token. This groundbreaking project is now launched, revolutionizing the industry and taking it to the next level.",
+          "DOGE VISION is pioneering the world's first Layer 3 blockchain, creating a multichain ecosystem that leverages superior bridging technology. Our innovative platform seamlessly connects with the most active blockchains outside of Bitcoin, offering unparalleled interoperability and versatility.",
+          "At the heart of our ecosystem, the DOGE VISION Token enables instant bridging across multiple chains, providing users with exceptional flexibility and usability. Experience the benefits of low transaction fees, high-speed operations, and robust security, all powered by cutting-edge blockchain technology.",
         ],
         title: "Doge is Multichain !",
         action: "Learn More",

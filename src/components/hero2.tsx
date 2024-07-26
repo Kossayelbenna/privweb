@@ -34,7 +34,7 @@ const Hero2: React.FC = () => {
                   # The blockchain revolution ! <br />
                 </h2>
                 <p className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed">
-                Doge Vision, the first Layer 3 blockchain built specifically for Doge, revolutionizes the crypto landscape with unparalleled Speed, robust Security, and incredibly Low Fees. Engineered for real utility, Doge Vision's innovative multichain ecosystem seamlessly integrates Games, NFTs, and the #1 streaming platform in the blockchain world.                 </p>
+                Doge Vision, The First Layer 3 blockchain built specifically for Doge, revolutionizes the crypto landscape with unparalleled Speed, robust Layer3 Security, and UP to 100x Lower Fees than ETH. Engineered for real utility, Doge Vision's innovative multichain ecosystem seamlessly integrates Games, NFTs, and the #1 streaming platform in the blockchain world.                 </p>
               </div>
               <div className="mt-12">
                 <h5 className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed font-bold">

@@ -16,7 +16,7 @@ interface IframeWrapperProps {
 }
 
 const IframeWrapper: React.FC<IframeWrapperProps> = ({ children }) => (
-  <div className="relative overflow-hidden rounded-[25px] w-[455px] h-[679px] mt-16">
+  <div className="relative overflow-hidden rounded-[25px] w-[440px] h-[679px] mt-16">
     <div className="relative z-10 w-full h-full">
       {children}
     </div>
@@ -72,6 +72,7 @@ const Hero: React.FC = () => {
             <div className="flex justify-center items-center">  
               
             </div>
+            
             <IframeWrapper>
               <iframe
                 className="w-full h-full rounded-[20px]"
@@ -87,6 +88,14 @@ const Hero: React.FC = () => {
                 scrolling="no"
               />
               </IframeWrapper>
+              <div className="text-center mt-4 mx-auto max-w-[90%] space-y-3">
+  <div className="text-sm md:text-base font-medium text-white bg-purple-800/20 border border-purple-500/50 rounded-lg p-3">
+    <span className="text-purple-400 font-bold">Presale is live:</span> An opportunity for early investors before price skyrockets!
+  </div>
+  <div className="text-xs md:text-sm text-gray-300 bg-gray-800/30 border border-gray-700/50 rounded-lg p-3">
+    $DOGE VISION is multichain: You can buy using Solana, Ethereum, Base, BNB, Polygon and other cryptocurrencies.
+  </div>
+</div>
           </div>
         </div>
       </div>

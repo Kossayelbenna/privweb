@@ -7,6 +7,19 @@ import { inter } from "@/fonts";
 import { Wallet, CreditCard, Coins, Banknote } from "lucide-react";  // Importez ces icônes de lucide-react
 
 
+interface IframeWrapperProps {
+  children: React.ReactNode;
+}
+
+const IframeWrapper: React.FC<IframeWrapperProps> = ({ children }) => (
+  <div className="relative overflow-hidden rounded-[25px] w-[440px] h-[694px] ">
+    <div className="relative z-10 w-full h-full">
+      {children}
+    </div>
+  </div>
+);
+
+
 const HowToBuy = () => {
   
   const locale = useLocale();
@@ -101,13 +114,15 @@ const HowToBuy = () => {
             );
           })}
         </div>
-        <div className="flex flex-col items-center scale-70">
+        <div className="flex flex-col items-center scale-70 rounded-[20px]">
+        <IframeWrapper>
           <iframe
-            className="lg:w-[450px] w-full h-[750px] md:-mt-12"
+            className="lg:w-[450px] w-full h-[850px] md:-mt-12 "
             allow="clipboard-write"
-            style={{ transform: 'scale(0.85)' }}
+            style={{ transform: 'scale(1)' }}
             src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
             ></iframe>
+            </IframeWrapper>
         </div>
       </div>
     </div>
