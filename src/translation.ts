@@ -24,7 +24,7 @@ export const translation = {
         head: "DOGE VISION",
         title: "Games, NFTs, and Streaming Platform",
         description: [
-          "Layer 3's first-ever blockchain integrating Web3 games, NFTs, and the world's first decentralized streaming platform. Immersive Games and Metaverse Dive into a world of innovative Web3 games and metaverse experiences. DogeVision integrates fully with NFTs and blockchain technology, offering users an immersive and interactive entertainment environment.",
+          "Doge Vision is the first Layer 3 blockchain integrating Web3 games, NFTs, and the world's first decentralized streaming platform. Immersive Games and Metaverse Dive into a world of innovative Web3 games and metaverse experiences. DogeVision integrates fully with NFTs and blockchain technology, offering users an immersive and interactive entertainment environment.",
           "The World's First Streaming Platform! Access the world's first decentralized streaming platform, providing an exceptional rewarding system for streamers and a user-friendly experience. DogeVision combines the best of digital entertainment with blockchain benefits.",
         ],
         action: "Learn More",
@@ -36,7 +36,7 @@ export const translation = {
           "Versatile Multichain Token The DOGE VISION Token is at the heart of our ecosystem, designed to be multichain and highly versatile. It facilitates instant bridging between Ethereum and DOGE VISION, offering unparalleled flexibility and usability.",
           "Enjoy low transaction fees, high-speed transactions, and the security of the Ethereum blockchain, all powered by the DOGE VISION Token. This groundbreaking project is now launched, revolutionizing the industry and taking it to the next level.",
         ],
-        title: "Multichain Token",
+        title: "Doge is Multichain !",
         action: "Learn More",
       },
       section3: {

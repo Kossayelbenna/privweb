@@ -16,8 +16,7 @@ interface IframeWrapperProps {
 }
 
 const IframeWrapper: React.FC<IframeWrapperProps> = ({ children }) => (
-  <div className="relative overflow-hidden rounded-[25px] w-[455px] h-[675px] mt-16">
-    <BorderBeam />
+  <div className="relative overflow-hidden rounded-[25px] w-[455px] h-[679px] mt-16">
     <div className="relative z-10 w-full h-full">
       {children}
     </div>

@@ -99,17 +99,14 @@ function Navbar() {
               />
               {/* Social Media Icons */}
               <div className="gap-2 hidden md:flex">
-                <a href="https://t.me/yourchannel" target="_blank" rel="noopener noreferrer">
+                <a href="https://t.me/+FbXXL-n8xkYyMWJk" target="_blank" rel="noopener noreferrer">
                   <BsTelegram className="w-6 h-6 text-white" />
                 </a>
-                <a href="https://discord.com/invite/yourserver" target="_blank" rel="noopener noreferrer">
+                <a href="https://discord.gg/xEydn77j" target="_blank" rel="noopener noreferrer">
                   <BsDiscord className="w-6 h-6 text-white" />
                 </a>
-                <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/x54412" target="_blank" rel="noopener noreferrer">
                   <BsTwitter className="w-6 h-6 text-white" />
-                </a>
-                <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                  <BsInstagram className="w-6 h-6 text-white" />
                 </a>
               </div>
             </div>

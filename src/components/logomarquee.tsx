@@ -9,7 +9,7 @@ function LogoMarquee() {
     <div className="relative max-w-screen overflow-x-clip py-1">
       {/* Title Section */}
       <div className="text-center py-4">
-        <h1 className="text-4xl font-bold">Upcoming listing and collaboration</h1>
+        <h1 className="text-4xl font-bold">Upcoming Listings and Collaborations</h1>
       </div>
 
       {/* Marquee Section */}

@@ -34,13 +34,11 @@ const Hero2: React.FC = () => {
                   # The blockchain revolution ! <br />
                 </h2>
                 <p className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed">
-                  DOGE VISION is pioneering the first gaming ecosystem on a layer 3 blockchain. Our platform boasts lower transaction fees and operates within a multichain ecosystem, integrating games, NFTs, and a streaming platform. Dive into an immersive world of Web3 games and metaverse experiences, fully leveraging NFTs and blockchain technology.
-                </p>
+                Doge Vision, the first Layer 3 blockchain built specifically for Doge, revolutionizes the crypto landscape with unparalleled Speed, robust Security, and incredibly Low Fees. Engineered for real utility, Doge Vision's innovative multichain ecosystem seamlessly integrates Games, NFTs, and the #1 streaming platform in the blockchain world.                 </p>
               </div>
               <div className="mt-12">
                 <h5 className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed font-bold">
-                  Building The First Gaming & streaming Ecosystem In The World's First LAYER 3 BLOCKCHAIN!
-                </h5>
+                Pioneering the Future The DOGE's LAYER 3 BLOCKCHAIN Powering an Unrivaled Gaming & Streaming Ecosystem!                </h5>
                 <div className="flex items-center space-x-4">
                   <ul className="flex flex-wrap gap-4">
                     {['01', '02', '03', '04', '05', '06'].map((num) => (
