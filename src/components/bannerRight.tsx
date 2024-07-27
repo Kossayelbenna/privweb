@@ -23,7 +23,7 @@ const DogeVisionBanner: React.FC = () => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.1,
+        delay: i * 0.07,
       },
     }),
     exit: { opacity: 1, y: -130 },
