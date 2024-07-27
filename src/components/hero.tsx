@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
             <div className="flex justify-center items-center">  
               
             </div>
-            <div className="flex justify-center space-x-6 -mb-12 z-10 relative">
+            <div className="flex justify-center space-x-6 -mb-8 z-10 relative">
               <a 
                 href="/Layer%203/WhitePaper.pdf" 
                 target="_blank" 

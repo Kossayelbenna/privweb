@@ -57,8 +57,8 @@ const DogeVisionBanner: React.FC = () => {
   We're not just going to the moon – we're building a new universe with DOGE community!
 </div>
 
-<a href="#" className="mt-6 bg-white text-black font-bold text-xl md:text-2xl py-4 px-10 rounded-full inline-block hover:bg-purple-700 hover:text-white transition duration-300">
-  Join the Doge Revolution!
+<a href="#about" className="mt-6 bg-white text-black font-bold text-xl md:text-2xl py-4 px-10 rounded-full inline-block hover:bg-purple-700 hover:text-white transition duration-300">
+Join the Doge Revolution!
 </a>
 
 
