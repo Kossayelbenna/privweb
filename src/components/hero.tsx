@@ -53,6 +53,7 @@ const Hero: React.FC = () => {
         <h1 className="text-2xl md:text-4xl font-extrabold text-center max-w-2xl font-display mb-16">
           <span>{tr("title")[0]}</span>
         </h1>
+        
       </div>
 
       <div className="relative w-full max-w-[1500px] mx-auto px-2 lg:px-0 ">
@@ -72,7 +73,24 @@ const Hero: React.FC = () => {
             <div className="flex justify-center items-center">  
               
             </div>
-            
+            <div className="flex justify-center space-x-6 -mb-12 z-10 relative">
+              <a 
+                href="/Layer%203/WhitePaper.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline"
+              >
+                Whitepaper
+              </a>
+              <a 
+                href="https://etherscan.io/token/0x0c5ae0f398e753b9e6b4949f86f6ac3accf20309" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline"
+              >
+                Audit
+              </a>
+            </div>
             <IframeWrapper>
               <iframe
                 className="w-full h-full rounded-[20px]"
@@ -81,6 +99,7 @@ const Hero: React.FC = () => {
                   border: 0,
                   overflow: 'hidden'
                 }}
+                
                 allow="clipboard-write"
                 style={{ transform: 'scale(1)' }}
                 src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
@@ -89,24 +108,24 @@ const Hero: React.FC = () => {
               />
               </IframeWrapper>
               <div className="text-center mt-4 mx-auto max-w-[90%] space-y-3">
-  <div className="text-sm md:text-base font-medium text-white bg-purple-800/20 border border-purple-500/50 rounded-lg p-3">
-    <span className="text-purple-400 font-bold"> Over $20,000 raised |</span> Presale just started today! Join early investors before price increases!
-  </div>
-  <div className="text-xs md:text-sm text-gray-300 bg-gray-800/30 border border-gray-700/50 rounded-lg p-4 flex flex-col md:flex-row justify-between items-center">
-  <span className="mb-2 md:mb-0">
-    $DOGE VISION is multichain: Buy using Solana, Ethereum, Base, BNB, BUSD, USDC, USDT, Polygon, Tron, and Bitcoin on different chains.
-  </span>
-  <a 
-    href="#how-to-buy" 
-    className="text-purple-400 font-semibold hover:text-purple-300 transition-colors duration-300 flex items-center"
-  >
-    HOW TO BUY? 
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-    </svg>
-  </a>
-</div>
-</div>
+              <div className="text-sm md:text-base font-medium text-white bg-purple-800/20 border border-purple-500/50 rounded-lg p-3">
+                <span className="text-purple-400 font-bold"> Over $20,000 raised |</span> Presale just started today! Join early investors before price increases!
+              </div>
+              <div className="text-xs md:text-sm text-gray-300 bg-gray-800/30 border border-gray-700/50 rounded-lg p-4 flex flex-col md:flex-row justify-between items-center">
+              <span className="mb-2 md:mb-0">
+                $DOGE VISION is multichain: Buy using Solana, Ethereum, Base, BNB, BUSD, USDC, USDT, Polygon, Tron, and Bitcoin on different chains.
+              </span>
+              <a 
+                href="#how-to-buy" 
+                className="text-purple-400 font-semibold hover:text-purple-300 transition-colors duration-300 flex items-center"
+              >
+                HOW TO BUY? 
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            </div>
           </div>
         </div>
       </div>

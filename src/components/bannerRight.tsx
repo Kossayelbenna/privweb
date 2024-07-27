@@ -61,24 +61,7 @@ const DogeVisionBanner: React.FC = () => {
   Join the Doge Revolution!
 </a>
 
-<div className="mt-4 flex pl-28 space-x-6">
-  <a 
-    href="https://etherscan.io/token/0x0c5ae0f398e753b9e6b4949f86f6ac3accf20309" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300"
-  >
-    Audit
-  </a>
-  <a 
-    href="/Layer%203/WhitePaper.pdf" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300"
-  >
-    Whitepaper
-  </a>
-</div>
+
 </div>
 
   );
