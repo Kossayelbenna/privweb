@@ -16,7 +16,7 @@ interface IframeWrapperProps {
 }
 
 const IframeWrapper: React.FC<IframeWrapperProps> = ({ children }) => (
-  <div className="relative overflow-hidden rounded-[25px] w-[440px] h-[679px] mt-16">
+  <div className="relative overflow-hidden rounded-[25px] w-[380px] h-[679px] md:w-[440px]   mt-16">
     <div className="relative z-10 w-full h-full">
       {children}
     </div>
@@ -109,7 +109,7 @@ const Hero: React.FC = () => {
               </IframeWrapper>
               <div className="text-center mt-4 mx-auto max-w-[90%] space-y-3">
               <div className="text-sm md:text-base font-medium text-white bg-purple-800/20 border border-purple-500/50 rounded-lg p-3">
-                <span className="text-purple-400 font-bold"> Over $20,000 raised |</span> Presale just started today! Join early investors before price increases!
+                <span className="text-purple-400 font-bold"> Over $20,000 raised |</span> Presale just started! Join early investors before price increases!
               </div>
               <div className="text-xs md:text-sm text-gray-300 bg-gray-800/30 border border-gray-700/50 rounded-lg p-4 flex flex-col md:flex-row justify-between items-center">
               <span className="mb-2 md:mb-0">

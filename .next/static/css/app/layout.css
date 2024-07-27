@@ -974,6 +974,9 @@ video {
 .w-full {
   width: 100%;
 }
+.w-\[380px\] {
+  width: 380px;
+}
 .min-w-24 {
   min-width: 6rem;
 }
@@ -2052,6 +2055,10 @@ html {
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:w-\[440px\] {
+    width: 440px;
   }
 
   .md\:max-w-\[1200px\] {
