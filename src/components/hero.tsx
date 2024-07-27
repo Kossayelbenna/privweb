@@ -92,9 +92,20 @@ const Hero: React.FC = () => {
   <div className="text-sm md:text-base font-medium text-white bg-purple-800/20 border border-purple-500/50 rounded-lg p-3">
     <span className="text-purple-400 font-bold"> Over $20,000 raised |</span> Presale just started today! Join early investors before price increases!
   </div>
-  <div className="text-xs md:text-sm text-gray-300 bg-gray-800/30 border border-gray-700/50 rounded-lg p-3">
-    $DOGE VISION is multichain: You can buy using Solana, Ethereum, Base, BNB, Busd, Usdc, Usdt, Polygon, Tron, and Bitcoin in different chains.
-  </div>
+  <div className="text-xs md:text-sm text-gray-300 bg-gray-800/30 border border-gray-700/50 rounded-lg p-4 flex flex-col md:flex-row justify-between items-center">
+  <span className="mb-2 md:mb-0">
+    $DOGE VISION is multichain: Buy using Solana, Ethereum, Base, BNB, BUSD, USDC, USDT, Polygon, Tron, and Bitcoin on different chains.
+  </span>
+  <a 
+    href="#how-to-buy" 
+    className="text-purple-400 font-semibold hover:text-purple-300 transition-colors duration-300 flex items-center"
+  >
+    HOW TO BUY? 
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+</div>
 </div>
           </div>
         </div>
