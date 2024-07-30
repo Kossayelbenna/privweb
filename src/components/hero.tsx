@@ -70,7 +70,7 @@ const Hero = () => {
         </div>
 
         {/* Right side - Radom app */}
-        <div className="md:w-[50%] flex flex-col items-end -mt-16 " >
+        <div className=" w-full md:w-[50%] flex flex-col items-end -mt-16 " >
           <div className="flex justify-end space-x-4 mb-4">
             <a href="/Layer%203/WhitePaper.pdf" target="_blank" rel="noopener noreferrer" 
                className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
