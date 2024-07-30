@@ -99,13 +99,13 @@ function Navbar() {
               />
               {/* Social Media Icons */}
               <div className="gap-2 hidden md:flex">
-                <a href="https://t.me/+4__dZjnbjKY0Nzlk" target="_blank" rel="noopener noreferrer">
+                <a href="https://t.me/Dogeuniversepresale" target="_blank" rel="noopener noreferrer">
                   <BsTelegram className="w-6 h-6 text-white" />
                 </a>
                 <a href="https://discord.gg/xEydn77j" target="_blank" rel="noopener noreferrer">
                   <BsDiscord className="w-6 h-6 text-white" />
                 </a>
-                <a href="https://twitter.com/x54412" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/doge_vision" target="_blank" rel="noopener noreferrer">
                   <BsTwitter className="w-6 h-6 text-white" />
                 </a>
               </div>

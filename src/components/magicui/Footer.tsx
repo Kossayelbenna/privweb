@@ -133,13 +133,13 @@ const Footer: React.FC = () => {
           </ul>
         </FooterNav>
         <SocialIcons>
-          <SocialIcon href="https://t.me/+4__dZjnbjKY0Nzlk" target="_blank" rel="noopener noreferrer">
+          <SocialIcon href="https://t.me/Dogeuniversepresale" target="_blank" rel="noopener noreferrer">
             <BsTelegram />
           </SocialIcon>
           <SocialIcon href="https://discord.gg/xEydn77j" target="_blank" rel="noopener noreferrer">
             <BsDiscord />
           </SocialIcon>
-          <SocialIcon href="https://twitter.com/x54412" target="_blank" rel="noopener noreferrer">
+          <SocialIcon href="https://twitter.com/doge_vision" target="_blank" rel="noopener noreferrer">
             <BsTwitter />
           </SocialIcon>
         </SocialIcons>
