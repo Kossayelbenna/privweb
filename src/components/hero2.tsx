@@ -3,6 +3,7 @@ import { useTranslator } from "@/lib/use-translator";
 import { cn } from "@/lib/utils";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { CPU } from "@/components/cpu";
+import BannerRight from "@/components/bannerRight";
 
 const Hero2: React.FC = () => {
   const tr = useTranslator();
@@ -22,48 +23,16 @@ const Hero2: React.FC = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 -mt-8 sm:mt-4 md:mt-4 md:grid-cols-2 gap-4 max-w-[1500px] mx-auto place-items-center px-2 lg:px-0 my-14">
-        <div className="mt-28">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1500px] mx-auto place-items-center px-2 lg:px-0 my-14">
+        <div className="order-2 md:order-1">
           <CPU />
         </div>
-        <div className="flex flex-col w-full scale-20">
-          <div className="w-full p-8">
-            <div className="text-white">
-              <div className="mb-8 mt-[100px]">
-                <h2 className="text-4xl -mt-32 sm:mt-4 md:mt-4 md:text-6xl font-extrabold text-balance">
-                  # The Blockchain Revolution ! <br />
-                </h2>
-                <p className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed">
-                Doge Vision, The First Layer 3 blockchain built for Doge, revolutionizes the crypto landscape with unparalleled Speed, robust Layer3 Security, and UP to 100x Lower Fees than ETH. Engineered for real utility, Doge Vision's innovative multichain ecosystem seamlessly integrates Games, NFTs, and the #1 streaming platform in the blockchain world.                 </p>
-              </div>
-              <div className="mt-12">
-                <h5 className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed font-bold">
-                Pioneering the Future The DOGE's LAYER 3 BLOCKCHAIN Powering an Unrivaled Gaming & Streaming Ecosystem!                </h5>
-                <div className="flex items-center space-x-4">
-                  <ul className="flex flex-wrap gap-4">
-                    {['01', '02', '03', '04', '05', '06'].map((num) => (
-                      <li key={num}>
-                        <a href="#" className={`icon-logo-${num} text-3xl`}>
-                          {num === '05' && (
-                            <>
-                              <span className="path1"></span>
-                              <span className="path2"></span>
-                              <span className="path3"></span>
-                              <span className="path4"></span>
-                            </>
-                          )}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="order-1 md:order-2 w-full">
+          <BannerRight />
         </div>
       </div>
 
-      <div className="relative flex flex-col pt-5 pb-20 max-w-[1200px] mx-auto -mt-12 -mb-16">
+      <div className="relative flex flex-col pt-5 pb-20 max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-3 lg:px-0 mt-5 sm:my-5 gap-3">
           {featuresTop.map((feature, idx) => (
             <FeatureBox key={idx} feature={feature} index={idx} />
@@ -84,3 +53,57 @@ const Hero2: React.FC = () => {
 }
 
 export default React.memo(Hero2);
+
+ {/*<div className="flex flex-col w-full scale-20">
+          <div className="w-full p-8">
+          <div className="text-white">
+            <div className="mb-8 mt-[100px]">
+              <h2 className="text-4xl -mt-32 sm:mt-4 md:mt-4 md:text-6xl font-extrabold text-balance">
+                # The Blockchain Revolution ! <br />
+              </h2>
+              <p className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed">
+              Doge Vision, The First Layer 3 blockchain built for Doge, revolutionizes the crypto landscape with unparalleled Speed, robust Layer3 Security, and UP to 100x Lower Fees than ETH. Engineered for real utility, Doge Vision's innovative multichain ecosystem seamlessly integrates Games, NFTs, and the #1 streaming platform in the blockchain world.                 </p>
+            </div>
+            <div className="mt-12">
+              <h5 className="text-xl mt-4 mb-8 max-w-[500px] leading-relaxed font-bold">
+              Pioneering the Future The DOGE's LAYER 3 BLOCKCHAIN Powering an Unrivaled Gaming & Streaming Ecosystem!                </h5>
+              <div className="flex items-center space-x-4">
+                <ul className="flex flex-wrap gap-4">
+                  {['01', '02', '03', '04', '05', '06'].map((num) => (
+                    <li key={num}>
+                      <a href="#" className={`icon-logo-${num} text-3xl`}>
+                        {num === '05' && (
+                          <>
+                            <span className="path1"></span>
+                            <span className="path2"></span>
+                            <span className="path3"></span>
+                            <span className="path4"></span>
+                          </>
+                        )}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="relative flex flex-col pt-5 pb-20 max-w-[1200px] mx-auto -mt-12 -mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-3 lg:px-0 mt-5 sm:my-5 gap-3">
+        {featuresTop.map((feature, idx) => (
+          <FeatureBox key={idx} feature={feature} index={idx} />
+        ))}
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_1fr_350px_350px_1fr_1fr] px-3 lg:px-0 mt-3 sm:mt-5 gap-3 mb-16">
+        <div className="hidden md:block"></div>
+        <div className="hidden md:block"></div>
+        {featuresBottom.map((feature, idx) => (
+          <FeatureBox key={idx} feature={feature} index={idx + 3} />
+        ))}
+        <div className="hidden md:block"></div>
+        <div className="hidden md:block"></div>
+      </div>
+    </div> */}

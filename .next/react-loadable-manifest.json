@@ -407,6 +407,7 @@
   "app\\[locale]\\page.tsx -> @/components/hero2": {
     "id": "app\\[locale]\\page.tsx -> @/components/hero2",
     "files": [
+      "static/chunks/vendor.js",
       "static/chunks/common.js",
       "static/chunks/_app-pages-browser_src_components_hero2_tsx.js"
     ]
@@ -452,11 +453,15 @@
   },
   "components\\MarqueeGames.tsx -> ./magicui/marquee": {
     "id": "components\\MarqueeGames.tsx -> ./magicui/marquee",
-    "files": []
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_magicui_marquee_tsx.js"
+    ]
   },
   "components\\logomarquee.tsx -> ./magicui/marquee": {
     "id": "components\\logomarquee.tsx -> ./magicui/marquee",
-    "files": []
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_magicui_marquee_tsx.js"
+    ]
   },
   "components\\magicui\\Footer.tsx -> ./Footer": {
     "id": "components\\magicui\\Footer.tsx -> ./Footer",
@@ -471,6 +476,7 @@
   "components\\textImagesSection.tsx -> ./pargraphText": {
     "id": "components\\textImagesSection.tsx -> ./pargraphText",
     "files": [
+      "static/chunks/vendor.js",
       "static/chunks/_app-pages-browser_src_components_pargraphText_tsx.js"
     ]
   }

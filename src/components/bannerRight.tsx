@@ -23,7 +23,7 @@ const DogeVisionBanner: React.FC = () => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.07,
+        delay: i * 0.08,
       },
     }),
     exit: { opacity: 1, y: -130 },
@@ -32,7 +32,7 @@ const DogeVisionBanner: React.FC = () => {
   return (
     <div className="w-full p-8 text-white hidden sm:block mb-0">
       <div className="text-2xl md:text-6xl font-bold text-white mb-4" style={{ lineHeight: '1.3' }}>
-        The World's First Layer 3 Blockchain, Integrating 
+        The world's first Layer 3 blockchain, Integrating 
       </div>
 
       <div className="h-24 md:h-32 lg:h-48 mb-6 md:mb-12"> 
@@ -52,18 +52,14 @@ const DogeVisionBanner: React.FC = () => {
           </motion.h3>
         </AnimatePresence>
       </div>
-     
-<div className="text-2xl md:text-xl font-bold text-white mt-2">
-  We're not just going to the moon – we're building a new universe with DOGE community!
-</div>
+      <div className="text-2xl md:text-xl font-bold text-white mt-2">
+        We're not just going to the moon – we're building a new universe with DOGE community! 
+      </div>
 
-<a href="#about" className="mt-6 bg-white text-black font-bold text-xl md:text-2xl py-4 px-10 rounded-full inline-block hover:bg-purple-700 hover:text-white transition duration-300">
-Join the Doge Revolution!
-</a>
-
-
-</div>
-
+      <a href="#" className="mt-6 bg-white text-black font-bold text-xl md:text-2xl py-4 px-10 rounded-full inline-block hover:bg-purple-700 transition duration-300">
+        Join the Doge Revolution!
+      </a>
+    </div>
   );
 };
 
