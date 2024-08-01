@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from 'next/image';
-import { motion } from "framer-motion";
 import { useTranslator } from "@/lib/use-translator";
 
 const IframeWrapper = ({ children }) => (
@@ -23,7 +22,6 @@ const Hero = () => {
   ];
 
   return (
-    
     <main className="relative min-h-screen overflow-hidden">
       <div className="md:hidden ">
         <Image
@@ -34,7 +32,6 @@ const Hero = () => {
           width={500}
           height={500}
           className="w-full h-auto"
-          
         />
       </div>
       
@@ -45,8 +42,6 @@ const Hero = () => {
           backgroundImage: 'url(/images/bc.png)', 
           maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0))',
           WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0))'
-          
-
         }}
       />
       
@@ -55,12 +50,7 @@ const Hero = () => {
         <div className="w-full flex flex-col md:flex-row justify-between items-start">
           {/* Left side - Title and content */}
           <div className="w-full md:w-[30%] mb-8 md:mb-0">
-            <motion.div 
-              className="bg-black/80 rounded-2xl p-6 backdrop-blur-md border border-purple-500/50"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <div className="bg-black/80 rounded-2xl p-6 backdrop-blur-md border border-purple-500/50">
               <h1 className="text-3xl md:text-4xl font-bold mb-2 text-white">
                 DOGE NOW HAS HIS OWN
               </h1>
@@ -86,19 +76,22 @@ const Hero = () => {
               <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:from-purple-600 hover:to-pink-600 transition-colors">
                 Join the Doge Revolution!
               </button>
-            </motion.div>
+            </div>
           </div>
 
           {/* Right side - Radom app */}
           <div className="w-full md:w-[50%] flex flex-col items-end mt-8 md:-mt-16">
-            <div className="flex justify-end space-x-4 mb-4">
-              <a href="/Layer%203/WhitePaper.pdf" target="_blank" rel="noopener noreferrer" 
-                 className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
+         < div className="flex justify-center items-center space-x-6 mb-4 text-center ">
+              <a href="/public/Docs/WhitePaper.pdf" target="_blank" rel="noopener noreferrer"
+                className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
                 Whitepaper
               </a>
-              <a href="https://etherscan.io/token/0x0c5ae0f398e753b9e6b4949f86f6ac3accf20309" target="_blank" rel="noopener noreferrer" 
-                 className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
+              <a href="https://etherscan.io/token/0x0c5ae0f398e753b9e6b4949f86f6ac3accf20309" target="_blank" rel="noopener noreferrer"
+                className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
                 Audit
+              </a>
+              <a href="/Layer%203/Smartcontract_Audit_Solidproof_DogeVision.pdf" target="_blank" rel="noopener noreferrer">
+                <img src="/Layer%203/logo_shield_text_white.png" alt="Logo" className="h-10 w-auto" />
               </a>
             </div>
             <IframeWrapper>
@@ -116,7 +109,7 @@ const Hero = () => {
       </div>
 
       {/* Separated text sections */}
-      <div className="relative z-10 w-full bg-gradient-to-b from-transparent to-purple-900">
+      <div className="relative z-10 w-full bg-gradient-to-b to-transparent">
         <div className="max-w-[1600px] mx-auto px-4 py-6">
           <div className="text-center text-white mb-4">
             <p className="text-xl font-bold">

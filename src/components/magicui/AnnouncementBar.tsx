@@ -1,38 +1,17 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-
-const announcements = [
-  "DOGE Layer 3 blockchain released",
-  "The first blockchain integrating games, NFTs and streaming platform",
-  "Multichain ecosystem",
-  // Add more announcements as needed
-];
 
 const AnnouncementBar: React.FC = () => {
   return (
-    <div className="bg-gradient-to-r from-purple-900 to-indigo-800 text-white overflow-hidden py-2 flex items-center">
-      <div className="flex-shrink-0 font-bold text-lg px-4 mr-4 bg-red-600 py-1">
-        BREAKING
+    <div className="bg-gradient-to-r from-purple-600 to-pink-500 overflow-hidden">
+      <div className="animate-marquee whitespace-nowrap py-2">
+        <span className="text-white font-bold mx-4">🚀 Presale is live! 🚀</span>
+        <span className="text-white mx-4">|</span>
+        <span className="text-white font-bold mx-4">🎉 Join the Doge Revolution! 🎉</span>
+        <span className="text-white mx-4">|</span>
+        <span className="text-white font-bold mx-4">💎 Early investors get special rewards! 💎</span>
+        <span className="text-white mx-4">|</span>
+        <span className="text-white font-bold mx-4">🌟 Don't miss out on the next big thing in crypto! 🌟</span>
       </div>
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: "-100%" }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 30,
-            ease: "linear",
-          },
-        }}
-        className="whitespace-nowrap flex"
-      >
-        {announcements.map((announcement, index) => (
-          <span key={index} className="mr-8 text-lg">
-            {announcement}
-          </span>
-        ))}
-      </motion.div>
     </div>
   );
 };

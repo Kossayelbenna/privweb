@@ -11,14 +11,12 @@ interface IframeWrapperProps {
   children: React.ReactNode;
 }
 
-const IframeWrapper: React.FC<IframeWrapperProps> = ({ children }) => (
-  <div className="relative overflow-hidden rounded-[25px] md:w-[440px] w-[380px] md:h-[687px] h-[730px]">
-    <div className="relative z-10 w-full h-full">
-      {children}
-    </div>
+const IframeWrapper = ({ children }) => (
+  <div className="relative overflow-hidden rounded-[25px] w-full max-w-[440px] h-[680px] backdrop-blur-md bg-purple-900/30 border border-purple-500/50 shadow-lg shadow-purple-500/30">
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
+    <div className="relative w-full h-full">{children}</div>
   </div>
 );
-
 
 const HowToBuy = () => {
   
@@ -116,12 +114,14 @@ const HowToBuy = () => {
         </div>
         <div className="flex flex-col items-center scale-70 rounded-[20px]">
         <IframeWrapper>
-          <iframe
-            className="lg:w-[450px] w-full h-[850px] md:-mt-12 "
-            allow="clipboard-write"
-            style={{ transform: 'scale(1)' }}
-            src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
-            ></iframe>
+              <iframe
+                className="w-full h-full rounded-[20px]"
+                style={{ outline: 0, border: 0, overflow: 'hidden' }}
+                allow="clipboard-write"
+                src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
+                title="Presale iframe"
+                scrolling="no"
+              />
             </IframeWrapper>
         </div>
       </div>

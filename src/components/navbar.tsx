@@ -99,7 +99,7 @@ function Navbar() {
               />
               {/* Social Media Icons */}
               <div className="gap-2 hidden md:flex">
-                <a href="https://t.me/Dogeuniversepresale" target="_blank" rel="noopener noreferrer">
+                <a href="https://t.me/Dogevision" target="_blank" rel="noopener noreferrer">
                   <BsTelegram className="w-6 h-6 text-white" />
                 </a>
                 <a href="https://discord.gg/xEydn77j" target="_blank" rel="noopener noreferrer">
@@ -121,6 +121,7 @@ function Navbar() {
               <ConnectWallet className="hidden md:block" />
             </div>
           </div>
+          
         </header>
       </div>
       {/* Mobile nav menu */}

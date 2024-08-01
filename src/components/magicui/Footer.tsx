@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
           </ul>
         </FooterNav>
         <SocialIcons>
-          <SocialIcon href="https://t.me/Dogeuniversepresale" target="_blank" rel="noopener noreferrer">
+          <SocialIcon href="https://t.me/Dogevision" target="_blank" rel="noopener noreferrer">
             <BsTelegram />
           </SocialIcon>
           <SocialIcon href="https://discord.gg/xEydn77j" target="_blank" rel="noopener noreferrer">
