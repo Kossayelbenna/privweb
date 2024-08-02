@@ -1,18 +1,17 @@
-"use client";
-
-import React from "react";
+import React, { useState } from "react";
 import Image from 'next/image';
 import { useTranslator } from "@/lib/use-translator";
 
-const IframeWrapper = ({ children }) => (
+const IframeWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <div className="relative overflow-hidden rounded-[25px] w-full max-w-[440px] h-[680px] backdrop-blur-md bg-purple-900/30 border border-purple-500/50 shadow-lg shadow-purple-500/30">
     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
     <div className="relative w-full h-full">{children}</div>
   </div>
 );
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const tr = useTranslator();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const features = [
     "Instant bridging between ETH and Doge Chain",
@@ -21,12 +20,21 @@ const Hero = () => {
     "Dedicated Block Explorer"
   ];
 
+  const scrollToHowToBuy = () => {
+    const howToBuySection = document.getElementById('how-to-buy');
+    if (howToBuySection) {
+      howToBuySection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <main className="relative min-h-screen overflow-hidden">
-      <div className="md:hidden ">
+      <div className="md:hidden">
         <Image
-        style={ {maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0))',
-          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0))'}}
+          style={{
+            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0))',
+            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0))'
+          }}
           src="/images/1f.png"
           alt="Dogeverse"
           width={500}
@@ -35,7 +43,6 @@ const Hero = () => {
         />
       </div>
       
-      {/* Desktop background */}
       <div 
         className="absolute inset-0 bg-cover bg-center hidden md:block"
         style={{ 
@@ -46,9 +53,7 @@ const Hero = () => {
       />
       
       <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 py-20 flex flex-col md:flex-row justify-between items-start md:mt-20 -mt-24">
-        {/* Content wrapper */}
         <div className="w-full flex flex-col md:flex-row justify-between items-start">
-          {/* Left side - Title and content */}
           <div className="w-full md:w-[30%] mb-8 md:mb-0">
             <div className="bg-black/80 rounded-2xl p-6 backdrop-blur-md border border-purple-500/50">
               <h1 className="text-3xl md:text-4xl font-bold mb-2 text-white">
@@ -73,16 +78,23 @@ const Hero = () => {
                   </div>
                 ))}
               </div>
-              <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:from-purple-600 hover:to-pink-600 transition-colors">
-                Join the Doge Revolution!
-              </button>
+              <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:from-purple-600 hover:to-pink-600 transition-colors">
+                  Join the Doge Revolution!
+                </button>
+                <button 
+                  onClick={() => setIsModalOpen(true)} 
+                  className="bg-transparent border-2 border-purple-500 text-purple-300 px-6 py-2 rounded-full font-bold text-sm hover:bg-purple-500 hover:text-white transition-colors"
+                >
+                  Learn More
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* Right side - Radom app */}
           <div className="w-full md:w-[50%] flex flex-col items-end mt-8 md:-mt-16">
-            < div className="flex justify-center items-center space-x-6 mb-2 text-center md:mr-10 mt-4">
-              <a href="/public/Docs/WhitePaper.pdf" target="_blank" rel="noopener noreferrer"
+            <div className="flex justify-center items-center space-x-6 mb-2 text-center md:mr-10 mt-4">
+              <a href="/Layer%203/WhitePaper.pdf" target="_blank" rel="noopener noreferrer"
                 className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
                 Whitepaper
               </a>
@@ -108,7 +120,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Separated text sections */}
       <div className="relative z-10 w-full bg-gradient-to-b to-transparent">
         <div className="max-w-[1600px] mx-auto px-4 py-6">
           <div className="text-center text-white mb-4">
@@ -120,12 +131,15 @@ const Hero = () => {
             <p className="text-sm mb-2">
               $DOGE VISION is Multichain! You can Buy using Solana, Ethereum, Base, BNB, BUSD, USDC, USDT, Polygon, Tron, and Bitcoin on different chains.
             </p>
-            <a href="#how-to-buy" className="inline-flex items-center text-purple-300 hover:text-purple-100 transition-colors duration-300">
+            <button 
+              onClick={scrollToHowToBuy}
+              className="inline-flex items-center text-purple-300 hover:text-purple-100 transition-colors duration-300 bg-transparent border-none cursor-pointer"
+            >
               HOW TO BUY? 
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>

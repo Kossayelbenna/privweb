@@ -18,7 +18,7 @@ export const translation = {
         "#1 STREAMING PLATFORM",
         "MULTICHAIN ECOSYSTEM",
         "ETH BLOCKCHAIN SECURITY",
-        "FAST AND 100x LOWER FEES",
+        "FAST AND 100x LOWER FEES THAN ETH",
       ],
       section1: {
         head: "DOGE VISION",
