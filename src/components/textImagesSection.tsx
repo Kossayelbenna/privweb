@@ -59,7 +59,7 @@ const TextImagesSection: React.FC = React.memo(() => {
           {tr("section2")("head")}
         </span>
       </div>
-      <h2 className="text-4xl md:text-6xl font-bold text-balance">
+      <h2 className="text-4xl md:text-6xl font-bold text-balance leading-[1.2] md:leading-[1.2]">
         {tr("section2")("title")}
       </h2>
       <p className={cn("text-base md:text-lg leading-7 text-balance", inter.className)}>

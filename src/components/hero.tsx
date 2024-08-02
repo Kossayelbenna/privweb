@@ -81,7 +81,7 @@ const Hero = () => {
 
           {/* Right side - Radom app */}
           <div className="w-full md:w-[50%] flex flex-col items-end mt-8 md:-mt-16">
-            < div className="flex justify-center items-center space-x-6 mb-4 text-center md:mr-10 ">
+            < div className="flex justify-center items-center space-x-6 mb-2 text-center md:mr-10 mt-4">
               <a href="/public/Docs/WhitePaper.pdf" target="_blank" rel="noopener noreferrer"
                 className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
                 Whitepaper
