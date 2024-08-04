@@ -107,7 +107,7 @@ const Hero2: React.FC = () => {
             <FeatureBox key={idx} feature={feature} index={idx} />
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_1fr_350px_350px_1fr_1fr] px-3 lg:px-0 mt-3 sm:mt-5 gap-3 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_1fr_350px_350px_1fr_1fr] px-3 lg:px-0 mt-3 sm:mt-5 gap-3 ">
           <div className="hidden md:block"></div>
           <div className="hidden md:block"></div>
           {featuresBottom.map((feature, idx) => (

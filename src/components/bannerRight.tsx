@@ -3,18 +3,18 @@ import React from 'react';
 const BannerRight: React.FC = () => {
   return (
     <div className="w-full p-6 text-white">
-      <h2 className="text-3xl font-bold mb-4">Welcome to Doge Vision</h2>
+      <h2 className="text-6xl font-bold mb-4">The Doge Revolution</h2>
       
       <div className="space-y-4">
         <p className="text-lg">
-          <span className="font-bold text-purple-400">DOGE VISION</span> is an ecosystem that combines:
+          <span className="text-2xl font-bold text-purple-400">DOGE VISION</span> is an ecosystem that combines:
         </p>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>A token</li>
-          <li>Multichain functionality</li>
-          <li>A Doge Layer 3 blockchain</li>
+        <ul className="text-xl font-bold list-disc pl-6 space-y-2 pt-6">
+          <li>A Layer 3 Blockchain Built For Doge</li>
+          <li>A Multichain Token And Ecosystem</li>
+          <li>Games, Nfts And The First Streaming Platform In Defi </li>
         </ul>
-        <p className="text-lg">
+        <p className="text-lg pt-6 ">
           Our vision is to revolutionize the blockchain gaming industry by creating truly enjoyable games, not just play-to-earn mechanisms.
         </p>
         <p className="text-lg">
