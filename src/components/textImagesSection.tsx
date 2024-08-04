@@ -92,7 +92,7 @@ const TextImagesSection: React.FC = React.memo(() => {
   ), [tr]);
 
   const OrbitingContent = useMemo(() => (
-    <div className="relative flex items-center justify-center overflow-hidden h-[400px] w-[400px] sm:h-[500px] sm:w-[500px] scale-120 sm:scale-150 md:scale-200">
+    <div className="relative flex items-center justify-center overflow-hidden h-[400px] w-[400px] sm:h-[500px] sm:w-[500px] scale-[1.17] sm:scale-150 md:scale-200">
       <div className="absolute flex items-center justify-center w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <img src="/images/shiba.png" alt="" className="absolute w-[80px] h-[80px] sm:w-[100px] sm:h-[100px]" />
       </div>
