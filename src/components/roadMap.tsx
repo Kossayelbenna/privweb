@@ -7,6 +7,7 @@
   const steps = [
     {
       title: { en: "THE BIG BANG", fr: "LE BIG BANG" },
+      timeline: { en: "Q3-Q4 2024", fr: "T3-T4 2024" },
       description: {
         en: `- Website Goes Live
   - Social Channels Are Born
@@ -22,6 +23,7 @@
     },
     {
       title: { en: "DEVELOPMENT", fr: "DÉVELOPPEMENT" },
+      timeline: { en: "Q1-Q2 2025", fr: "T1-T2 2025" },
       description: {
         en: `- Continue Game Development
   - Establish Strategic Partnerships
@@ -34,54 +36,90 @@
       },
     },
     {
-      title: { en: "LAUNCHPAD", fr: "PLATEFORME DE LANCEMENT" },
+      title: { en: "ALPHA LAUNCH", fr: "LANCEMENT ALPHA" },
+      timeline: { en: "Q3-Q4 2025", fr: "T3-T4 2025" },
       description: {
-        en: `- Launch rare NFT Collection
-  - Release First Web3 Game
-  - Expand Community Outreach
-  - Big giveaways for the community`,
-        fr: `- Lancement de la collection NFT rare
-  - Sortie du premier jeu Web3
-  - Expansion de la sensibilisation communautaire
-  - Grands cadeaux pour la communauté`,
+        en: `- Release Alpha Version of First Web3 Game
+  - Launch Exclusive NFT Collection
+  - Deploy Layer 3 Testnet
+  - Expand Community Outreach`,
+        fr: `- Sortie de la version alpha du premier jeu Web3
+  - Lancement de la collection NFT exclusive
+  - Déploiement du testnet Layer 3
+  - Expansion de la sensibilisation communautaire`,
       },
     },
     {
-      title: { en: "EXPANSION", fr: "EXPANSION" },
+      title: { en: "BETA ROLLOUT", fr: "DÉPLOIEMENT BÊTA" },
+      timeline: { en: "Q1-Q2 2026", fr: "T1-T2 2026" },
       description: {
-        en: `- Develop Additional Games
-  - Launch Decentralized Streaming Platform
-  - Implement Multichain Token
-  - 1Million$ Marketing Campaign`,
-        fr: `- Développement de jeux supplémentaires
-  - Lancement de la plateforme de streaming décentralisée
-  - Implémentation du token multichain
-  - Campagne marketing d'1 million de dollars`,
+        en: `- Launch Beta Decentralized Streaming Platform
+  - Release Layer 3 Beta Chain
+  - Implement Cross-Chain Features
+  - Kickstart Developer Program`,
+        fr: `- Lancement de la plateforme de streaming décentralisée bêta
+  - Sortie de la chaîne bêta Layer 3
+  - Implémentation des fonctionnalités inter-chaînes
+  - Lancement du programme pour développeurs`,
       },
     },
     {
-      title: { en: "REWARDS", fr: "RÉCOMPENSES" },
+      title: { en: "ECOSYSTEM EXPANSION", fr: "EXPANSION DE L'ÉCOSYSTÈME" },
+      timeline: { en: "Q3-Q4 2026", fr: "T3-T4 2026" },
       description: {
-        en: `- Big Giveaways and Contests
-  - Give the presale people a rare NFT $$
-  - Expand NFT Marketplace`,
-        fr: `- Grands cadeaux et concours
-  - Offrir aux participants de la prévente un NFT rare $$
-  - Expansion du marché NFT`,
+        en: `- Full Launch of Layer 3 Mainnet
+  - Release Additional Web3 Games
+  - Expand NFT Marketplace Features
+  - Implement Comprehensive Reward System`,
+        fr: `- Lancement complet du réseau principal Layer 3
+  - Sortie de jeux Web3 supplémentaires
+  - Expansion des fonctionnalités du marché NFT
+  - Mise en place d'un système de récompense complet`,
       },
     },
     {
-      title: { en: "GLOBAL IMPACT", fr: "IMPACT GLOBAL" },
+      title: { en: "MASS ADOPTION", fr: "ADOPTION MASSIVE" },
+      timeline: { en: "Q1-Q2 2027", fr: "T1-T2 2027" },
       description: {
         en: `- Major Marketing Push
-  - Strategic Global Partnerships
-  - Continuous Ecosystem Development and Upgrades`,
-        fr: `- Importante campagne marketing
-  - Partenariats stratégiques mondiaux
-  - Développement et mises à niveau continus de l'écosystème`,
+  - Launch Decentralized Governance
+  - Integrate AI and VR Technologies
+  - Establish Global Strategic Partnerships`,
+        fr: `- Campagne marketing majeure
+  - Lancement de la gouvernance décentralisée
+  - Intégration des technologies IA et VR
+  - Établissement de partenariats stratégiques mondiaux`,
       },
-    },];
-  
+    },
+    {
+      title: { en: "INNOVATION SURGE", fr: "VAGUE D'INNOVATION" },
+      timeline: { en: "Q3-Q4 2027", fr: "T3-T4 2027" },
+      description: {
+        en: `- Implement Advanced Blockchain Features
+  - Launch Ecosystem Grant Program
+  - Explore Real-World dApp Integrations
+  - Host Global Hackathons and Events`,
+        fr: `- Implémentation de fonctionnalités blockchain avancées
+  - Lancement du programme de subventions pour l'écosystème
+  - Exploration d'intégrations dApp dans le monde réel
+  - Organisation de hackathons et d'événements mondiaux`,
+      },
+    },
+    {
+      title: { en: "DOGE DOMINATION", fr: "DOMINATION DOGE" },
+      timeline: { en: "2028 Onwards", fr: "2028 et au-delà" },
+      description: {
+        en: `- Achieve Mainstream Adoption Milestones
+  - Launch Revolutionary Gaming and Streaming Features
+  - Establish DOGEVISION as Leading Web3 Platform
+  - Continuous Ecosystem Growth and Innovation`,
+        fr: `- Atteinte des jalons d'adoption grand public
+  - Lancement de fonctionnalités révolutionnaires de jeu et de streaming
+  - Établissement de DOGEVISION comme plateforme Web3 leader
+  - Croissance et innovation continues de l'écosystème`,
+      },
+    },
+  ];
   function RoadMap() {
     const locale = useLocale();
     const tr = useTranslator();
@@ -89,6 +127,7 @@
     const memoizedSteps = useMemo(() => steps.map((step, index) => ({
       ...step,
       title: step.title[locale],
+      timeline: step.timeline?.[locale],
       description: step.description[locale],
       phase: index + 1,
     })), [locale]);
@@ -124,6 +163,7 @@
                     Phase {step.phase}
                   </div>
                   <h4 className="text-white text-lg font-bold mb-2">{step.title}</h4>
+                  {step.timeline && <p className="text-white text-sm mb-2">{step.timeline}</p>}
                   <pre className="text-white text-sm font-light whitespace-pre-line break-words">
                     {step.description}
                   </pre>
@@ -158,6 +198,7 @@
                         <h4 className="text-white text-lg font-bold">
                           {step.title}
                         </h4>
+                        {step.timeline && <p className="text-white text-sm mb-2">{step.timeline}</p>}
                         <pre className="text-white text-sm font-light whitespace-pre-line break-words">
                           {step.description}
                         </pre>
@@ -194,6 +235,7 @@
                         <h4 className="text-white text-lg font-bold">
                           {step.title}
                         </h4>
+                        {step.timeline && <p className="text-white text-sm mb-2">{step.timeline}</p>}
                         <pre className="text-white text-sm font-light whitespace-pre-line break-words">
                           {step.description}
                         </pre>
