@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useMemo } from "react";
@@ -9,87 +8,60 @@ const Marquee = dynamic(() => import('./magicui/marquee'), {
   ssr: false,
 });
 
-const images = [
+const games = [
   {
     src: "/images/carosel/P-_1_.webp",
-    description: {
-      fr: "Univers Multijoueur : Une aventure sans limites",
-      en: "Multiplayer Metaverse Map: Limitless Adventure"
+    title: {
+      en: "DogeMeta: Boundless Adventure",
+      fr: "DogeMeta : Aventure Sans Limites"
     },
-  },
-  {
-    src: "/images/carosel/P (2) (1).webp",
     description: {
-      fr: "Formez votre équipe et dominez le champ de bataille",
-      en: "Squad up and dominate the battlefield"
-    },
+      en: "Explore a vast multiplayer metaverse powered by blockchain. Own, trade, and build in this expansive virtual world.",
+      fr: "Explorez un vaste métavers multijoueur propulsé par la blockchain. Possédez, échangez et construisez dans ce monde virtuel expansif."
+    }
   },
   {
     src: "/images/carosel/P-_3_.webp",
-    description: {
-      fr: "Rassemblez votre équipe ! Que la bataille commence !",
-      en: "Assemble your team! Let the Battle Begin!"
+    title: {
+      en: "CryptoSquad Tactics",
+      fr: "Tactiques CryptoSquad"
     },
-  },
-  {
-    src: "/images/carosel/p 4.webp",
     description: {
-      fr: "Combats de la galaxie               ",
-      en: "Fights of the galaxy"
-    },
+      en: "Assemble your team of unique NFT heroes and engage in strategic battles. Every victory enhances your characters' blockchain-stored stats.",
+      fr: "Assemblez votre équipe de héros NFT uniques et engagez-vous dans des batailles stratégiques. Chaque victoire améliore les statistiques de vos personnages stockées sur la blockchain."
+    }
   },
-  {
-    src: "/images/carosel/P (5).webp",
-    description: {
-      fr: " Basketball complet, Plus qu'un simple jeu",
-      en: "Full min Basketball , More than just a game"
-    },
-  },
-  {
-    src: "/images/carosel/P (6).webp",
-    description: {
-      fr: "Rejoignez votre équipe pour le basketball !",
-      en: "Join your squad for basketball!"
-    },
-  },
- 
   {
     src: "/images/carosel/p-_8_.webp",
-    description: {
-      fr: " Anime Arena : L'ultime confrontation",
-      en: "Anime Arena: The Ultimate Showdown"
+    title: {
+      en: "Doge Arena: Ultimate Showdown",
+      fr: "Arène Doge : Confrontation Ultime"
     },
+    description: {
+      en: "Enter the arena with your unique Doge fighter. Battle, earn, and upgrade your character with blockchain-verified achievements.",
+      fr: "Entrez dans l'arène avec votre combattant Doge unique. Combattez, gagnez et améliorez votre personnage avec des réalisations vérifiées par blockchain."
+    }
   },
   {
     src: "/images/carosel/P-_9_.webp",
-    description: {
-      fr: "Servez la victoire dans une action de tennis réaliste !      ",
-      en: "Gear up for the BATTLE"
+    title: {
+      en: "CryptoServe: Blockchain Tennis",
+      fr: "CryptoServe : Tennis Blockchain"
     },
-  },
-  {
-    src: "/images/carosel/P-_11_.webp",
     description: {
-      fr: "  Choisissez votre champion et battez-vous",
-      en: "Serve up victory in realistic tennis action!"
-    },
-  },
-  {
-    src: "/images/carosel/pp-_2_.webp",
-    description: {
-      fr: "Baseball Pro : Frappez un coup de circuit",
-      en: "Choose your champion! and fight"
-    },
-  },
-  
+      en: "Experience tennis like never before. Use NFT rackets and players, participate in decentralized tournaments with real crypto prizes.",
+      fr: "Vivez le tennis comme jamais auparavant. Utilisez des raquettes et des joueurs NFT, participez à des tournois décentralisés avec de vrais prix en crypto."
+    }
+  }
 ];
 
 const MarqueeGames: React.FC = () => {
   const locale = useLocale();
   const tr = useTranslator();
 
-  const memoizedImages = useMemo(() => images.map(({ src, description }) => ({
+  const memoizedGames = useMemo(() => games.map(({ src, title, description }) => ({
     src,
+    title: title[locale as keyof typeof title],
     description: description[locale as keyof typeof description]
   })), [locale]);
 
@@ -115,18 +87,22 @@ const MarqueeGames: React.FC = () => {
         pauseOnHover
         className="[--duration:50s] bg-primary backdrop-blur-xl border border-gray-100/20 p-2 gap-20 transform"
       >
-        {memoizedImages.map(({ src, description }) => (
+        {memoizedGames.map(({ src, title, description }) => (
           <div
             key={src}
             className="relative flex items-center justify-center w-[400px] h-[400px] md:w-[600px] md:h-[500px] rounded-[2rem] border border-gray-100/20 overflow-clip"
           >
             <img
               src={src}
-              alt={description}
+              alt={title}
               className="w-full h-full absolute inset-0 object-cover hover:scale-110 transition-transform duration-300 ease-in-out rounded-md"
             />
-            <div className="absolute bottom-2 left-2 right-2 rounded-xl flex justify-center items-center p-5 bg-white/10 backdrop-blur-lg">
-              <p className="text-white text-md font-semibold">
+            <div className="absolute top-2 right-2 bg-yellow-500 text-black px-2 py-1 rounded-md font-bold">
+              Coming Soon
+            </div>
+            <div className="absolute bottom-2 left-2 right-2 rounded-xl flex flex-col justify-center items-center p-5 bg-black/80 backdrop-blur-lg">
+              <h3 className="text-white text-xl font-bold mb-2">{title}</h3>
+              <p className="text-white text-sm text-center">
                 {description}
               </p>
             </div>

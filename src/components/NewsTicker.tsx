@@ -7,6 +7,10 @@ const NewsTicker: React.FC = () => {
         'EXPERTS SAY DOGE VISION DOUBLE STAKING REWARDS = 100X THE LOLZ',
         'DOGE VISION IS MORE THAN A MEME',
         'NEW PARTNERSHIPS ANNOUNCED: DOGE VISION EXPANDS ECOSYSTEM',
+        'DOGE VISION PRESALE PRICE RISING AGAIN SOON!',
+        'EXPERTS SAY DOGE VISION DOUBLE STAKING REWARDS = 100X THE LOLZ',
+        'DOGE VISION IS MORE THAN A MEME',
+        'NEW PARTNERSHIPS ANNOUNCED: DOGE VISION EXPANDS ECOSYSTEM',
     ];
 
     const tickerRef = useRef<HTMLDivElement>(null);
@@ -15,7 +19,7 @@ const NewsTicker: React.FC = () => {
         const ticker = tickerRef.current;
         if (ticker) {
             const tickerWidth = ticker.offsetWidth;
-            const animationDuration = tickerWidth / 40; // Adjust speed as needed
+            const animationDuration = tickerWidth / 70; // Adjust speed as needed
             ticker.style.animationDuration = `${animationDuration}s`;
         }
     }, []);

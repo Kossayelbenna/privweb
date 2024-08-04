@@ -61,7 +61,7 @@ export const translation = {
             style: "font-bold text-lg mt-4 mb-2"
           },
           {
-            text: "At the heart of our ecosystem, the $DOGvision token enables instant bridging across multiple chains. Holders enjoy low fees, high-speed operations, and the freedom to traverse the best crypto chains effortlessly. Experience the future of blockchain interoperability, powered by cutting-edge technology and the spirit of Doge.",
+            text: "At the heart of our ecosystem, the $DOGEVISION token enables instant bridging across multiple chains. Holders enjoy low fees, high-speed operations, and the freedom to traverse the best crypto chains effortlessly. Experience the future of blockchain interoperability, powered by cutting-edge technology and the spirit of Doge.",
             style: "mb-4"
           }
         ],
@@ -76,9 +76,10 @@ export const translation = {
         ],
         action: "Learn More",
       },
-      marqueeGamesTitle: "Our Web3 Games",
+      marqueeGamesTitle: "Web3 Gaming Ecosystem",
       description1: [
-        "Beyond the technical prowess, DOGE VISION brings a wealth of applications to the digital world. From immersive Web3 games and unique NFTs to a state-of-the-art streaming platform, DOGE VISION is more than just a blockchain; it's a complete ecosystem.",
+        
+"DOGE VISION is revolutionizing gaming with our blockchain-powered platform. We're developing a suite of engaging Web3 games that offer true ownership of in-game assets through NFTs, player-driven economies, and seamless integration with our decentralized streaming service.",
       ],
       qnaTitle: "Frequently Asked Questions",
       howToBuyTitle: "How to Buy",
