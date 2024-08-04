@@ -58,7 +58,7 @@ const Hero2: React.FC = () => {
 
   return (
     <>
-      <div id="Hero2" className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1500px] mx-auto place-items-center px-2 lg:px-0 my-14">
+      <div id="Hero2" className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1500px] mx-auto place-items-center px-2 lg:px-0 my-14 ">
         <div className="order-2 md:order-1">
           <CPU />
         </div>

@@ -17,7 +17,7 @@ export const translation = {
         "LAYER 3 BLOCKCHAIN",
         "#1 STREAMING PLATFORM",
         "MULTICHAIN ECOSYSTEM",
-        "ETH BLOCKCHAIN SECURITY",
+        "ETH-DOGE BRIDGING ",
         "FAST AND 100x LOWER FEES THAN ETH",
       ],
       section1: {
