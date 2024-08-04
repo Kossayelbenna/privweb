@@ -12,7 +12,7 @@ const games = [
   {
     src: "/images/carosel/P-_1_.webp",
     title: {
-      en: "DogeMeta: Boundless Adventure",
+      en: "Metaverse City Boundless Adventure",
       fr: "DogeMeta : Aventure Sans Limites"
     },
     description: {
@@ -20,6 +20,7 @@ const games = [
       fr: "Explorez un vaste métavers multijoueur propulsé par la blockchain. Possédez, échangez et construisez dans ce monde virtuel expansif."
     }
   },
+ 
   {
     src: "/images/carosel/P-_3_.webp",
     title: {
@@ -34,8 +35,8 @@ const games = [
   {
     src: "/images/carosel/p-_8_.webp",
     title: {
-      en: "Doge Arena: Ultimate Showdown",
-      fr: "Arène Doge : Confrontation Ultime"
+      en: "Arena, Ultimate Showdown",
+      fr: "Arène : Confrontation Ultime"
     },
     description: {
       en: "Enter the arena with your unique Doge fighter. Battle, earn, and upgrade your character with blockchain-verified achievements.",
@@ -43,16 +44,28 @@ const games = [
     }
   },
   {
-    src: "/images/carosel/P-_9_.webp",
+    src: "/images/carosel/P-_11_.webp",
     title: {
-      en: "CryptoServe: Blockchain Tennis",
+      en: "CryptoServe Tennis",
       fr: "CryptoServe : Tennis Blockchain"
     },
     description: {
       en: "Experience tennis like never before. Use NFT rackets and players, participate in decentralized tournaments with real crypto prizes.",
       fr: "Vivez le tennis comme jamais auparavant. Utilisez des raquettes et des joueurs NFT, participez à des tournois décentralisés avec de vrais prix en crypto."
     }
+  }, {
+    src: "/images/carosel/P (5).webp",
+    title: {
+      en: "StreetHoops Revolution",
+      fr: "Révolution StreetHoops"
+    },
+    description: {
+      en: "Assemble your dream team and dominate the courts! Customize players, compete in global tournaments, and trade star athletes in this next-gen sports experience where every decision impacts your team's legacy.",
+      fr: "Assemblez votre équipe de rêve et dominez les terrains ! Personnalisez les joueurs, participez à des tournois mondiaux et échangez des athlètes stars dans cette expérience sportive de nouvelle génération où chaque décision impacte l'héritage de votre équipe."
+    }
   }
+  
+  
 ];
 
 const MarqueeGames: React.FC = () => {
