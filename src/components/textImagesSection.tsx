@@ -55,7 +55,7 @@ const TextImagesSection: React.FC = React.memo(() => {
   ), [tr]);
 
   const Section2Content = useMemo(() => (
-    <div className="flex flex-col justify-center sm:mt-0 -mt-40 gap-4 p-5">
+    <div className="flex flex-col justify-center sm:mt-0 -mt-40 gap-4 p-5 md:mb-64 -mb-32">
       <div className="bg-white/10 w-fit py-2 px-4 border rounded-2xl backdrop-blur-md border-gray-100/20">
         <span
           className="text-lg md:text-xl font-semibold text-balance"
@@ -92,27 +92,28 @@ const TextImagesSection: React.FC = React.memo(() => {
   ), [tr]);
 
   const OrbitingContent = useMemo(() => (
-    <div className="relative flex items-center justify-center overflow-hidden sm:-mt-24 -mt-50 h-[475px] w-[475px] sm:h-[500px] sm:w-[500px] sm:scale[0.9]">
+    <div className="relative flex items-center justify-center overflow-hidden h-[400px] w-[400px] sm:h-[500px] sm:w-[500px] scale-120 sm:scale-150 md:scale-200">
       <div className="absolute flex items-center justify-center w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <img src="/images/shiba.png" alt="" className="absolute w-[95px] h-[95px] sm:w-[100px] sm:h-[100px]" />
+        <img src="/images/shiba.png" alt="" className="absolute w-[80px] h-[80px] sm:w-[100px] sm:h-[100px]" />
       </div>
       {[
-        { src: "/images/bitcoin-4976783-4159449.png", radius: 76, duration: 20, delay: 20 },
-        { src: "/images/polygon-4976786-4159452.webp", radius: 76, duration: 20, delay: 10 },
-        { src: "/images/solana-4976792-4159458.png", radius: 133, duration: 25, delay: 0, reverse: true },
-        { src: "/images/cosmos-4976793-4159459.png", radius: 133, duration: 25, delay: 12.5, reverse: true },
-        { src: "/images/ethereum-9855399-8000714.webp", radius: 190, duration: 30, delay: 0 },
-        { src: "/images/cardano-4976784-4159450.png", radius: 190, duration: 30, delay: 15 },
+        { src: "/images/bitcoin-4976783-4159449.png", radius: 60, smRadius: 76, duration: 20, delay: 20 },
+        { src: "/images/polygon-4976786-4159452.webp", radius: 60, smRadius: 76, duration: 20, delay: 10 },
+        { src: "/images/solana-4976792-4159458.png", radius: 105, smRadius: 133, duration: 25, delay: 0, reverse: true },
+        { src: "/images/cosmos-4976793-4159459.png", radius: 105, smRadius: 133, duration: 25, delay: 12.5, reverse: true },
+        { src: "/images/ethereum-9855399-8000714.webp", radius: 150, smRadius: 190, duration: 30, delay: 0 },
+        { src: "/images/cardano-4976784-4159450.png", radius: 150, smRadius: 190, duration: 30, delay: 15 },
       ].map((circle, index) => (
         <OrbitingCircles
           key={index}
-          className="h-[28px] w-[28px] sm:h-[30px] sm:w-[30px] border-none bg-transparent"
+          className="h-[24px] w-[24px] sm:h-[28px] sm:w-[28px] md:h-[30px] md:w-[30px] border-none bg-transparent"
           radius={circle.radius}
+          smRadius={circle.smRadius}
           duration={circle.duration}
           delay={circle.delay}
           reverse={circle.reverse}
         >
-          <img src={circle.src} alt="" className="w-11 h-11 sm:w-12 sm:h-12" />
+          <img src={circle.src} alt="" className="w-full h-full" />
         </OrbitingCircles>
       ))}
     </div>
@@ -123,7 +124,7 @@ const TextImagesSection: React.FC = React.memo(() => {
       <TextImageSection images={images} invert={false}>
         {Section1Content}
       </TextImageSection>
-      <TextImageSection className="mb-[-500px] sm:mb-[-300px]" override={() => OrbitingContent} invert={true}>
+      <TextImageSection className="mb-[-300px] sm:mb-[-300px] mt-32 " override={() => OrbitingContent} invert={true}>
         {Section2Content}
       </TextImageSection>
     </>

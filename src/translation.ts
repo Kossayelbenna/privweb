@@ -25,34 +25,47 @@ export const translation = {
         title: "Revolutionizing Web3 Entertainment",
         description: [
           {
-            text: "Web3 Gaming Revolution:",
+            text: "Next-Gen Web3 Gaming Ecosystem:",
             style: "font-bold text-lg mt-4 mb-2"
           },
           {
-            text: "Immerse yourself in cutting-edge games with integrated NFTs and custom skins. Experience community-driven gameplay and thriving in-game economies powered by blockchain.",
+            text: "Dive into a groundbreaking gaming universe where blockchain meets entertainment. Our platform integrates cutting-edge NFTs and custom skins, allowing for true ownership of in-game assets. Experience community-driven development, where player decisions shape thriving virtual economies and push the boundaries of decentralized gameplay.",
             style: "mb-4"
           },
           {
-            text: "Decentralized Streaming Platform:",
+            text: "DeFi-Powered Streaming Revolution:",
             style: "font-bold text-lg mt-4 mb-2"
           },
           {
-            text: "Join the world's first blockchain-powered content platform. Creators earn more through direct fan support, while viewers enjoy deeper connections and exclusive content.",
+            text: "Welcome to the future of content creation, built for the world's largest meme coin community. Our DeFi-integrated streaming platform introduces an unparalleled reward system, leveraging the massive Doge ecosystem. Streamers and viewers alike benefit from innovative tokenomics, creating a viral loop of engagement, rewards, and growth. Join the movement that's set to redefine digital entertainment!",
             style: "mb-4"
           }
         ],
-        action: "Explore Now"
+        action: "Join the Revolution"
       },
-  
-      Description_seo_name: ["DOGE VISION"],
+
       section2: {
         head: "DOGE VISION",
+        title: "Doge is goin Multichain!",
         description: [
-          "DOGE VISION is pioneering the world's first Layer 3 blockchain, creating a multichain ecosystem that leverages superior bridging technology. Our innovative platform seamlessly connects with the most active blockchains, offering unparalleled interoperability. ",
-          "At the heart of our ecosystem, the DOGE VISION Token enables instant bridging across multiple chains, providing users with low fees, and high-speed operations. all powered by cutting-edge blockchain technology.",
+          {
+            text: "Revolutionary Layer 3 Blockchain:",
+            style: "font-bold text-lg mt-4 mb-2"
+          },
+          {
+            text: "DOGE VISION pioneers the world's first Layer 3 blockchain, creating a multichain ecosystem with superior bridging technology. Our innovative platform seamlessly connects with Ethereum, BNB Chain, Polygon, Solana, Avalanche, and Base, offering unparalleled interoperability for the Doge community.",
+            style: "mb-4"
+          },
+          {
+            text: "DOGE VISION Token: The Key to Cross-Chain Freedom",
+            style: "font-bold text-lg mt-4 mb-2"
+          },
+          {
+            text: "At the heart of our ecosystem, the $DOGvision token enables instant bridging across multiple chains. Holders enjoy low fees, high-speed operations, and the freedom to traverse the best crypto chains effortlessly. Experience the future of blockchain interoperability, powered by cutting-edge technology and the spirit of Doge.",
+            style: "mb-4"
+          }
         ],
-        title: "Doge is goin Multichain !",
-        action: "Learn More",
+        action: "Explore Multichain Doge"
       },
       section3: {
         head: "DOGE VISION",
