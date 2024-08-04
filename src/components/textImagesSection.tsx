@@ -34,14 +34,23 @@ const TextImagesSection: React.FC = React.memo(() => {
       <h2 className="text-4xl md:text-6xl font-bold text-balance">
         {tr("section1")("title")}
       </h2>
-      <p className={cn("text-base md:text-lg leading-7 text-balance -mb-16", inter.className)}>
-        {tr("section1")("description").map((value, idx) => (
-          <React.Fragment key={idx}>
-            <span className="mt-2 block leading-relaxed">{value}</span>
-            {idx !== tr("section1")("description").length - 1 && <br />}
-          </React.Fragment>
-        ))}
-      </p>
+      <div className={cn("text-base md:text-lg leading-7 text-balance -mb-16", inter.className)}>
+        {tr("section1")("description").map((item, idx) => {
+          if (typeof item === 'string') {
+            return (
+              <p key={idx} className="mt-2 block leading-relaxed">
+                {item}
+              </p>
+            );
+          } else {
+            return (
+              <p key={idx} className={item.style}>
+                {item.text}
+              </p>
+            );
+          }
+        })}
+      </div>
     </div>
   ), [tr]);
 
@@ -62,19 +71,28 @@ const TextImagesSection: React.FC = React.memo(() => {
       <h2 className="text-4xl md:text-6xl font-bold text-balance leading-[1.2] md:leading-[1.2]">
         {tr("section2")("title")}
       </h2>
-      <p className={cn("text-base md:text-lg leading-7 text-balance", inter.className)}>
-        {tr("section2")("description").map((value, idx) => (
-          <React.Fragment key={idx}>
-            <span className="mt-2 block leading-relaxed">{value}</span>
-            {idx !== tr("section1")("description").length - 1 && <br />}
-          </React.Fragment>
-        ))}
-      </p>
+      <div className={cn("text-base md:text-lg leading-7 text-balance", inter.className)}>
+        {tr("section2")("description").map((item, idx) => {
+          if (typeof item === 'string') {
+            return (
+              <p key={idx} className="mt-2 block leading-relaxed">
+                {item}
+              </p>
+            );
+          } else {
+            return (
+              <p key={idx} className={item.style}>
+                {item.text}
+              </p>
+            );
+          }
+        })}
+      </div>
     </div>
   ), [tr]);
 
   const OrbitingContent = useMemo(() => (
-    <div className="relative flex items-center justify-center overflow-hidden sm:-mt-24 -mt-40 h-[475px] w-[475px] sm:h-[500px] sm:w-[500px] sm:scale[0.9]">
+    <div className="relative flex items-center justify-center overflow-hidden sm:-mt-24 -mt-50 h-[475px] w-[475px] sm:h-[500px] sm:w-[500px] sm:scale[0.9]">
       <div className="absolute flex items-center justify-center w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <img src="/images/shiba.png" alt="" className="absolute w-[95px] h-[95px] sm:w-[100px] sm:h-[100px]" />
       </div>

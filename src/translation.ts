@@ -22,13 +22,28 @@ export const translation = {
       ],
       section1: {
         head: "DOGE VISION",
-        title: "Games, NFTs, and Streaming Platform",
+        title: "Revolutionizing Web3 Entertainment",
         description: [
-          "Doge Vision is the first Layer 3 blockchain integrating Web3 games, NFTs, and the world's first decentralized streaming platform. Immersive Games and Metaverse Dive into a world of innovative Web3 games and metaverse experiences. DogeVision integrates fully with NFTs and blockchain technology, offering users an immersive and interactive entertainment environment.",
-          "The World's First Streaming Platform! Access the world's first decentralized streaming platform, providing an exceptional rewarding system for streamers and a user-friendly experience. DogeVision combines the best of digital entertainment with blockchain benefits.",
+          {
+            text: "Web3 Gaming Revolution:",
+            style: "font-bold text-lg mt-4 mb-2"
+          },
+          {
+            text: "Immerse yourself in cutting-edge games with integrated NFTs and custom skins. Experience community-driven gameplay and thriving in-game economies powered by blockchain.",
+            style: "mb-4"
+          },
+          {
+            text: "Decentralized Streaming Platform:",
+            style: "font-bold text-lg mt-4 mb-2"
+          },
+          {
+            text: "Join the world's first blockchain-powered content platform. Creators earn more through direct fan support, while viewers enjoy deeper connections and exclusive content.",
+            style: "mb-4"
+          }
         ],
-        action: "Learn More",
+        action: "Explore Now"
       },
+  
       Description_seo_name: ["DOGE VISION"],
       section2: {
         head: "DOGE VISION",
