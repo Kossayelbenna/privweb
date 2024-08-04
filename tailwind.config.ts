@@ -101,7 +101,17 @@ const config = {
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
       
-      
+      extend: {
+        keyframes: {
+          twinkle: {
+            '0%, 100%': { opacity: 0.2 },
+            '50%': { opacity: 0.7 },
+          }
+        },
+        animation: {
+          twinkle: 'twinkle 4s ease-in-out infinite',
+        }
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

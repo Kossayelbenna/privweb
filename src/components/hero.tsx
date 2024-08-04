@@ -25,11 +25,19 @@ const Hero: React.FC = () => {
     if (howToBuySection) {
       howToBuySection.scrollIntoView({ behavior: 'smooth' });
     }
+    
+  };
+
+  const scrollToHero2 = () => {
+    const howToBuySection = document.getElementById('Hero2');
+    if (howToBuySection) {
+      howToBuySection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
-      <div className="md:hidden">
+    <main className="relative min-h-screen overflow-hidden -mt-6">
+      <div className="md:hidden mt-6">
         <Image
           style={{
             maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0))',
@@ -44,7 +52,7 @@ const Hero: React.FC = () => {
       </div>
       
       <div 
-        className="absolute inset-0 bg-cover bg-center hidden md:block"
+        className="absolute inset-0 bg-cover bg-center hidden md:block mt-6"
         style={{ 
           backgroundImage: 'url(/images/bc.png)', 
           maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0))',
@@ -79,11 +87,12 @@ const Hero: React.FC = () => {
                 ))}
               </div>
               <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-                <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:from-purple-600 hover:to-pink-600 transition-colors">
-                  Join the Doge Revolution!
+                <button onClick={scrollToHowToBuy} className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:from-purple-600 hover:to-pink-600 transition-colors">
+                
+                Join the Doge Revolution!
                 </button>
                 <button 
-                  onClick={() => setIsModalOpen(true)} 
+                  onClick={scrollToHero2}
                   className="bg-transparent border-2 border-purple-500 text-purple-300 px-6 py-2 rounded-full font-bold text-sm hover:bg-purple-500 hover:text-white transition-colors"
                 >
                   Learn More
@@ -98,7 +107,7 @@ const Hero: React.FC = () => {
                 className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
                 Whitepaper
               </a>
-              <a href="https://etherscan.io/token/0x0c5ae0f398e753b9e6b4949f86f6ac3accf20309" target="_blank" rel="noopener noreferrer"
+              <a href="/Layer%203/Smartcontract_Audit_Solidproof_DogeVision.pdf" target="_blank" rel="noopener noreferrer"
                 className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
                 Audit
               </a>

@@ -4,8 +4,10 @@ import React from "react";
 import dynamic from 'next/dynamic';
 
 // Directly import Navbar, Hero, and BgSVG for immediate loading
+import NewsTicker from '@/components/NewsTicker';
 import Navbar from '@/components/navbar';
 import Hero from '@/components/hero';
+
 
 
 import BgSVG from '@/components/bg-svg';
@@ -30,8 +32,25 @@ const Page: React.FC = () => {
   const tr = useTranslator();
   return (
     <>
-      <div className="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+      
+  <div className="fixed inset-0 -z-10 h-full w-full overflow-hidden [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
+    {[...Array(50)].map((_, i) => (
+      <div
+        key={i}
+        className="absolute bg-white rounded-full opacity-70 animate-twinkle"
+        style={{
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+          width: `${Math.random() * 2 + 1}px`,
+          height: `${Math.random() * 2 + 1}px`,
+          animationDelay: `${Math.random() * 5}s`,
+        }}
+      />
+    ))}
+  </div>
+
       <Navbar />
+      <NewsTicker />
       <Hero />
       <Hero2 />
       <LogoMarquee />
