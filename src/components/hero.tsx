@@ -14,10 +14,11 @@ const Hero: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const features = [
+    "Layer 3 blockchain with high-volume capacity",
+    "Ultra-low fees across multiple chains",
     "Instant bridging between ETH and Doge Chain",
-    "Lowest transaction fees",
-    "Higher Volume Capacity — 100x faster than ETH",
-    "Dedicated Block Explorer"
+    "Dedicated block explorer for transparency",
+    "Next-gen games, NFTs, and streaming Ecosystem"
   ];
 
   const scrollToHowToBuy = () => {
@@ -74,11 +75,11 @@ const Hero: React.FC = () => {
                 DOGE UNLEASHED | THE VISION
               </h2>
               <p className="mb-4 text-gray-200 text-sm">
-                Congrats! You're early to the party! Buy and Stake now during Presale to max out your rewards before the price skyrockets!
+              Congrats! You're early to the party! Buy and Stake now during Presale to max out your rewards before the price skyrockets!
               </p>
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-purple-400 mb-2">DOGE VISION</h3>
-                <p className="text-white text-sm mb-2">Better speed. Better gains. Same wow Doge flavor.</p>
+                <p className="text-white text-sm mb-2">Advanced technology, massive community, infinite potential</p>
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center mb-4 bg-purple-900/30 p-0 rounded-lg ">
                     <div className="w-2 h-2 rounded-full bg-green-500 mr-2 m-2"></div>

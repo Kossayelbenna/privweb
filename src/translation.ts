@@ -29,7 +29,7 @@ export const translation = {
             style: "font-bold text-lg mt-4 mb-2"
           },
           {
-            text: "Dive into a groundbreaking gaming universe where blockchain meets entertainment. Our platform integrates cutting-edge NFTs and custom skins, allowing for true ownership of in-game assets. Experience community-driven development, where player decisions shape thriving virtual economies and push the boundaries of decentralized gameplay.",
+            text: "Explore a groundbreaking universe where blockchain enhances gameplay. Our platform features NFTs and custom skins for true in-game asset ownership. Experience community-driven development with player decisions shaping virtual economies and pushing decentralized gaming boundaries.",
             style: "mb-4"
           },
           {
@@ -37,7 +37,7 @@ export const translation = {
             style: "font-bold text-lg mt-4 mb-2"
           },
           {
-            text: "Welcome to the future of content creation, built for the world's largest meme coin community. Our DeFi-integrated streaming platform introduces an unparalleled reward system, leveraging the massive Doge ecosystem. Streamers and viewers alike benefit from innovative tokenomics, creating a viral loop of engagement, rewards, and growth. Join the movement that's set to redefine digital entertainment!",
+            text: "Enter the future of content creation, tailored for the world's largest meme coin community. Our DeFi-integrated platform offers unparalleled creator rewards, leveraging the vast Doge ecosystem. Benefit from innovative tokenomics that foster engagement and growth. Join us in redefining digital entertainment!",
             style: "mb-4"
           }
         ],
@@ -53,7 +53,7 @@ export const translation = {
             style: "font-bold text-lg mt-4 mb-2"
           },
           {
-            text: "DOGE VISION pioneers the world's first Layer 3 blockchain, creating a multichain ecosystem with superior bridging technology. Our innovative platform seamlessly connects with Ethereum, BNB Chain, Polygon, Solana, Avalanche, and Base, offering unparalleled interoperability for the Doge community.",
+            text: "DOGE VISION introduces the world's first Layer 3 blockchain, creating a multichain ecosystem with advanced bridging. We connect seamlessly with Ethereum, BNB Chain, Polygon, Solana, Avalanche, and Base, offering unmatched interoperability for the Doge community.",
             style: "mb-4"
           },
           {
@@ -61,7 +61,7 @@ export const translation = {
             style: "font-bold text-lg mt-4 mb-2"
           },
           {
-            text: "At the heart of our ecosystem, the $DOGEVISION token enables instant bridging across multiple chains. Holders enjoy low fees, high-speed operations, and the freedom to traverse the best crypto chains effortlessly. Experience the future of blockchain interoperability, powered by cutting-edge technology and the spirit of Doge.",
+            text: "Our $DOGEVISION token enables instant multi-chain bridging. Enjoy low fees, rapid transactions, and effortless navigation across top crypto chains. Experience next-gen blockchain interoperability, powered by cutting-edge tech and the Doge spirit..",
             style: "mb-4"
           }
         ],
@@ -77,9 +77,8 @@ export const translation = {
         action: "Learn More",
       },
       marqueeGamesTitle: "Web3 Gaming Ecosystem",
-      description1: [
-        
-"DOGE VISION is revolutionizing gaming with our blockchain-powered platform. We're developing a suite of engaging Web3 games that offer true ownership of in-game assets through NFTs, player-driven economies, and seamless integration with our decentralized streaming service.",
+      description1: [ 
+          "DOGE VISION is revolutionizing gaming with our blockchain-powered platform. We're developing a suite of engaging Web3 games that offer true ownership of in-game assets through NFTs, player-driven economies, and seamless integration with our decentralized streaming service.",
       ],
       qnaTitle: "Frequently Asked Questions",
       howToBuyTitle: "How to Buy",

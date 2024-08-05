@@ -5,6 +5,7 @@ import { useTranslator } from "@/lib/use-translator";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { CPU } from "@/components/cpu";
 import BannerRight from "@/components/bannerRight";
+import { Content } from "next/font/google";
 
 const Hero2: React.FC = () => {
   const tr = useTranslator();
@@ -42,14 +43,8 @@ const Hero2: React.FC = () => {
       content: "Experience a seamless integration of Games, NFTs, and the #1 Streaming Platform in the blockchain world. Our multichain ecosystem connects various blockchains, allowing for unprecedented interoperability and expanding the possibilities for developers and users alike."
     },
     {
-      title: "The world's first Layer 3 blockchain, Integrating",
-      content: (
-        <AnimatedText texts={[
-          "Web3 Games and NFTs",
-          "Decentralized Streaming Platform",
-          "Multichain Ecosystem"
-        ]} />
-      )
+      title: "Doge Community & lovers",
+      content:"Join the world's largest meme coin community, now with its own cutting-edge blockchain! Backed by Elon Musk, DOGE #1 supporter, we're transforming Doge into a technological powerhouse for decentralized finance and entertainment."
     }
   ];
 
