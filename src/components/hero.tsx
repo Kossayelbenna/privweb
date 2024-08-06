@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
 
           <div className="w-full md:w-[50%] flex flex-col items-end mt-8 md:-mt-16">
             <div className="flex justify-center items-center space-x-6 mb-2 text-center md:mr-10 mt-4">
-              <a href="/Layer%203/WhitePaper.pdf" target="_blank" rel="noopener noreferrer"
+              <a href="/Layer%203/WhitePaperDogevision.pdf" target="_blank" rel="noopener noreferrer"
                 className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
                 Whitepaper
               </a>
