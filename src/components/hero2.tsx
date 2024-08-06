@@ -35,13 +35,14 @@ const Hero2: React.FC = () => {
 
   const pageContent = [
     {
-      title: "Doge Layer 3 Blockchain",
-      content: "Introducing the world's first Layer 3 blockchain built for Doge. Faster, more secure, and with lower fees than ever before. Our innovative technology takes the beloved Doge ecosystem to new heights, providing a robust foundation for the future of decentralized finance."
-    },
-    {
       title: "Integrated Ecosystem",
       content: "Experience a seamless integration of Games, NFTs, and the #1 Streaming Platform in the blockchain world. Our multichain ecosystem connects various blockchains, allowing for unprecedented interoperability and expanding the possibilities for developers and users alike."
     },
+    {
+      title: "Doge Layer 3 Blockchain",
+      content: "Introducing the world's first Layer 3 blockchain built for Doge. Faster, more secure, and with lower fees than ever before. Our innovative technology takes the beloved Doge ecosystem to new heights, providing a robust foundation for the future of decentralized finance."
+    },
+
     {
       title: "Doge Community & lovers",
       content:"Join the world's largest meme coin community, now with its own cutting-edge blockchain! Backed by Elon Musk, DOGE #1 supporter, we're transforming Doge into a technological powerhouse for decentralized finance and entertainment."
