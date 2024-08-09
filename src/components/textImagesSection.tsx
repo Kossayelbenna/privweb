@@ -11,7 +11,7 @@ const TextImagesSection: React.FC = React.memo(() => {
   const tr = useTranslator();
 
   const images = useMemo(() => [
-    "/images/carosel/P-_3_.webp",
+    "/images/carosel/bleu.jpg",
     "/images/carosel/p-_8_.webp",
     "/images/carosel/P (2) (1).webp",
     "/images/carosel/P (6).webp",

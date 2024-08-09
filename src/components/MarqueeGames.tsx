@@ -22,9 +22,9 @@ const games = [
   },
  
   {
-    src: "/images/carosel/P-_3_.webp",
+    src: "/images/carosel/bleu.jpg",
     title: {
-      en: "CryptoSquad Tactics",
+      en: "SquadTactics",
       fr: "Tactiques CryptoSquad"
     },
     description: {
@@ -46,7 +46,7 @@ const games = [
   {
     src: "/images/carosel/P-_11_.webp",
     title: {
-      en: "CryptoServe Tennis",
+      en: "MetaTennis",
       fr: "CryptoServe : Tennis Blockchain"
     },
     description: {
