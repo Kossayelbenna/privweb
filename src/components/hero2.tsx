@@ -12,6 +12,14 @@ const Hero2: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
 
+
+  const scrollToHowToBuy = () => {
+    const howToBuySection = document.getElementById('how-to-buy');
+    if (howToBuySection) {
+      howToBuySection.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+  };
   useEffect(() => {
     setHasAnimated(true);
   }, []);
@@ -58,36 +66,37 @@ const Hero2: React.FC = () => {
         <div className="order-2 md:order-1">
           <CPU />
         </div>
-        <div className="order-1 md:order-2 w-full">
+        <div className="order-1 md:order-2 w-full ">
           <BannerRight />
         </div>
       </div>
 
       <div className="relative flex flex-col pt-5 pb-20 max-w-[1200px] mx-auto">
-        <div className="flex items-center justify-between mb-10">
-          <button onClick={prevPage} className="p-2 rounded-full bg-white text-indigo-600 hover:bg-indigo-100 transition duration-300 transform hover:scale-105">
-            <ChevronLeft size={24} />
-          </button>
-          <motion.div 
-            className="text-center flex-grow"
-            key={currentPage}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">{pageContent[currentPage].title}</h2>
-            <div className="text-lg text-gray-300 max-w-3xl mx-auto">
-              {typeof pageContent[currentPage].content === 'string' 
-                ? <p>{pageContent[currentPage].content}</p>
-                : pageContent[currentPage].content
-              }
-            </div>
-          </motion.div>
-          <button onClick={nextPage} className="p-2 rounded-full bg-white text-indigo-600 hover:bg-indigo-100 transition duration-300 transform hover:scale-105">
-            <ChevronRight size={24} />
-          </button>
-        </div>
+  <div className="flex items-center justify-between mb-10">
+    <button onClick={scrollToHowToBuy} className="p-2 rounded-full bg-white text-indigo-600 hover:bg-indigo-100 transition duration-300 transform hover:scale-105">
+      <ChevronLeft size={24} />
+    </button>
+    <motion.div 
+      className="text-center flex-grow"
+      key={currentPage}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h2 className="text-4xl font-bold text-white mb-4">{pageContent[currentPage].title}</h2>
+      <div className="text-lg text-gray-300 max-w-3xl mx-auto">
+        {typeof pageContent[currentPage].content === 'string' 
+          ? <p>{pageContent[currentPage].content}</p>
+          : pageContent[currentPage].content
+        }
+      </div>
+    </motion.div>
+    <button onClick={scrollToHowToBuy} className="p-2 rounded-full bg-white text-indigo-600 hover:bg-indigo-100 transition duration-300 transform hover:scale-105">
+      <ChevronRight size={24} />
+    </button>
+  </div>
+</div>
 
         <div className="flex justify-center space-x-2 mb-10">
           {pageContent.map((_, index) => (

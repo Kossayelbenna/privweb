@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
         <div className="max-w-[1600px] mx-auto px-4 py-6">
           <div className="text-center text-white mb-4">
             <p className="text-xl font-bold">
-              <span className="text-purple-300">Over $20,000 raised |</span> Presale just started! Join early investors before price increases!
+              <span className="text-purple-300"> 100X potential ! |</span> Presale just started! Join early investors before price increases!
             </p>
           </div>
           <div className="text-center text-white">
