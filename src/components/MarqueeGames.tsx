@@ -22,7 +22,7 @@ const games = [
   },
  
   {
-    src: "/images/carosel/bleu.jpg",
+    src: "/images/carosel/blue.webp",
     title: {
       en: "SquadTactics",
       fr: "Tactiques CryptoSquad"
