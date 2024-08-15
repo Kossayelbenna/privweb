@@ -59,7 +59,7 @@ const MarqueeTweetScreenshots: React.FC = () => {
   const memoizedDescription = useMemo(() => tr("tweetDescription"), [tr]);
 
   return (
-    <div className="py-10 pt-0 bg-[#0f0a19]">
+    <div className="py-10 pt-0 ">
       <div className="flex flex-col items-center justify-center gap-4 p-5">
         <h1
           className="text-5xl font-bold text-white text-center"
@@ -68,22 +68,22 @@ const MarqueeTweetScreenshots: React.FC = () => {
           {memoizedTitle}
         </h1>
       </div>
-      <div className="flex flex-col items-center justify-center max-w-2xl mx-auto px-4 mt-4 ">
+      <div className="flex flex-col items-center justify-center max-w-2xl mx-auto px-4 mt-0 ">
         <h5 className="text-center text-lg md:text-xl font-bold leading-relaxed text-white"> 
           {memoizedDescription} 
         </h5>
       </div>
       <Marquee
         
-        className="[--duration:10s] bg-[#16181c] backdrop-blur-xl border border-gray-800 p-2 gap-10 transform"
+        className="[--duration:10s] "
       >
         {memoizedTweetScreenshots.map((tweet) => (
           <Link href={tweet.link} key={tweet.id} target="_blank" rel="noopener noreferrer">
-            <div className="p-2 hover:scale-105 transition-transform duration-100">
+            <div className="p-2  transition-transform duration-100">
               <img 
                 src={tweet.imageUrl} 
                 alt="Tweet screenshot" 
-                className="rounded-xl shadow-lg"
+                className="rounded-xl "
                 style={{ maxWidth: '350px', height: 'auto' }}
               />
             </div>
