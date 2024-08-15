@@ -27,3 +27,4 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/magicui"],
   "exclude": ["node_modules"]
 }
+}
