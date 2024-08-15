@@ -68,15 +68,30 @@ function Tokenomics() {
           </div>
         ))}
       </div>
-
-      <div className="p-5">
-        <h3 className="text-xl lg:text-2xl font-bold text-white text-right">
-          {memoizedTokenomicsReadMore}
-        </h3>
-        <h5 className="text-xl lg:text-2xl font-bold text-white text-left mt-4">
-          {memoizedTokenomicsFooter}
-        </h5>
+      {/* New section for total tokens and contract address */}
+      <div className="p-5 text-center">
+        <h3 className="text-3xl font-bold text-pink-500 mb-2">200B Total Tokens. No Tax. No Mint. </h3>
+        <p className="text-white">Token Contract Address: <a href="https://etherscan.io/address/0x0c5ae0f398e753B9e6B4949f86F6Ac3ACCf20309" target="_blank" rel="noopener noreferrer"className="text-pink-300 hover:underline">(0x0c5ae...Cf20309)</a></p>
       </div>
+
+      {/* New section for Whitepaper, Audit, and logo */}
+      <div className="flex justify-center items-center space-x-6 mb-6 p-5">
+        <a href="/Layer%203/WhitePaper.pdf" target="_blank" rel="noopener noreferrer"
+          className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
+          Whitepaper
+        </a>
+        <a href="/Layer%203/Smartcontract_Audit_Solidproof_DogeVision.pdf" target="_blank" rel="noopener noreferrer"
+          className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
+          Audit
+        </a>
+        <a href="https://github.com/solidproof/Projects/blob/main/2024/DogeVision/Smartcontract_Audit_Solidproof_DogeVision.pdf" target="_blank" rel="noopener noreferrer">
+          <img src="/Layer%203/logo_shield_text_white.png" alt="Logo" className="h-10 w-auto" />
+        </a>
+      </div>
+
+
+     
+
     </div>
   );
 }

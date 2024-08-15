@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useTranslator } from "@/lib/use-translator";
 
 const IframeWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="relative overflow-hidden rounded-[25px] w-full max-w-[440px] h-[680px] backdrop-blur-md bg-purple-900/30 border border-purple-500/50 shadow-lg shadow-purple-500/30">
+  <div className="relative overflow-hidden rounded-[25px] w-full max-w-[440px] h-[680px] backdrop-blur-md bg-blue-900/30 border border-purple-500/100 shadow-lg shadow-purple-500/50">
     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
     <div className="relative w-full h-full">{children}</div>
   </div>
@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden -mt-6">
+    <main className="relative min-h-screen overflow-hidden -mt-6  ">
       <div className="md:hidden mt-6">
         <Image
           style={{
@@ -48,10 +48,10 @@ const Hero: React.FC = () => {
           alt="Dogeverse"
           width={500}
           height={500}
-          className="w-full h-auto"
+          
+          className="w-full h-auto "
         />
       </div>
-      
       <div 
         className="absolute inset-0 bg-cover bg-center hidden md:block mt-6"
         style={{ 
@@ -61,10 +61,10 @@ const Hero: React.FC = () => {
         }}
       />
       
-      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 py-20 flex flex-col md:flex-row justify-between items-start md:mt-20 -mt-24">
-        <div className="w-full flex flex-col md:flex-row justify-between items-start">
-          <div className="w-full md:w-[30%] mb-8 md:mb-0">
-            <div className="bg-black/80 rounded-2xl p-6 backdrop-blur-md border border-purple-500/50">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 py-20 flex flex-col md:flex-row justify-between items-start md:mt-16 -mt-24 md:scale-[0.94]">
+        <div className="w-full flex flex-col md:flex-row justify-between items-start scale-100">
+          <div className="w-full md:w-[30%] mb-8 md:mb-0 md:-mt-8 ">
+            <div className="bg-black/80 rounded-2xl p-6 backdrop-blur-md border border-purple-500/50 ">
               <h1 className="text-3xl md:text-4xl font-bold mb-2 text-white">
                 DOGE NOW HAS HIS OWN
               </h1>
@@ -105,14 +105,14 @@ const Hero: React.FC = () => {
           <div className="w-full md:w-[50%] flex flex-col items-end mt-8 md:-mt-16">
             <div className="flex justify-center items-center space-x-6 mb-2 text-center md:mr-10 mt-4">
               <a href="/Layer%203/WhitePaper.pdf" target="_blank" rel="noopener noreferrer"
-                className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
+                className="text-white hover:text-purple-400 font-semibold text-lg transition duration-300 underline">
                 Whitepaper
               </a>
               <a href="/Layer%203/Smartcontract_Audit_Solidproof_DogeVision.pdf" target="_blank" rel="noopener noreferrer"
                 className="text-white hover:text-purple-300 font-semibold text-lg transition duration-300 underline">
                 Audit
               </a>
-              <a href="/Layer%203/Smartcontract_Audit_Solidproof_DogeVision.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/solidproof/Projects/blob/main/2024/DogeVision/Smartcontract_Audit_Solidproof_DogeVision.pdf" target="_blank" rel="noopener noreferrer">
                 <img src="/Layer%203/logo_shield_text_white.png" alt="Logo" className="h-10 w-auto" />
               </a>
             </div>
@@ -153,6 +153,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
+      
     </main>
   );
 }

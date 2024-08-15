@@ -457,6 +457,12 @@
       "static/chunks/_app-pages-browser_src_components_magicui_marquee_tsx.js"
     ]
   },
+  "components\\MarqueeTweetScreenshots.tsx -> ./magicui/marquee": {
+    "id": "components\\MarqueeTweetScreenshots.tsx -> ./magicui/marquee",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_magicui_marquee_tsx.js"
+    ]
+  },
   "components\\logomarquee.tsx -> ./magicui/marquee": {
     "id": "components\\logomarquee.tsx -> ./magicui/marquee",
     "files": [

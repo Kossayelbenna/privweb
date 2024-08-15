@@ -3,14 +3,18 @@ import './NewsTicker.css';
 
 const NewsTicker: React.FC = () => {
     const newsItems = [
-        'DOGE VISION PRESALE PRICE RISING AGAIN SOON!',
-        'EXPERTS SAY DOGE VISION DOUBLE STAKING REWARDS = 100X THE LOLZ',
-        'DOGE VISION IS MORE THAN A MEME',
-        'NEW PARTNERSHIPS ANNOUNCED: DOGE VISION EXPANDS ECOSYSTEM',
-        'DOGE VISION PRESALE PRICE RISING AGAIN SOON!',
-        'EXPERTS SAY DOGE VISION DOUBLE STAKING REWARDS = 100X THE LOLZ',
-        'DOGE VISION IS MORE THAN A MEME',
-        'NEW PARTNERSHIPS ANNOUNCED: DOGE VISION EXPANDS ECOSYSTEM',
+        "DOGE VISION L3 LAUNCHES AT THE END OF PRESALE!  ",
+        "DOGE VISION INTEGRATES GAMES, NFTs, STREAMING ON POWERFUL BLOCKCHAIN",
+        "ULTRA-FAST, LOW FEE TRANSACTIONS - REVOLUTIONIZES THE GAMING INDUSTRY",
+        "EXPERTS PREDICT 1000X GROWTH BY 2025",
+        "COMPLETE DOGE ECOSYSTEM BUILT FOR THE #1 MEME COMMUNITY",
+        "PRESALE PRICE INCREASE AGAIN SOON!",
+        "BREAKING: DOGE VISION L3 LAUNCHES AT THE END OF PRESALE!",
+        "DOGE VISION INTEGRATES GAMES, NFTs, STREAMING ON POWERFUL BLOCKCHAIN",
+        "ULTRA-FAST, LOW FEE TRANSACTIONS - REVOLUTIONIZES THE GAMING INDUSTRY",
+        "EXPERTS PREDICT 1000X GROWTH BY 2025",
+        "COMPLETE DOGE ECOSYSTEM BUILT FOR THE #1 MEME COMMUNITY",
+        "PRESALE PRICE INCREASE AGAIN SOON!"
     ];
 
     const tickerRef = useRef<HTMLDivElement>(null);
@@ -19,7 +23,7 @@ const NewsTicker: React.FC = () => {
         const ticker = tickerRef.current;
         if (ticker) {
             const tickerWidth = ticker.offsetWidth;
-            const animationDuration = tickerWidth / 70; // Adjust speed as needed
+            const animationDuration = tickerWidth / 80; // Adjust speed as needed
             ticker.style.animationDuration = `${animationDuration}s`;
         }
     }, []);
@@ -29,7 +33,7 @@ const NewsTicker: React.FC = () => {
             <div className="breaking-news overflow bg-black pr-2">BREAKING:</div>
             <div className="news-ticker-wrapper">
                 <div className="news-ticker" ref={tickerRef}>
-                    {newsItems.map((item, index) => (
+                    {newsItems.map((item , index) => (
                         <span key={index} className="news-ticker-item">{item}</span>
                     ))}
                     {newsItems.map((item, index) => (

@@ -5,6 +5,11 @@ import { useTranslator } from "@/lib/use-translator";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { CPU } from "@/components/cpu";
 import BannerRight from "@/components/bannerRight";
+import MarqueeTweetScreenshots from '@/components/MarqueeTweetScreenshots';
+
+
+
+
 
 const Hero2: React.FC = () => {
   const tr = useTranslator();
@@ -57,7 +62,13 @@ const Hero2: React.FC = () => {
 
   return (
     <>
-      <div id="Hero2" className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1500px] mx-auto place-items-center px-2 lg:px-0 my-14">
+
+<div>
+      {/* Other components */}
+      <MarqueeTweetScreenshots />
+      {/* Other components */}
+    </div>
+          <div id="Hero2" className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[1500px] mx-auto place-items-center px-2 lg:px-0 my-14">
         <div className="order-2 md:order-1">
           <CPU />
         </div>
