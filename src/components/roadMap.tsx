@@ -133,6 +133,7 @@
     })), [locale]);
   
     return (
+      
       <div
         className="pt-10 md:pt-20 max-w-[1200px] mx-auto px-2 lg:px-0"
         id="roadmap"

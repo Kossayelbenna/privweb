@@ -65,6 +65,7 @@ const MarqueeTweetScreenshots: React.FC = () => {
           className="text-5xl font-bold text-white text-center"
           style={{ textShadow: "0 0 10px rgba(0,0,0,0.5)" }}
         >
+        What influencers said about us !
           {memoizedTitle}
         </h1>
       </div>

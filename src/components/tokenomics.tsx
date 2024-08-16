@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { useTranslator } from "@/lib/use-translator";
 import { BorderBeam } from "./magicui/border-beam";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // Assurez-vous d'avoir installé lucide-react
+import MarqueeTweetScreenshots from '@/components/MarqueeTweetScreenshots';
 
 function Tokenomics() {
   const tr = useTranslator();
@@ -88,12 +89,17 @@ function Tokenomics() {
           <img src="/Layer%203/logo_shield_text_white.png" alt="Logo" className="h-10 w-auto" />
         </a>
       </div>
+      
 
-
-     
-
+      <MarqueeTweetScreenshots />
+      
     </div>
+    
+
+
+
   );
+  
 }
 
 export default React.memo(Tokenomics);

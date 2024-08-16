@@ -13,7 +13,7 @@ const TextImagesSection: React.FC = React.memo(() => {
   const images = useMemo(() => [
     "/images/carosel/blue.webp",
     "/images/carosel/p-_8_.webp",
-    "/images/carosel/P (2) (1).webp",
+    "/images/carosel/P-_9_.webp",
     "/images/carosel/P (6).webp",
   ], []);
 

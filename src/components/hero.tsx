@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { useTranslator } from "@/lib/use-translator";
 
 const IframeWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="relative overflow-hidden rounded-[25px] w-full max-w-[440px] h-[680px] backdrop-blur-md bg-blue-900/30 border border-purple-500/100 shadow-lg shadow-purple-500/50">
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
+  <div className="relative overflow-hidden rounded-[25px] w-full max-w-[440px] h-[680px]  backdrop-blur-md bg-blue-900/30 border  border-purple-500/100 shadow-lg shadow-purple-500/50">
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 "></div>
     <div className="relative w-full h-full">{children}</div>
   </div>
 );
@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
         }}
       />
       
-      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 py-20 flex flex-col md:flex-row justify-between items-start md:mt-16 -mt-24 md:scale-[0.94]">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 py-20 flex flex-col md:flex-row justify-between items-start md:mt-14 -mt-24 md:scale-[0.94]">
         <div className="w-full flex flex-col md:flex-row justify-between items-start scale-100">
           <div className="w-full md:w-[30%] mb-8 md:mb-0 md:-mt-8 ">
             <div className="bg-black/80 rounded-2xl p-6 backdrop-blur-md border border-purple-500/50 ">
@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-[50%] flex flex-col items-end mt-8 md:-mt-16">
+          <div className="w-full md:w-[50%] flex flex-col items-end mt-8 md:mt-[-65px]">
             <div className="flex justify-center items-center space-x-6 mb-2 text-center md:mr-10 mt-4">
               <a href="/Layer%203/WhitePaper.pdf" target="_blank" rel="noopener noreferrer"
                 className="text-white hover:text-purple-400 font-semibold text-lg transition duration-300 underline">
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
             </div>
             <IframeWrapper>
               <iframe
-                className="w-full h-full rounded-[20px]"
+                className="w-full h-full rounded-[20px] "
                 style={{ outline: 0, border: 0, overflow: 'hidden' }}
                 allow="clipboard-write"
                 src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
