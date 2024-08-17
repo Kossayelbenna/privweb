@@ -331,8 +331,7 @@
     "id": "..\\node_modules\\@thirdweb-dev\\wallets\\evm\\wallets\\safe\\dist\\thirdweb-dev-wallets-evm-wallets-safe.browser.esm.js -> ../../../connectors/safe/dist/thirdweb-dev-wallets-evm-connectors-safe.browser.esm.js",
     "files": [
       "static/chunks/vendor.js",
-      "static/chunks/common.js",
-      "static/chunks/_8d7a-_1fc4.js"
+      "static/chunks/common.js"
     ]
   },
   "..\\node_modules\\@thirdweb-dev\\wallets\\evm\\wallets\\signer\\dist\\thirdweb-dev-wallets-evm-wallets-signer.browser.esm.js -> ../../../connectors/signer/dist/thirdweb-dev-wallets-evm-connectors-signer.browser.esm.js": {

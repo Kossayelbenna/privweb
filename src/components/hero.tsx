@@ -1,17 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from 'next/image';
 import { useTranslator } from "@/lib/use-translator";
+import { useWertWidget } from '@wert-io/module-react-component';
 
-const IframeWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="relative overflow-hidden rounded-[25px] w-full max-w-[440px] h-[680px]  backdrop-blur-md bg-blue-900/30 border  border-purple-500/100 shadow-lg shadow-purple-500/50">
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 "></div>
+const IframeWrapper = ({ children }) => (
+  <div className="relative overflow-hidden rounded-[25px] w-full max-w-[450px] md:h-[680px] h-[700px] backdrop-blur-md bg-blue-900/30 border border-purple-500/100 shadow-lg shadow-purple-500/50">
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
     <div className="relative w-full h-full">{children}</div>
   </div>
 );
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const tr = useTranslator();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { open: openWertWidget } = useWertWidget({
+    partner_id: "01J5DT05Y48MGPWV2B1DJTNRAQ",
+    origin: "https://sandbox.wert.io",
+    theme: "light",
+    extra: {
+      wallets: [
+        {
+          name: "ETH",
+          network: "sepolia",
+          address: "0x0118E8e2FCb391bCeb110F62b5B7B963477C1E0d"
+        }
+      ]
+    },
+    color_buttons: "#050505",
+    color_background: "#ffffff",
+    listeners: {
+      'loaded': () => console.log('Wert widget loaded'),
+    },
+  });
+
+  const launchWertWidget = () => {
+    openWertWidget({ options: {} });
+  };
 
   const features = [
     "Layer 3 blockchain with high-volume capacity",
@@ -26,7 +51,6 @@ const Hero: React.FC = () => {
     if (howToBuySection) {
       howToBuySection.scrollIntoView({ behavior: 'smooth' });
     }
-    
   };
 
   const scrollToHero2 = () => {
@@ -37,7 +61,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden -mt-6  ">
+    <main className="relative min-h-screen overflow-hidden -mt-6">
       <div className="md:hidden mt-6">
         <Image
           style={{
@@ -48,8 +72,7 @@ const Hero: React.FC = () => {
           alt="Dogeverse"
           width={500}
           height={500}
-          
-          className="w-full h-auto "
+          className="w-full h-auto"
         />
       </div>
       <div 
@@ -75,7 +98,7 @@ const Hero: React.FC = () => {
                 DOGE UNLEASHED | THE VISION
               </h2>
               <p className="mb-4 text-gray-200 text-sm">
-              Congrats! You're early to the party! Buy and Stake now during Presale to max out your rewards before the price skyrockets!
+                Congrats! You're early to the party! Buy and Stake now during Presale to max out your rewards before the price skyrockets!
               </p>
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-purple-400 mb-2">DOGE VISION</h3>
@@ -89,8 +112,7 @@ const Hero: React.FC = () => {
               </div>
               <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
                 <button onClick={scrollToHowToBuy} className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:from-purple-600 hover:to-pink-600 transition-colors">
-                
-                Join the Doge Revolution!
+                  Join the Doge Revolution!
                 </button>
                 <button 
                   onClick={scrollToHero2}
@@ -116,16 +138,27 @@ const Hero: React.FC = () => {
                 <img src="/Layer%203/logo_shield_text_white.png" alt="Logo" className="h-10 w-auto" />
               </a>
             </div>
-            <IframeWrapper>
-              <iframe
-                className="w-full h-full rounded-[20px] "
-                style={{ outline: 0, border: 0, overflow: 'hidden' }}
-                allow="clipboard-write"
-                src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
-                title="Presale iframe"
-                scrolling="no"
-              />
-            </IframeWrapper>
+            
+            <div className="relative w-full max-w-[440px]">
+              <IframeWrapper>
+                <iframe
+                  className="w-full h-full rounded-[20px]"
+                  style={{ outline: 0, border: 0, overflow: 'hidden' }}
+                  allow="clipboard-write"
+                  src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
+                  title="Presale iframe"
+                  scrolling="no"
+                />
+              </IframeWrapper>
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+                <button
+                  onClick={launchWertWidget}
+                  className="text-white hover:text-purple-300 transition-colors duration-300 underline text-lg"
+                >
+                  Not Enougth Crypto? Buy With Card Now.
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -153,7 +186,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-      
     </main>
   );
 }

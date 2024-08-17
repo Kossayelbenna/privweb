@@ -46,6 +46,26 @@ module.exports = webpackEmptyContext;
 
 /***/ }),
 
+/***/ "?8d7a":
+/*!************************!*\
+  !*** crypto (ignored) ***!
+  \************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ "?1fc4":
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+/* (ignored) */
+
+/***/ }),
+
 /***/ "?c852":
 /*!**********************!*\
   !*** util (ignored) ***!

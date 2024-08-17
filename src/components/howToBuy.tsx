@@ -1,15 +1,10 @@
 import React, { useMemo } from "react";
 import { useLocale, useTranslator } from "@/lib/use-translator";
 import { cn } from "@/lib/utils";
-import { BiMoney } from "react-icons/bi";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { inter } from "@/fonts";
-import { Wallet, CreditCard, Coins, Banknote } from "lucide-react";  // Importez ces icônes de lucide-react
-
-
-interface IframeWrapperProps {
-  children: React.ReactNode;
-}
+import { Wallet, CreditCard, Coins, Banknote } from "lucide-react";
+import { useWertWidget } from '@wert-io/module-react-component';
 
 const IframeWrapper = ({ children }) => (
   <div className="relative overflow-hidden rounded-[25px] w-full max-w-[440px] h-[680px] backdrop-blur-md bg-purple-900/30 border border-purple-500/50 shadow-lg shadow-purple-500/30">
@@ -19,9 +14,32 @@ const IframeWrapper = ({ children }) => (
 );
 
 const HowToBuy = () => {
-  
   const locale = useLocale();
   const tr = useTranslator();
+
+  const { open: openWertWidget } = useWertWidget({
+    partner_id: "01J5DT05Y48MGPWV2B1DJTNRAQ",
+    origin: "https://sandbox.wert.io",
+    theme: "light",
+    extra: {
+      wallets: [
+        {
+          name: "ETH",
+          network: "sepolia",
+          address: "0x0118E8e2FCb391bCeb110F62b5B7B963477C1E0d"
+        }
+      ]
+    },
+    color_buttons: "#050505",
+    color_background: "#ffffff",
+    listeners: {
+      'loaded': () => console.log('Wert widget loaded'),
+    },
+  });
+
+  const launchWertWidget = () => {
+    openWertWidget({ options: {} }); // Pass an empty options object
+  };
 
   const steps = useMemo(() => [
     {
@@ -66,7 +84,7 @@ const HowToBuy = () => {
         en: "After completing your purchase, your $DOGEVISION token balance will be displayed on the buy widget. And you're one of the first holders.",
         fr: "Après avoir terminé votre achat, votre solde de jetons $DOGEVISION s'affichera sur le widget d'achat. Et vous êtes l'un des premiers détenteurs.",
       },
-      image: <Banknote size={24}  />,
+      image: <Banknote size={24} />,
     },
   ], [locale]);
 
@@ -113,16 +131,24 @@ const HowToBuy = () => {
           })}
         </div>
         <div className="flex flex-col items-center scale-70 rounded-[20px]">
-        <IframeWrapper>
-              <iframe
-                className="w-full h-full rounded-[20px]"
-                style={{ outline: 0, border: 0, overflow: 'hidden' }}
-                allow="clipboard-write"
-                src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
-                title="Presale iframe"
-                scrolling="no"
-              />
-            </IframeWrapper>
+          <IframeWrapper>
+            <iframe
+              className="w-full h-full rounded-[20px]"
+              style={{ outline: 0, border: 0, overflow: 'hidden' }}
+              allow="clipboard-write"
+              src="https://pay.radom.com/presale/4f6ac522-e050-42c4-9393-eca9236bbd94"
+              title="Presale iframe"
+              scrolling="no"
+            />
+          </IframeWrapper>
+          <div className=" scale-[1] -mt-16 rounded-[50px]">
+            <button
+              onClick={launchWertWidget}
+              className="bg-white hover:bg-gray-200 text-black  py-2 px-4 rounded transition-colors duration-300 -mt-12"
+            >
+              Buy with Card
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -130,3 +156,4 @@ const HowToBuy = () => {
 }
 
 export default React.memo(HowToBuy);
+
