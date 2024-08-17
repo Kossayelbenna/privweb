@@ -18,6 +18,7 @@ const HowToBuy = () => {
   const tr = useTranslator();
 
   const { open: openWertWidget } = useWertWidget({
+    
     partner_id: "01J5DT05Y48MGPWV2B1DJTNRAQ",
     origin: "https://sandbox.wert.io",
     theme: "light",
@@ -26,7 +27,7 @@ const HowToBuy = () => {
         {
           name: "ETH",
           network: "sepolia",
-          address: "0x0118E8e2FCb391bCeb110F62b5B7B963477C1E0d"
+          sc_address: "0xAAC496808A678B834073FB3435857FdcF0dc186F"
         }
       ]
     },
