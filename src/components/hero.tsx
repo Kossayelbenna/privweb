@@ -155,7 +155,7 @@ const Hero = () => {
                   onClick={launchWertWidget}
                   className="text-white hover:text-purple-300 transition-colors duration-300 underline text-lg"
                 >
-                  Not Enougth Crypto? Buy With Card Now.
+                  Not Enough Crypto? Buy With Card Now.
                 </button>
               </div>
             </div>

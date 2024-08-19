@@ -1,10 +1,17 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useCallback } from "react";
 import { useLocale, useTranslator } from "@/lib/use-translator";
 import { cn } from "@/lib/utils";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { inter } from "@/fonts";
 import { Wallet, CreditCard, Coins, Banknote } from "lucide-react";
-import { useWertWidget } from '@wert-io/module-react-component';
+import WertWidget from '@wert-io/widget-initializer';
+import { signSmartContractData } from '@wert-io/widget-sc-signer';
+import { v4 as uuidv4 } from 'uuid';
+
+// Ensure Buffer is available globally
+if (typeof window !== 'undefined') {
+  window.Buffer = window.Buffer || require('buffer').Buffer;
+}
 
 const IframeWrapper = ({ children }) => (
   <div className="relative overflow-hidden rounded-[25px] w-full max-w-[440px] h-[680px] backdrop-blur-md bg-purple-900/30 border border-purple-500/50 shadow-lg shadow-purple-500/30">
@@ -17,30 +24,43 @@ const HowToBuy = () => {
   const locale = useLocale();
   const tr = useTranslator();
 
-  const { open: openWertWidget } = useWertWidget({
-    
-    partner_id: "01J5DT05Y48MGPWV2B1DJTNRAQ",
-    origin: "https://sandbox.wert.io",
-    theme: "light",
-    extra: {
-      wallets: [
-        {
-          name: "ETH",
-          network: "sepolia",
-          sc_address: "0xAAC496808A678B834073FB3435857FdcF0dc186F"
-        }
-      ]
-    },
+  const privateKey = '0x57466afb5491ee372b3b30d82ef7e7a0583c9e36aef0f02435bd164fe172b1d3';
+
+  const signedData = useMemo(() => signSmartContractData({
+    address: '0x0E976df9bb3ac63F7802ca843C9d121aE2Ef22ee', // User's address
+    commodity: 'ETH',
+    network: 'sepolia',
+    commodity_amount: 0,
+    sc_address: '0xAAC496808A678B834073FB3435857FdcF0dc186F', // Smart contract address
+    sc_input_data: '0xa08720bb0000000000000000000000000e976df9bb3ac63f7802ca843c9d121ae2ef22ee0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  }, privateKey), []);
+
+  const otherWidgetOptions = useMemo(() => ({
+    partner_id: '01J5DT05Y48MGPWV2B1DJTNRAQ',
+    click_id: uuidv4(),
+    origin: 'https://sandbox.wert.io',
+    theme: 'light',
     color_buttons: "#050505",
     color_background: "#ffffff",
+    is_crypto_hidden: true,
+    extra: {
+      item_info: {
+        name: "DOGE VISION Token",
+        category: "Cryptocurrency",
+      },
+    },
     listeners: {
       'loaded': () => console.log('Wert widget loaded'),
     },
-  });
+  }), []);
 
-  const launchWertWidget = () => {
-    openWertWidget({ options: {} }); // Pass an empty options object
-  };
+  const launchWertWidget = useCallback(() => {
+    const wertWidget = new WertWidget({
+      ...signedData,
+      ...otherWidgetOptions,
+    });
+    wertWidget.open();
+  }, [signedData, otherWidgetOptions]);
 
   const steps = useMemo(() => [
     {
@@ -91,7 +111,8 @@ const HowToBuy = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center justify-center gap-4 p-5">
+      <div className="flex flex-col items-center justify-center gap-4 p-5" id="how-to-buy">
+      
         <h3
           className="text-4xl font-bold text-white text-center"
           style={{ textShadow: "0 0 10px rgba(0,0,0,0.5)" }}
@@ -142,10 +163,10 @@ const HowToBuy = () => {
               scrolling="no"
             />
           </IframeWrapper>
-          <div className=" scale-[1] -mt-16 rounded-[50px]">
+          <div className="scale-[1] -mt-16 rounded-[50px]">
             <button
               onClick={launchWertWidget}
-              className="bg-white hover:bg-gray-200 text-black  py-2 px-4 rounded transition-colors duration-300 -mt-12"
+              className="bg-white hover:bg-gray-200 text-black py-2 px-4 rounded transition-colors duration-300 -mt-12"
             >
               Buy with Card
             </button>
@@ -157,4 +178,3 @@ const HowToBuy = () => {
 }
 
 export default React.memo(HowToBuy);
-
