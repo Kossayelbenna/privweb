@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import Image from 'next/image';
 import { useTranslator } from "@/lib/use-translator";
 import { useWertWidget } from '@wert-io/module-react-component';
+import { signSmartContractData } from '@wert-io/widget-sc-signer';
+import { v4 as uuidv4 } from 'uuid';
+import { CreditCard, X } from "lucide-react";
+import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 
 const IframeWrapper = ({ children }) => (
   <div className="relative overflow-hidden rounded-[25px] w-full max-w-[450px] md:h-[680px] h-[700px] backdrop-blur-md bg-blue-900/30 border border-purple-500/100 shadow-lg shadow-purple-500/50">
@@ -10,9 +14,76 @@ const IframeWrapper = ({ children }) => (
   </div>
 );
 
+const CustomPopup = ({ isOpen, onClose, onContinue }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-blue-600 text-white p-6 rounded-lg max-w-md">
+        <div className="flex justify-between items-start mb-4">
+          <h2 className="text-xl font-bold">Buy $DOGEVISION</h2>
+          <button onClick={onClose} className="text-white">
+            <X size={24} />
+          </button>
+        </div>
+        <p className="mb-6">
+          By continuing, you're purchasing $DOGEVISION tokens. Your tokens won't be immediately
+          deposited to your wallet. You'll be able to claim them on the claim date that will be
+          announced at a later date. After you claim them, they will be deposited to your wallet.
+        </p>
+        <button
+          onClick={onContinue}
+          className="w-full bg-white text-blue-600 py-2 px-4 rounded-full font-bold hover:bg-gray-100 transition-colors"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const Hero = () => {
   const tr = useTranslator();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [usdAmount, setUsdAmount] = useState(1000);
+  const [ethPrice, setEthPrice] = useState(null);
+  const [isConnecting, setIsConnecting] = useState(false);
+  const address = useAddress();
+
+  const privateKey = '0x57466afb5491ee372b3b30d82ef7e7a0583c9e36aef0f02435bd164fe172b1d3';
+
+  useEffect(() => {
+    const fetchEthPrice = async () => {
+      try {
+        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd');
+        const data = await response.json();
+        setEthPrice(data.ethereum.usd);
+      } catch (error) {
+        console.error("Failed to fetch ETH price:", error);
+      }
+    };
+
+    fetchEthPrice();
+    const interval = setInterval(fetchEthPrice, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const ethAmount = useMemo(() => {
+    if (!ethPrice || usdAmount <= 0) return 0;
+    return usdAmount / ethPrice;
+  }, [usdAmount, ethPrice]);
+
+  const signedData = useMemo(() => {
+    if (!address || ethAmount <= 0) return null;
+    return signSmartContractData({
+      address: address,
+      commodity: 'ETH',
+      network: 'sepolia',
+      commodity_amount: Number(ethAmount.toFixed(8)),
+      sc_address: '0xAAC496808A678B834073FB3435857FdcF0dc186F',
+      sc_input_data: '0xa08720bb0000000000000000000000000e976df9bb3ac63f7802ca843c9d121ae2ef22ee0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+    }, privateKey);
+  }, [address, ethAmount]);
 
   const { open: openWertWidget } = useWertWidget({
     partner_id: "01J5DT05Y48MGPWV2B1DJTNRAQ",
@@ -23,7 +94,7 @@ const Hero = () => {
         {
           name: "ETH",
           network: "sepolia",
-          address: "0x0118E8e2FCb391bCeb110F62b5B7B963477C1E0d"
+          address: address || "0x0118E8e2FCb391bCeb110F62b5B7B963477C1E0d"
         }
       ]
     },
@@ -34,9 +105,32 @@ const Hero = () => {
     },
   });
 
-  const launchWertWidget = () => {
-    openWertWidget({ options: {} });
+  const handleBuyClick = () => {
+    if (!address) {
+      setIsConnecting(true);
+      return;
+    }
+    setIsPopupOpen(true);
   };
+
+  const handlePopupContinue = useCallback(() => {
+    setIsPopupOpen(false);
+    if (!signedData) {
+      console.error("Signed data is not available");
+      return;
+    }
+    openWertWidget({ options: { ...signedData, click_id: uuidv4() } });
+  }, [signedData, openWertWidget]);
+
+  const handleUsdAmountChange = (e) => {
+    setUsdAmount(parseFloat(e.target.value));
+  };
+
+  useEffect(() => {
+    if (address) {
+      setIsConnecting(false);
+    }
+  }, [address]);
 
   const features = [
     "Layer 3 blockchain with high-volume capacity",
@@ -59,6 +153,7 @@ const Hero = () => {
       howToBuySection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
 
   return (
     <main className="relative min-h-screen overflow-hidden -mt-6">
@@ -84,7 +179,7 @@ const Hero = () => {
         }}
       />
       
-      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 py-20 flex flex-col md:flex-row justify-between items-start md:mt-14 -mt-24 md:scale-[0.94]">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 py-20 flex flex-col md:flex-row justify-between items-start md:mt-14 -mt-24 md:scale-[1]">
         <div className="w-full flex flex-col md:flex-row justify-between items-start scale-100">
           <div className="w-full md:w-[30%] mb-8 md:mb-0 md:-mt-8 ">
             <div className="bg-black/80 rounded-2xl p-6 backdrop-blur-md border border-purple-500/50 ">
@@ -150,13 +245,38 @@ const Hero = () => {
                   scrolling="no"
                 />
               </IframeWrapper>
-              <div className="absolute bottom-4 left-0 right-0 flex justify-center">
-                <button
-                  onClick={launchWertWidget}
-                  className="text-white hover:text-purple-300 transition-colors duration-300 underline text-lg"
-                >
-                  Not Enough Crypto? Buy With Card Now.
-                </button>
+              <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center scale-[0.85]">
+                <div className="flex items-center justify-between bg-white rounded-lg p-2 shadow-md mb-2 max-w-[450px] ">
+                  <div className="relative flex-grow mr-2">
+                    <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                    <input
+                      type="number"
+                      value={usdAmount}
+                      onChange={handleUsdAmountChange}
+                      className="w-full pl-6 pr-2 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
+                      placeholder="Enter amount in USD"
+                      min="0"
+                      step="1"
+                    />
+                  </div>
+                  {isConnecting ? (
+                    <ConnectWallet theme="light" className="!bg-purple-600 !text-white" />
+                  ) : (
+                    <button
+                      onClick={handleBuyClick}
+                      className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded transition-colors duration-300 flex items-center"
+                      disabled={!ethPrice}
+                    >
+                      <CreditCard className="mr-2 h-5 w-5" />
+                      Buy with Card
+                    </button>
+                  )}
+                </div>
+                {ethPrice && (
+                  <p className="text-sm text-white mt-2">
+                    Approx. {ethAmount.toFixed(6)} ETH (1 ETH = ${ethPrice.toFixed(2)})
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -186,8 +306,12 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <CustomPopup
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+        onContinue={handlePopupContinue}
+      />
     </main>
   );
-}
-
+};
 export default Hero;
