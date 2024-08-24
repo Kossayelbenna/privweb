@@ -174,7 +174,7 @@ function Navbar() {
                 <a href="https://discord.com/invite/yourserver" target="_blank" rel="noopener noreferrer">
                   <BsDiscord className="w-6 h-6 text-white" />
                 </a>
-                <a href="https://twitter.com/x54412" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/DogeVisionL3" target="_blank" rel="noopener noreferrer">
                   <BsTwitter className="w-6 h-6 text-white" />
                 </a>
               </div>

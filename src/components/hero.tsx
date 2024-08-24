@@ -14,6 +14,7 @@ const IframeWrapper = ({ children }) => (
   </div>
 );
 
+
 const CustomPopup = ({ isOpen, onClose, onContinue }) => {
   if (!isOpen) return null;
 
@@ -80,7 +81,7 @@ const Hero = () => {
       commodity: 'ETH',
       network: 'sepolia',
       commodity_amount: Number(ethAmount.toFixed(8)),
-      sc_address: '0x76962e7A311eb311aea08afA88e4e96a02cb92e7',
+      sc_address: '0x09a9d175751E43D91EA45c44d1890cb7Ebdc32B2',
       sc_input_data: '0xa08720bb',
     }, privateKey);
   }, [address, ethAmount]);

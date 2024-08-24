@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
           <SocialIcon href="https://discord.gg/xEydn77j" target="_blank" rel="noopener noreferrer">
             <BsDiscord />
           </SocialIcon>
-          <SocialIcon href="https://twitter.com/doge_vision" target="_blank" rel="noopener noreferrer">
+          <SocialIcon href="https://x.com/DogeVisionL3" target="_blank" rel="noopener noreferrer">
             <BsTwitter />
           </SocialIcon>
         </SocialIcons>

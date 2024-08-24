@@ -414,10 +414,7 @@
   "app\\[locale]\\page.tsx -> @/components/howToBuy": {
     "id": "app\\[locale]\\page.tsx -> @/components/howToBuy",
     "files": [
-      "static/chunks/vendor.js",
-      "static/chunks/common.js",
-      "static/css/node_modules_next_font_google_target_css-node_modules_next_font_google_target_css-_app-pages--9e2d88.css",
-      "static/chunks/node_modules_next_font_google_target_css-node_modules_next_font_google_target_css-_app-pages--9e2d88.js"
+      "static/chunks/_app-pages-browser_src_components_howToBuy_tsx.js"
     ]
   },
   "app\\[locale]\\page.tsx -> @/components/logomarquee": {
@@ -437,7 +434,6 @@
     "id": "app\\[locale]\\page.tsx -> @/components/textImagesSection",
     "files": [
       "static/chunks/vendor.js",
-      "static/chunks/common.js",
       "static/css/node_modules_next_font_google_target_css-node_modules_next_font_google_target_css-_app-pages--afc15a.css",
       "static/chunks/node_modules_next_font_google_target_css-node_modules_next_font_google_target_css-_app-pages--afc15a.js"
     ]
