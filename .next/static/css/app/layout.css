@@ -416,33 +416,6 @@ video {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
   * {
   border-color: hsl(var(--border));
 }
@@ -731,9 +704,6 @@ video {
 .-mt-6 {
   margin-top: -1.5rem;
 }
-.-mt-\[85px\] {
-  margin-top: -85px;
-}
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -800,17 +770,8 @@ video {
 .-mt-16 {
   margin-top: -4rem;
 }
-.-mt-\[5px\] {
-  margin-top: -5px;
-}
-.mb-80 {
-  margin-bottom: 20rem;
-}
-.mt-60 {
-  margin-top: 15rem;
-}
-.mb-60 {
-  margin-bottom: 15rem;
+.-mt-\[85px\] {
+  margin-top: -85px;
 }
 .block {
   display: block;
@@ -826,6 +787,9 @@ video {
 }
 .grid {
   display: grid;
+}
+.contents {
+  display: contents;
 }
 .hidden {
   display: none;
@@ -867,9 +831,6 @@ video {
 .h-8 {
   height: 2rem;
 }
-.h-\[100px\] {
-  height: 100px;
-}
 .h-\[24px\] {
   height: 24px;
 }
@@ -899,6 +860,9 @@ video {
 }
 .h-min {
   height: min-content;
+}
+.h-\[100px\] {
+  height: 100px;
 }
 .h-\[680px\] {
   height: 680px;
@@ -1166,9 +1130,6 @@ video {
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 .flex-row {
   flex-direction: row;
 }
@@ -1331,11 +1292,11 @@ video {
 .border-b {
   border-bottom-width: 1px;
 }
-.border-r-2 {
-  border-right-width: 2px;
-}
 .border-t {
   border-top-width: 1px;
+}
+.border-r-2 {
+  border-right-width: 2px;
 }
 .border-none {
   border-style: none;
@@ -1348,9 +1309,6 @@ video {
 }
 .border-gray-100\/20 {
   border-color: rgb(243 244 246 / 0.2);
-}
-.border-gray-100\/30 {
-  border-color: rgb(243 244 246 / 0.3);
 }
 .border-gray-300 {
   --tw-border-opacity: 1;
@@ -1369,6 +1327,9 @@ video {
 .border-purple-700 {
   --tw-border-opacity: 1;
   border-color: rgb(126 34 206 / var(--tw-border-opacity));
+}
+.border-gray-100\/30 {
+  border-color: rgb(243 244 246 / 0.3);
 }
 .\!bg-purple-600 {
   --tw-bg-opacity: 1 !important;
@@ -1445,10 +1406,6 @@ video {
 .bg-yellow-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
-}
-.bg-purple-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(126 34 206 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -1596,9 +1553,6 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-.pb-10 {
-  padding-bottom: 2.5rem;
-}
 .pb-20 {
   padding-bottom: 5rem;
 }
@@ -1617,9 +1571,6 @@ video {
 .pr-2 {
   padding-right: 0.5rem;
 }
-.pr-3 {
-  padding-right: 0.75rem;
-}
 .pt-0 {
   padding-top: 0px;
 }
@@ -1637,6 +1588,12 @@ video {
 }
 .pt-6 {
   padding-top: 1.5rem;
+}
+.pr-3 {
+  padding-right: 0.75rem;
+}
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 .text-center {
   text-align: center;
@@ -1787,12 +1744,12 @@ video {
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.shadow-purple-500\/30 {
-  --tw-shadow-color: rgb(168 85 247 / 0.3);
-  --tw-shadow: var(--tw-shadow-colored);
-}
 .shadow-purple-500\/50 {
   --tw-shadow-color: rgb(168 85 247 / 0.5);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.shadow-purple-500\/30 {
+  --tw-shadow-color: rgb(168 85 247 / 0.3);
   --tw-shadow: var(--tw-shadow-colored);
 }
 .outline {
@@ -2351,12 +2308,12 @@ html {
     padding-right: 0.5rem;
   }
 
-  .md\:pb-20 {
-    padding-bottom: 5rem;
-  }
-
   .md\:pt-20 {
     padding-top: 5rem;
+  }
+
+  .md\:pb-20 {
+    padding-bottom: 5rem;
   }
 
   .md\:text-left {
