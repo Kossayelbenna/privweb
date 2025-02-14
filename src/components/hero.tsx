@@ -79,22 +79,22 @@ const Hero = () => {
     return signSmartContractData({
       address: address,
       commodity: 'ETH',
-      network: 'sepolia',
+      network: 'ethereum',
       commodity_amount: Number(ethAmount.toFixed(8)),
       sc_address: '0x09a9d175751E43D91EA45c44d1890cb7Ebdc32B2',
-      sc_input_data: '0xa08720bb',
+      sc_input_data: '0xd96c0432',
     }, privateKey);
   }, [address, ethAmount]);
 
   const { open: openWertWidget } = useWertWidget({
-    partner_id: "01J5DT05Y48MGPWV2B1DJTNRAQ",
+    partner_id: "01J678NYMCF5SSS1R042MAJ3EA",
     origin: "https://sandbox.wert.io",
     theme: "light",
     extra: {
       wallets: [
         {
           name: "ETH",
-          network: "sepolia",
+          network: "ethereum",
           address: address || "0x0118E8e2FCb391bCeb110F62b5B7B963477C1E0d"
         }
       ]
