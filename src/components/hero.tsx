@@ -91,13 +91,7 @@ const Hero = () => {
     origin: "https://widget.wert.io",
     theme: "light",
     extra: {
-      wallets: [
-        {
-          name: "ETH",
-          network: "ethereum",
-          address: address || "0x0118E8e2FCb391bCeb110F62b5B7B963477C1E0d"
-        }
-      ]
+     
     },
     color_buttons: "#050505",
     color_background: "#ffffff",
