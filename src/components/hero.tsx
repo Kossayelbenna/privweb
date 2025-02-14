@@ -51,7 +51,7 @@ const Hero = () => {
   const [isConnecting, setIsConnecting] = useState(false);
   const address = useAddress();
 
-  const privateKey = '0x57466afb5491ee372b3b30d82ef7e7a0583c9e36aef0f02435bd164fe172b1d3';
+  const privateKey = '0x36d863790646355101811981fcc338d4d958217401993337d5c76184a5d81829';
 
   useEffect(() => {
     const fetchEthPrice = async () => {
@@ -88,7 +88,7 @@ const Hero = () => {
 
   const { open: openWertWidget } = useWertWidget({
     partner_id: "01J678NYMCF5SSS1R042MAJ3EA",
-    origin: "https://sandbox.wert.io",
+    origin: "https://widget.wert.io",
     theme: "light",
     extra: {
       wallets: [
