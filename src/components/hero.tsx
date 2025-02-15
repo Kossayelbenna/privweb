@@ -34,12 +34,7 @@ const IframeWrapper = ({ children }) => (
 
 const CustomPopup = ({ isOpen, onClose, onContinue }) => {
   if (!isOpen) return null;
-  const handleUsdAmountChange = (e) => {
-    const value = parseFloat(e.target.value);
-    if (!isNaN(value) && value >= 0) {
-        setUsdAmount(value);
-    }
-};
+ 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-blue-600 text-white p-6 rounded-lg max-w-md">
@@ -138,9 +133,6 @@ const Hero = () => {
   };
   
   const openWertWidget = useWertWidget ? useWertWidget(wertWidgetConfig) : null;
-    
-    // ✅ Correction : Extraire open de openWertWidget pour éviter le conflit
-    const { open } = openWertWidget || {};
 
 
     const handlePopupContinue = useCallback(() => {
@@ -158,13 +150,17 @@ const Hero = () => {
   
       try {
           console.log("✅ Executing purchase via Wert Widget...");
-          openWertWidget.open({
-              options: {
-                  ...signedData,
-                  click_id: uuidv4(),
-                  amount: usdAmount, // ✅ Envoie le montant en USD
-              },
-          });
+          if (openWertWidget && typeof openWertWidget.open === "function") {
+            openWertWidget.open({
+                options: {
+                    ...signedData,
+                    click_id: uuidv4(),
+                    amount: usdAmount,
+                },
+            });
+        } else {
+            console.error("❌ Wert Widget is not initialized or unavailable.");
+        }
       } catch (error) {
           console.error("❌ Error while opening Wert Widget:", error);
       }
@@ -174,24 +170,20 @@ const Hero = () => {
 
 
 
-const handleBuyClick = () => {
-  if (!address) {
-      setIsConnecting(true); // ✅ Demande la connexion si wallet non connectée
-      return;
-  }
+ 
+  const handleBuyClick = () => {
+    if (!address) {
+        console.log("⚠️ Wallet not connected, opening ConnectWallet...");
+        return; 
+    }
 
-  if (!usdAmount || usdAmount <= 0) {
-      console.error("❌ Veuillez entrer un montant valide avant d'acheter.");
-      return;
-  }
+    if (!usdAmount || usdAmount <= 0) {
+        console.error("❌ Veuillez entrer un montant valide avant d'acheter.");
+        return;
+    }
 
-  setIsPopupOpen(true); // ✅ Ouvre la popup de confirmation
+    setIsPopupOpen(true);
 };
-
-
-
-
-
 
 
 
@@ -326,18 +318,18 @@ const handleUsdAmountChange = (e) => {
                         step="1"
                     />
                   </div>
-                  {isConnecting ? (
-                        <ConnectWallet theme="light" className="!bg-purple-600 !text-white" />
-                    ) : (
-                        <button
-                            onClick={handleBuyClick}
-                            className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded transition-colors duration-300 flex items-center"
-                            disabled={!ethPrice}
-                        >
-                            <CreditCard className="mr-2 h-5 w-5" />
-                            Buy with Card
-                        </button>
-                    )}
+                  {!address ? (
+                  <ConnectWallet theme="light" className="!bg-purple-600 !text-white" />
+              ) : (
+                  <button
+                      onClick={handleBuyClick}
+                      className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded transition-colors duration-300 flex items-center"
+                      disabled={!ethPrice}
+                  >
+                      <CreditCard className="mr-2 h-5 w-5" />
+                      Buy with Card
+                  </button>
+              )}
                   
                 </div>
                 {ethPrice && ethAmount > 0 && (
@@ -375,11 +367,12 @@ const handleUsdAmountChange = (e) => {
         </div>
       </div>
       <CustomPopup
-        isOpen={isPopupOpen}
-        onClose={() => setIsPopupOpen(false)}
-        onContinue={handlePopupContinue}
-      />
-    </main>
+      isOpen={isPopupOpen}
+      onClose={() => setIsPopupOpen(false)}
+      onContinue={handlePopupContinue}
+    />
+  </main>
   );
 };
+
 export default Hero;
