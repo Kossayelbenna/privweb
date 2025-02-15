@@ -125,68 +125,77 @@ const Hero = () => {
     
     console.log("🔍 signedData after useMemo:", signedData);
     
-    // ✅ Correction : Initialisation correcte de openWertWidget
-    const openWertWidget = useWertWidget
-      ? useWertWidget({
-          partner_id: "01J678NYMCF5SSS1R042MAJ3EA",
-          origin: "https://widget.wert.io",
-          theme: "light",
-          address: address || "0x0118E8e2FCb391bCeb110F62b5B7B963477C1E0d",
-          color_buttons: "#050505",
-          color_background: "#ffffff",
-          listeners: {
-            'loaded': () => console.log('✅ Wert widget loaded'),
-          },
-        })
-      : null;
+    const wertWidgetConfig = {
+      partner_id: "01J678NYMCF5SSS1R042MAJ3EA",
+      origin: "https://widget.wert.io",
+      theme: "light",
+      address: address || "0x0118E8e2FCb391bCeb110F62b5B7B963477C1E0d",
+      color_buttons: "#050505",
+      color_background: "#ffffff",
+      listeners: {
+          'loaded': () => console.log('✅ Wert widget loaded'),
+      },
+  };
+  
+  const openWertWidget = useWertWidget ? useWertWidget(wertWidgetConfig) : null;
     
     // ✅ Correction : Extraire open de openWertWidget pour éviter le conflit
     const { open } = openWertWidget || {};
 
 
-  const handlePopupContinue = useCallback(() => {
-    setIsPopupOpen(false);
+    const handlePopupContinue = useCallback(() => {
+      setIsPopupOpen(false);
+  
+      if (!signedData || Object.keys(signedData).length === 0) {
+          console.error("❌ Signed data is missing or empty:", signedData);
+          return;
+      }
+  
+      if (!openWertWidget || typeof openWertWidget.open !== "function") {
+          console.error("❌ Wert Widget is not initialized or unavailable.");
+          return;
+      }
+  
+      try {
+          console.log("✅ Executing purchase via Wert Widget...");
+          openWertWidget.open({
+              options: {
+                  ...signedData,
+                  click_id: uuidv4(),
+                  amount: usdAmount, // ✅ Envoie le montant en USD
+              },
+          });
+      } catch (error) {
+          console.error("❌ Error while opening Wert Widget:", error);
+      }
+  }, [signedData, openWertWidget, usdAmount]);
 
-    console.log("🔍 DEBUG: signedData before checking:", signedData);
 
-    if (!signedData || typeof signedData !== "object" || Object.keys(signedData ?? {}).length === 0) {
-        console.error("❌ Signed data is not available or empty:", signedData);
-        return;
-    }
 
-    console.log("✅ Before calling handlePopupContinue, signedData:", signedData);
-    console.log("🔑 Signed data keys:", Object.keys(signedData ?? {}));
 
-    if (!signedData.commodity || !signedData.network || !signedData.commodity_amount) {
-        console.error("❌ Signed data is missing required properties:", signedData);
-        return;
-    }
 
-    if (!openWertWidget || typeof openWertWidget.open !== "function") {
-      console.error("❌ Wert Widget is not initialized or not available.");
-      return;
-    }
-
-    try {
-        console.log("✅ Signed Data:", signedData);
-        console.log("🚀 Opening Wert Widget...");
-        openWertWidget({ options: { ...signedData, click_id: uuidv4() } });
-    } catch (error) {
-        console.error("❌ Error while opening Wert Widget:", error);
-    }
-    if (!signedData || Object.keys(signedData ?? {}).length === 0) {
-      console.error("❌ Signed data is missing or empty:", signedData);
+const handleBuyClick = () => {
+  if (!address) {
+      setIsConnecting(true); // ✅ Demande la connexion si wallet non connectée
       return;
   }
-}, [signedData, openWertWidget]);
 
-  const handleBuyClick = () => {
-    if (!address) {
-      setIsConnecting(true);
+  if (!usdAmount || usdAmount <= 0) {
+      console.error("❌ Veuillez entrer un montant valide avant d'acheter.");
       return;
-    }
-    setIsPopupOpen(true);
-  };
+  }
+
+  setIsPopupOpen(true); // ✅ Ouvre la popup de confirmation
+};
+
+
+
+
+
+
+
+
+
   const features = [
     "Layer 3 blockchain with high-volume capacity",
     "Ultra-low fees across multiple chains",
@@ -318,17 +327,18 @@ const handleUsdAmountChange = (e) => {
                     />
                   </div>
                   {isConnecting ? (
-                    <ConnectWallet theme="light" className="!bg-purple-600 !text-white" />
-                  ) : (
-                    <button
-                      onClick={handleBuyClick}
-                      className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded transition-colors duration-300 flex items-center"
-                      disabled={!ethPrice}
-                    >
-                      <CreditCard className="mr-2 h-5 w-5" />
-                      Buy with Card
-                    </button>
-                  )}
+                        <ConnectWallet theme="light" className="!bg-purple-600 !text-white" />
+                    ) : (
+                        <button
+                            onClick={handleBuyClick}
+                            className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded transition-colors duration-300 flex items-center"
+                            disabled={!ethPrice}
+                        >
+                            <CreditCard className="mr-2 h-5 w-5" />
+                            Buy with Card
+                        </button>
+                    )}
+                  
                 </div>
                 {ethPrice && ethAmount > 0 && (
                     <p className="text-sm text-white mt-2">
