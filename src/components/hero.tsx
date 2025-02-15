@@ -1,11 +1,29 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import Image from 'next/image';
 import { useTranslator } from "@/lib/use-translator";
-import { useWertWidget } from '@wert-io/module-react-component';
 import { signSmartContractData } from '@wert-io/widget-sc-signer';
 import { v4 as uuidv4 } from 'uuid';
 import { CreditCard, X } from "lucide-react";
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
+import { useWertWidget } from '@wert-io/module-react-component'; // ✅ Conserve seulement l'import
+
+
+const scrollToHowToBuy = () => {
+  const howToBuySection = document.getElementById('how-to-buy');
+  if (howToBuySection) {
+      howToBuySection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+const scrollToHero2 = () => {
+  const hero2Section = document.getElementById('Hero2');
+  if (hero2Section) {
+      hero2Section.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+
+
 
 const IframeWrapper = ({ children }) => (
   <div className="relative overflow-hidden rounded-[25px] w-full max-w-[450px] md:h-[680px] h-[700px] backdrop-blur-md bg-blue-900/30 border border-purple-500/100 shadow-lg shadow-purple-500/50">
@@ -14,10 +32,14 @@ const IframeWrapper = ({ children }) => (
   </div>
 );
 
-
 const CustomPopup = ({ isOpen, onClose, onContinue }) => {
   if (!isOpen) return null;
-
+  const handleUsdAmountChange = (e) => {
+    const value = parseFloat(e.target.value);
+    if (!isNaN(value) && value >= 0) {
+        setUsdAmount(value);
+    }
+};
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-blue-600 text-white p-6 rounded-lg max-w-md">
@@ -50,7 +72,6 @@ const Hero = () => {
   const [ethPrice, setEthPrice] = useState(null);
   const [isConnecting, setIsConnecting] = useState(false);
   const address = useAddress();
-
   const privateKey = '0x36d863790646355101811981fcc338d4d958217401993337d5c76184a5d81829';
 
   useEffect(() => {
@@ -60,45 +81,104 @@ const Hero = () => {
         const data = await response.json();
         setEthPrice(data.ethereum.usd);
       } catch (error) {
-        console.error("Failed to fetch ETH price:", error);
+        console.error("❌ Failed to fetch ETH price:", error);
       }
     };
-
+  
     fetchEthPrice();
     const interval = setInterval(fetchEthPrice, 60000);
     return () => clearInterval(interval);
   }, []);
-
+  
   const ethAmount = useMemo(() => {
     if (!ethPrice || usdAmount <= 0) return 0;
     return usdAmount / ethPrice;
   }, [usdAmount, ethPrice]);
-
+  
   const signedData = useMemo(() => {
-    if (!address || ethAmount <= 0) return null;
-    return signSmartContractData({
-      address: address,
-      commodity: 'ETH',
-      network: 'ethereum',
-      commodity_amount: Number(ethAmount.toFixed(8)),
-      sc_address: '0x09a9d175751E43D91EA45c44d1890cb7Ebdc32B2',
-      sc_input_data: '0xd96c0432',
-    }, privateKey);
-  }, [address, ethAmount]);
+    if (!address || ethAmount <= 0) {
+      console.error("❌ Invalid address or ETH amount", { address, ethAmount });
+      return {}; 
+    }
+    try {
+      const data = signSmartContractData({
+        address: address,
+        commodity: 'ETH',
+        network: 'ethereum',
+        commodity_amount: Number(ethAmount.toFixed(8)),
+        sc_address: '0x09a9d175751E43D91EA45c44d1890cb7Ebdc32B2',
+        sc_input_data: '0xd96c0432',
+      }, privateKey);
+    
+      if (!data || typeof data !== "object") {
+        console.error("❌ signSmartContractData returned invalid data:", data);
+        return {}; 
+      }
+    
+      console.log("✅ Generated signedData:", data);
+      return data;
+    } catch (error) {
+      console.error("❌ Error while signing smart contract data:", error);
+      return {}; 
+    }
+    }, [address, ethAmount]);
+    
+    console.log("🔍 signedData after useMemo:", signedData);
+    
+    // ✅ Correction : Initialisation correcte de openWertWidget
+    const openWertWidget = useWertWidget
+      ? useWertWidget({
+          partner_id: "01J678NYMCF5SSS1R042MAJ3EA",
+          origin: "https://widget.wert.io",
+          theme: "light",
+          address: address || "0x0118E8e2FCb391bCeb110F62b5B7B963477C1E0d",
+          color_buttons: "#050505",
+          color_background: "#ffffff",
+          listeners: {
+            'loaded': () => console.log('✅ Wert widget loaded'),
+          },
+        })
+      : null;
+    
+    // ✅ Correction : Extraire open de openWertWidget pour éviter le conflit
+    const { open } = openWertWidget || {};
 
-  const { open: openWertWidget } = useWertWidget({
-    partner_id: "01J678NYMCF5SSS1R042MAJ3EA",
-    origin: "https://widget.wert.io",
-    theme: "light",
-    extra: {
-     
-    },
-    color_buttons: "#050505",
-    color_background: "#ffffff",
-    listeners: {
-      'loaded': () => console.log('Wert widget loaded'),
-    },
-  });
+
+  const handlePopupContinue = useCallback(() => {
+    setIsPopupOpen(false);
+
+    console.log("🔍 DEBUG: signedData before checking:", signedData);
+
+    if (!signedData || typeof signedData !== "object" || Object.keys(signedData ?? {}).length === 0) {
+        console.error("❌ Signed data is not available or empty:", signedData);
+        return;
+    }
+
+    console.log("✅ Before calling handlePopupContinue, signedData:", signedData);
+    console.log("🔑 Signed data keys:", Object.keys(signedData ?? {}));
+
+    if (!signedData.commodity || !signedData.network || !signedData.commodity_amount) {
+        console.error("❌ Signed data is missing required properties:", signedData);
+        return;
+    }
+
+    if (!openWertWidget || typeof openWertWidget.open !== "function") {
+      console.error("❌ Wert Widget is not initialized or not available.");
+      return;
+    }
+
+    try {
+        console.log("✅ Signed Data:", signedData);
+        console.log("🚀 Opening Wert Widget...");
+        openWertWidget({ options: { ...signedData, click_id: uuidv4() } });
+    } catch (error) {
+        console.error("❌ Error while opening Wert Widget:", error);
+    }
+    if (!signedData || Object.keys(signedData ?? {}).length === 0) {
+      console.error("❌ Signed data is missing or empty:", signedData);
+      return;
+  }
+}, [signedData, openWertWidget]);
 
   const handleBuyClick = () => {
     if (!address) {
@@ -107,26 +187,6 @@ const Hero = () => {
     }
     setIsPopupOpen(true);
   };
-
-  const handlePopupContinue = useCallback(() => {
-    setIsPopupOpen(false);
-    if (!signedData) {
-      console.error("Signed data is not available");
-      return;
-    }
-    openWertWidget({ options: { ...signedData, click_id: uuidv4() } });
-  }, [signedData, openWertWidget]);
-
-  const handleUsdAmountChange = (e) => {
-    setUsdAmount(parseFloat(e.target.value));
-  };
-
-  useEffect(() => {
-    if (address) {
-      setIsConnecting(false);
-    }
-  }, [address]);
-
   const features = [
     "Layer 3 blockchain with high-volume capacity",
     "Ultra-low fees across multiple chains",
@@ -134,22 +194,25 @@ const Hero = () => {
     "Dedicated block explorer for transparency",
     "Next-gen games, NFTs, and streaming Ecosystem"
   ];
-
   const scrollToHowToBuy = () => {
     const howToBuySection = document.getElementById('how-to-buy');
     if (howToBuySection) {
-      howToBuySection.scrollIntoView({ behavior: 'smooth' });
+        howToBuySection.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+};
 
-  const scrollToHero2 = () => {
-    const howToBuySection = document.getElementById('Hero2');
-    if (howToBuySection) {
-      howToBuySection.scrollIntoView({ behavior: 'smooth' });
+const scrollToHero2 = () => {
+    const hero2Section = document.getElementById('Hero2');
+    if (hero2Section) {
+        hero2Section.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-
+};
+const handleUsdAmountChange = (e) => {
+  const value = parseFloat(e.target.value);
+  if (!isNaN(value) && value >= 0) {
+      setUsdAmount(value);
+  }
+};
   return (
     <main className="relative min-h-screen overflow-hidden -mt-6">
       <div className="md:hidden mt-6">
@@ -245,13 +308,13 @@ const Hero = () => {
                   <div className="relative flex-grow mr-2">
                     <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
                     <input
-                      type="number"
-                      value={usdAmount}
-                      onChange={handleUsdAmountChange}
-                      className="w-full pl-6 pr-2 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
-                      placeholder="Enter amount in USD"
-                      min="0"
-                      step="1"
+                        type="number"
+                        value={usdAmount}
+                        onChange={handleUsdAmountChange}
+                        className="w-full pl-6 pr-2 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 text-black"
+                        placeholder="Enter amount in USD"
+                        min="0"
+                        step="1"
                     />
                   </div>
                   {isConnecting ? (
@@ -267,11 +330,11 @@ const Hero = () => {
                     </button>
                   )}
                 </div>
-                {ethPrice && (
-                  <p className="text-sm text-white mt-2">
-                    Approx. {ethAmount.toFixed(6)} ETH (1 ETH = ${ethPrice.toFixed(2)})
-                  </p>
-                )}
+                {ethPrice && ethAmount > 0 && (
+                    <p className="text-sm text-white mt-2">
+                        Approx. {ethAmount?.toFixed(6) || 0} ETH (1 ETH = ${ethPrice?.toFixed(2) || 0})
+                    </p>
+                )}  
               </div>
             </div>
           </div>
